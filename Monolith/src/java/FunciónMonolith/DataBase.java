@@ -1,6 +1,7 @@
 package FunciónMonolith;
 
 import java.sql.*;
+import java.util.ArrayList;
 
 public class DataBase {
 
@@ -37,6 +38,17 @@ public class DataBase {
     
     public void ConsultarUsuario(Usuario usr){
     
+    }
+    
+    public ArrayList<Actividades> RegresarCartas() throws SQLException{
+        st=c.createStatement();
+        rs=st.executeQuery("select * from Actividad inner join Usuario on Usuario.IDUsuario=Actividad.IDUsuario "
+                + "where Uusario.Nombre='rick'");
+        ArrayList<Actividades> ColeccionCartas=new ArrayList<Actividades>();
+        while(rs.next()){
+            Actividad act=new Actividad();
+            ColeccionCartas.add(rs.);
+        }
     }
     
 }
