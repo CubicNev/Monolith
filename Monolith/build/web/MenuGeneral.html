@@ -13,12 +13,27 @@ and open the template in the editor.
         <link href="Css/bootstraplogin.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
         <link rel="stylesheet" href="Css/Menu.css">
+        <script type="text/javascript">
+           var fontSize = 1;
+ 
+        // funcion para aumentar la fuente
+        function agrandar() {
+            var tamaño = document.getElementById("contenedor");
+            tamaño.style.height = 130 + "%";
+        }
+ 
+        // funcion para disminuir la fuente
+        function minimizar() {
+            var tamaño = document.getElementById("uno");
+            tamaño.style.height = 100 + "%";
+        }
+        </script>
     </head>
     <body class="container-fluid">
         <div class="barraInicio navbar navbar-default " style="font-family:Mukta">Monolith<img  class="logo" src="img/logo.png" alt=""></div>
         <header>
 
-            <div class="contenedor" id="uno">
+            <div class="contenedor" id="uno" onclick="agrandar();" ondblclick="minimizar();">
                 <img class="icon" src="img/home.png" alt="HomeLogo">
             </div>
 
