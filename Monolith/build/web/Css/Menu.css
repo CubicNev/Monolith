@@ -1,32 +1,32 @@
 html,body{
-  
-        height: 100%;
-	margin:0px;
-	font-family: Helvetica Neue; 
-         
+
+    height: 100%;
+    margin:0px;
+    font-family: Helvetica Neue; 
+
 }
 
 
 
 header{
-	margin:auto;
-        margin-left: 20%;
-	width:60%;
-	height:10%;
-	position: fixed;
-         
+    margin:auto;
+    margin-left: 20%;
+    width:60%;
+    height:10%;
+    position: fixed;
+
 }
 
 div.contenedor{
-	width: 16.6666666666666%;
-	height: 100%;
-	float:left;
-	-webkit-transition: height .4s;
+    width: 16.6666666666666%;
+    height: 100%;
+    float:left;
+    -webkit-transition: height .4s;
 }
 
 div#uno{
     background-color:#337BAE;
-        
+
 }
 
 div#dos{
@@ -34,53 +34,53 @@ div#dos{
 }
 
 div#tres{
-	background-color:#ABBEBE;
+    background-color:#ABBEBE;
 }
 
 div#cuatro{
-	background-color: #746766;
+    background-color: #746766;
 }
 
 div#cinco{
-	background-color:#FAAE3D;
+    background-color:#FAAE3D;
 }
 
 div#seis{
-	background-color:#9F1C25;
+    background-color:#9F1C25;
 }
 
 img.icon{
-	display: block;
-	margin:auto;
-	background-color: rgba(255,255,255,.15);
-	width:50%;
-	padding:12%;
-        box-sizing: border-box;
-	-webkit-border-radius: 30%;
-	-webkit-box-shadow: 0px 0px 0px 30px rgba(255,255,255,0);
-	-webkit-transition:box-shadow .4s;
+    display: block;
+    margin:auto;
+    background-color: rgba(255,255,255,.15);
+    width:50%;
+    padding:12%;
+    box-sizing: border-box;
+    -webkit-border-radius: 30%;
+    -webkit-box-shadow: 0px 0px 0px 30px rgba(255,255,255,0);
+    -webkit-transition:box-shadow .4s;
 }
 /*p.texto{
-	font-size: 1.2em;
-	color:white;
-	text-align: center;
-	padding-top:10px;
-	opacity: .6;
-	-webkit-transition: padding-top .4s;
+        font-size: 1.2em;
+        color:white;
+        text-align: center;
+        padding-top:10px;
+        opacity: .6;
+        -webkit-transition: padding-top .4s;
 }*/
 
 
 div.contenedor:hover{
-	height:130%;
+    height:130%;
 }
 
 div.contenedor:hover p.texto{
-	padding-top: 30px;
-	opacity: 1;
+    padding-top: 30px;
+    opacity: 1;
 }
 
 div.contenedor:hover img.icon{
-	-webkit-box-shadow:0px 0px 0px 0px rgba(255,255,255,.6);
+    -webkit-box-shadow:0px 0px 0px 0px rgba(255,255,255,.6);
 }
 
 div#uno:active {    
@@ -103,13 +103,13 @@ div#uno:active {
     background-color: #00ffff;
 }
 .segundo{
-     float:left;
+    float:left;
     width: 50%;
     height:50%;
     background-color: #ff33ff;
 }
 .tercero{
-     float:left;
+    float:left;
     width: 50%;
     height:50%;
     background-color: #66ff66;
@@ -122,5 +122,22 @@ div#uno:active {
 }
 
 @media screen and (max-width: 800px){
-    
+
+}
+
+
+.clock{
+    position: absolute;
+    color:#f6032f;
+    font-size: 500%;
+    transition: 0.3s;
+    width: 25%;
+    top:25%;
+    text-align: center;
+   padding-left:10%;
+   padding-right:20%;
+}
+.clock:hover{
+    transition:0.3s;
+    color:#1646DE ;
 }
