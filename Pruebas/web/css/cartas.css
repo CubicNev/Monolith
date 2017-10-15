@@ -1,7 +1,31 @@
-section{
-    margin:150px 0;
+.carta h3{
+   text-align:center;
+   background-color:#2e3133;
+   color:#fff;
 }
 
-.imageBox{
+.bloquecarta{
     
+    background-color:#2e3133;
+    color:#fff;
+}
+
+.bloquecarta button{
+    border-width:0px;
+}
+
+#editar{
+    background-color:#F5B625;
+}
+
+#checar{
+    background-color:#82D911;
+}
+
+#borrar{
+    background-color:#E34627;
+}
+
+#agregar{
+    background-color:#AF5AE8;
 }
