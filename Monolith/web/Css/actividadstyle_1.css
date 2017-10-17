@@ -1,6 +1,7 @@
 .titulolista{
     text-align:center;
-    background-color:#fff; 
+    border-width:thick;
+    border-color:130px;
     color:#000;
 }
 .cartasdiv{
@@ -19,18 +20,25 @@
 .btn-carta {
     font-size: 20px;
     font-family: sans-serif;
+    font-weight:400;
 }
 
 .titulocarta{
     border-width:12px;
     border-color:#000;
-    background-color:#0056b3;
+    color:#fff;
+    background-color:#1FD7E4;
+    font-weight:400;
 }
 
 
 .carta h3{
    text-align:center;
-   color:#000;
+   font-family:sans-serif;
+   font-weight:400;
+   padding-top:15px;
+   color:#fff;
+   height:70px;
 }
 
 .bloquecarta{
