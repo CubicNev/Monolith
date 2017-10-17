@@ -1,7 +1,7 @@
 .titulolista{
     text-align:center;
-    background-color:#000; 
-    color:#fff;
+    background-color:#fff; 
+    color:#000;
 }
 .cartasdiv{
     padding:15px;
@@ -11,7 +11,35 @@
 .carta{
     width: 20rem;
     border-width:0px;
+    background-color:#000;
+    text-align:center;
+    align-self:center;
 }
+
+.btn-carta {
+    font-size: 20px;
+    font-family: sans-serif;
+    text-align: center;
+   align-content:center;
+}
+
+
+.carta h3{
+   text-align:center;
+   background-color:#2e3133;
+   color:#fff;
+}
+.card-text{
+    text-align:center;
+}
+
+
+.btn-carta {
+    font-size: 20px;
+    font-family: sans-serif;
+}
+
+
 .carta h3{
    text-align:center;
    background-color:#2e3133;
@@ -21,13 +49,25 @@
     text-align:center;
 }
 .bloquecarta{
-    
-    background-color:#2e3133;
+    text-align: center; 
+   background-color:#2e3133;
     color:#fff;
 }
 
+.grupo-bt {
+   text-align: center;
+}
+
+
 .bloquecarta button{
     border-width:0px;
+    text-align: center;
+   align-content:center;
+}
+
+div .description-card {
+    height: 100px;
+    overflow: scroll;
 }
 
 #editar{
