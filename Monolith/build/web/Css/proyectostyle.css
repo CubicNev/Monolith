@@ -1,32 +1,60 @@
 .titulolista{
     text-align:center;
-    background-color:#767674; 
-    color:#fff;
+    border-width:thick;
+    border-color:130px;
+    color:#000;
 }
 .cartasdiv{
     padding:15px;
-    background-color:#117a8b;
+    background-color:#DDD9D9;
 }
 
 .carta{
     width: 20rem;
-    border-width:0px;
+    border-width:120px;
+    border-color:#000;
+    background-color:#000;
+    
 }
+
+.btn-carta {
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight:400;
+}
+
+.titulocarta{
+    border-width:12px;
+    border-color:#000;
+    color:#fff;
+    background-color:#1FD7E4;
+    font-weight:400;
+}
+
+
 .carta h3{
    text-align:center;
-   background-color:#767674;
+   font-family:sans-serif;
+   font-weight:400;
+   padding-top:15px;
    color:#fff;
+   height:70px;
 }
-.card-text{
-    text-align:center;
-}
+
 .bloquecarta{
-    background-color:#767674;
-    color:#fff;
+    text-align: center; 
+   background-color:#fff;
+    color:#000;
+    padding:18px;
 }
 
 .bloquecarta button{
     border-width:0px;
+}
+
+div .description-card {
+    height: 100px;
+    overflow: scroll;
 }
 
 #editar{
@@ -64,5 +92,3 @@
 #chat:hover{
     background-color:#072668;
 }
-
-
