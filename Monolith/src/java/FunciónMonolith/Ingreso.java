@@ -96,8 +96,11 @@ public class Ingreso extends HttpServlet {
         u.setCorreo(Correo);
         u.setPassword(Password);
         
+        
+        
         try {
             db.IngresarUsuario(u);
+            response.sendRedirect("web/");
         } catch (SQLException ex) {
                         out.print(ex.toString());
         }
