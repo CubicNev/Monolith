@@ -44,32 +44,34 @@ and open the template in the editor.
         </header>
         <div class="encubador">
             <div class="primero">
-            <div  id="Reloj" class="clock" >
-                <script type="text/javascript">
+                <div  id="Reloj" class="clock" >
+                    <script type="text/javascript">
 
-                    function Mostrar() {
-                        var date = new Date();
-                        var h = date.getHours(); // 0 - 23
-                        var m = date.getMinutes(); // 0 - 59
-                        var s = date.getSeconds(); // 0 - 59
-                        h = (h < 10) ? "0" + h : h;
-                        m = (m < 10) ? "0" + m : m;
-                        s = (s < 10) ? "0" + s : s;
+                        function Mostrar() {
+                            var date = new Date();
+                            var h = date.getHours(); // 0 - 23
+                            var m = date.getMinutes(); // 0 - 59
+                            var s = date.getSeconds(); // 0 - 59
+                            h = (h < 10) ? "0" + h : h;
+                            m = (m < 10) ? "0" + m : m;
+                            s = (s < 10) ? "0" + s : s;
 
-                        var time = h + ":" + m + ":" + s + " ";
-                        document.getElementById("Reloj").innerText = time;
-                        document.getElementById("Reloj").textContent = time;
+                            var time = h + ":" + m + ":" + s + " ";
+                            document.getElementById("Reloj").innerText = time;
+                            document.getElementById("Reloj").textContent = time;
 
-                        setTimeout(Mostrar, 1000);
-                    }
+                            setTimeout(Mostrar, 1000);
+                        }
 
-                    Mostrar();
+                        Mostrar();
 
-                </script>
-            </div>
+                    </script>
+                </div>
             </div>
             <div class="segundo">
+                <iframe scrolling="auto" src="calendario.html" frameborder="0" height="300" width="300">
 
+                </iframe>
             </div>
             <div class="tercero">
 
