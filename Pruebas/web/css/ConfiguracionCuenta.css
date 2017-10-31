@@ -1,0 +1,36 @@
+/* 
+    Created on : 20/10/2017, 08:19:45 AM
+    Author     : Carlos Nevarez
+*/
+
+body {
+    background-color: #f1f1f1;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+img .logo_navbar {
+    width: 14px;
+}
+
+ul .barraNav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(66, 145, 156);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+}
+
+li .elemento_navbar {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 4px 6px;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
