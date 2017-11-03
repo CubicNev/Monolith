@@ -3,13 +3,15 @@
         <title>Actividades</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/actividadstyle.css" rel="stylesheet" type="text/css">
-        <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="Css/actividadstyle.css" rel="stylesheet" type="text/css">
+        <link href="Css/bootstrap.css" rel="stylesheet" type="text/css">
         <link href="Css/test1.css" rel="stylesheet" type="text/css">
         <link href="Css/bootstraplogin.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
         <link rel="stylesheet" href="Css/Menu.css">
-        <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script>
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
         <script type="text/javascript">
             // funcion para aumentar la fuente
             function agrandar() {
@@ -134,152 +136,235 @@
                     </div>
                 </div>
             </header>
-            
-                <div class="row" style="padding-top:125px;">
-                    <div class="titulolista col-12 ">
-                        <h2>Lista actividades</h2>
-                    </div>
+
+            <div class="row" style="padding-top:125px;">
+                <div class="titulolista col-12 ">
+                    <h2 align="center">Lista actividades</h2>
                 </div>
-                
-                    <div class="col-12 cartasdiv " style="margin-bottom:13px;">
-                        <div class="card-columns ">
-                            <div class="card carta" >
-                                <h3 class="cart-title titulocarta">Nueva Actividad</h3>
-                                <div class="card-block bloquecarta">
-                                    <p class="card-text">Nueva Actividad </p>
-                                    <div class="btn-group grupo-btn">
-                                        <button class="btn btn-block btn-primary" id="agregar">nueva Actividad</button>
-                                    </div>
+            </div>
 
-
-                                </div>
+            <div class="col-12 cartasdiv " style="margin-bottom:13px;">
+                <div class="card-columns ">
+                    <div class="card carta" >
+                        <h3 class="cart-title titulocarta">Nueva Actividad</h3>
+                        <div class="card-block bloquecarta">
+                            <p class="card-text">Nueva Actividad </p>
+                            <div class="btn-group grupo-btn">
+                                <button class="btn btn-block btn-primary" id="agregar"  data-toggle="modal" data-target="#exampleModal" >nueva Actividad</button>
                             </div>
-                            
-                            <div class="card carta" >
-                                <div class="">
-                                    <h3 class="cart-title titulocarta">Actividad 1</h3>
+                        </div>
+                    </div>
+                    <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" align="center" style="text-align:center" id="exampleModalLabel">Nueva Actividad</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
                                 </div>
-                                <div class="card-body bloquecarta">
-                                    <div class="container">
-                                        <div id="accordion" role="tablist" aria-multiselectable="false">
-                                            <div class="card">
-                                                <div class="card-header" role="tab" id="headingOne">
-                                                    <h5 class="mb-0">
-                                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                                            Descripcion
-                                                        </a>
-                                                    </h5>
-                                                </div>
-                                                <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headinOne">
-                                                    <div class="card-block">
-                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                                    </div>
+                                <div class="modal-body actividadformcont"  >
+                                    <form  class="actividadform" style="width:100%;"  >
+                                        <div class="row targetactividad"  style="width:100%;">
+                                            <div class="col-6 col-sm-auto" style="width:100%;">
+                                                <label  class="col-form-label">Nombre actividad</label>
+                                            </div>
+                                            <div class="col-6  col-sm-auto" style="width:100%;">
+                                                <input type="text" class="form-control" id="recipient-name" placeholder="Nombre Actividad">
+                                            </div>  
+                                        </div> 
+                                        <div class="row targetactividad" style="width:100%;">
+                                            <div class="col-6 col-sm-auto" style="width:100%;">
+                                                <label  class="col-form-label">Forma de Entrega</label>
+                                            </div>
+                                            <div class="col-6  col-sm-auto" style="width:100%;">
+                                                <input type="text" class="form-control" id="recipient-name" placeholder="Forma de Entrega">
+                                            </div>
+                                        </div> 
+                                        <div class="row targetactividad" style="width:100%;" >
+                                            <div class="col-3 targetactividadfecha">
+                                                <label  class="col-form-label">Fecha de Entrega</label>
+                                            </div>
+                                            <div class="col-3">
+                                                <select id="inputState" class="form-control">
+                                                    <option selected>Dia</option>
+                                                    <option>...</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-3">
+                                                <select id="inputState" class="form-control">
+                                                    <option selected>Mes</option>
+                                                    <option>...</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-3">
+                                                <select id="inputState" class="form-control">
+                                                    <option selected>Año</option>
+                                                    <option>...</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="row">
+                                            <div class="col-12">
+                                               <h5 class="modal-title"  id="exampleModalLabel">Contribuyentes</h5>
+                                            </div>
+                                        </div>
+                                       <hr style="height:40px;">
+                                        <div class="row">
+                                            <div class="col-12" style="overflow-y:scroll;height:150px;">
+                                                <div class="row">
+                                                    <div class="col-4 " style="width:100%;">
+                                               <label  class="col-form-label">Nombre Integrante</label>
+                                                   </div>
+                                            <div class="col-4  " style="width:100%;">
+                                                <input type="text" class="form-control" id="recipient-name" placeholder="Nombre Actividad">
+                                            </div>
+                                             <div class="col-4" style="width:100%;">
+                                                 <button class="btn btn-primary">Agregar</button>
+                                            </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="btn-group grupo-btn">
-                                        <button class="btn btn-primary" id="checar">Final</button>
-                                        <button class="btn btn-primary" id="editar">Editar</button>
-                                        <button class="btn btn-primary" id="borrar">Borrar</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card carta" >
-                                <div class="">
-                                    <h3 class="cart-title titulocarta">Actividad 2</h3>
-                                </div>
-                                <div class="card-body bloquecarta">
-                                    <div class="container">
-                                        <div id="accordion" role="tablist" aria-multiselectable="false">
-                                            <div class="card">
-                                                <div class="card-header" role="tab" id="headingTwo">
-                                                    <h5 class="mb-0">
-                                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                            Descripcion
-                                                        </a>
-                                                    </h5>
-                                                </div>
-                                                <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                                    <div class="card-block">
-                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="btn-group grupo-btn">
-                                        <button class="btn btn-primary" id="checar">Final</button>
-                                        <button class="btn btn-primary" id="editar">Editar</button>
-                                        <button class="btn btn-primary" id="borrar">Borrar</button>
-                                    </div>
-                                </div>
-                            </div>
-                             <div class="card carta" >
-                                <div class="">
-                                    <h3 class="cart-title titulocarta">Actividad 3</h3>
-                                </div>
-                                <div class="card-body bloquecarta">
-                                    <div class="container">
-                                        <div id="accordion" role="tablist" aria-multiselectable="false">
-                                            <div class="card">
-                                                <div class="card-header" role="tab" id="headingThree">
-                                                    <h5 class="mb-0">
-                                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                            Descripcion
-                                                        </a>
-                                                    </h5>
-                                                </div>
-                                                <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-                                                    <div class="card-block">
-                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="btn-group grupo-btn">
-                                        <button class="btn btn-primary" id="checar">Final</button>
-                                        <button class="btn btn-primary" id="editar">Editar</button>
-                                        <button class="btn btn-primary" id="borrar">Borrar</button>
-                                    </div>
-                                </div>
-                            </div>
-                             <div class="card carta" >
-                                <div class="">
-                                    <h3 class="cart-title titulocarta">Actividad 4</h3>
-                                </div>
-                                <div class="card-body bloquecarta">
-                                    <div class="container">
-                                        <div id="accordion" role="tablist" aria-multiselectable="false">
-                                            <div class="card">
-                                                <div class="card-header" role="tab" id="headingFour">
-                                                    <h5 class="mb-0">
-                                                        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                                            Descripcion
-                                                        </a>
-                                                    </h5>
-                                                </div>
-                                                <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
-                                                    <div class="card-block">
-                                                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="btn-group grupo-btn">
-                                        <button class="btn btn-primary" id="checar">Final</button>
-                                        <button class="btn btn-primary" id="editar">Editar</button>
-                                        <button class="btn btn-primary" id="borrar">Borrar</button>
-                                    </div>
+                                       <div class="row">
+                                           <div class="col-5">
+                                           </div>
+                                           <div class="col-4">
+                                                <button class="btn btn-primary">Guardar Actividad</button>
+                                           </div>
+                                           <div class="col-3">
+                                           </div>
+                                       </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <div class="card carta" >
+                        <div class="">
+                            <h3 class="cart-title titulocarta">Actividad 1</h3>
+                        </div>
+                        <div class="card-body bloquecarta">
+                            <div class="container">
+                                <div id="accordion" role="tablist" aria-multiselectable="false">
+                                    <div class="card">
+                                        <div class="card-header" role="tab" id="headingOne">
+                                            <h5 class="mb-0">
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                                    Descripcion
+                                                </a>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headinOne">
+                                            <div class="card-block">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn-group grupo-btn">
+                                <button class="btn btn-primary" id="checar">Final</button>
+                                <button class="btn btn-primary" id="editar" data-toggle="modal" data-target="#exampleModal2">Editar</button>
+                                <button class="btn btn-primary" id="borrar">Borrar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card carta" >
+                        <div class="">
+                            <h3 class="cart-title titulocarta">Actividad 2</h3>
+                        </div>
+                        <div class="card-body bloquecarta">
+                            <div class="container">
+                                <div id="accordion" role="tablist" aria-multiselectable="false">
+                                    <div class="card">
+                                        <div class="card-header" role="tab" id="headingTwo">
+                                            <h5 class="mb-0">
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    Descripcion
+                                                </a>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                            <div class="card-block">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn-group grupo-btn">
+                                <button class="btn btn-primary" id="checar">Final</button>
+                                <button class="btn btn-primary" id="editar">Editar</button>
+                                <button class="btn btn-primary" id="borrar">Borrar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card carta" >
+                        <div class="">
+                            <h3 class="cart-title titulocarta">Actividad 3</h3>
+                        </div>
+                        <div class="card-body bloquecarta">
+                            <div class="container">
+                                <div id="accordion" role="tablist" aria-multiselectable="false">
+                                    <div class="card">
+                                        <div class="card-header" role="tab" id="headingThree">
+                                            <h5 class="mb-0">
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                    Descripcion
+                                                </a>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                                            <div class="card-block">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn-group grupo-btn">
+                                <button class="btn btn-primary" id="checar">Final</button>
+                                <button class="btn btn-primary" id="editar">Editar</button>
+                                <button class="btn btn-primary" id="borrar">Borrar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card carta" >
+                        <div class="">
+                            <h3 class="cart-title titulocarta">Actividad 4</h3>
+                        </div>
+                        <div class="card-body bloquecarta">
+                            <div class="container">
+                                <div id="accordion" role="tablist" aria-multiselectable="false">
+                                    <div class="card">
+                                        <div class="card-header" role="tab" id="headingFour">
+                                            <h5 class="mb-0">
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                                    Descripcion
+                                                </a>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
+                                            <div class="card-block">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn-group grupo-btn">
+                                <button class="btn btn-primary" id="checar">Final</button>
+                                <button class="btn btn-primary" id="editar">Editar</button>
+                                <button class="btn btn-primary" id="borrar">Borrar</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-           
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+            </div>
+        </div>
+
+
     </body>
 </html>

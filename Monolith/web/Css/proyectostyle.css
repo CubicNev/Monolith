@@ -85,6 +85,34 @@ div .description-card {
     background-color:#AF5AE8;
 }
 
+#editar{
+    background-color:#F5B625;
+}
+
+#editar:hover{
+    background-color:#D07F05;
+    
+}
+
+#checar{
+    background-color:#82D911;
+}
+#checar:hover{
+    background-color:#0588DF;
+}
+
+#borrar{
+    background-color:#E34627;
+}
+
+#borrar:hover{
+    background-color:#DF1F05;
+}
+
+#agregar{
+    background-color:#AF5AE8;
+}
+
 #chat{
     background-color:#06369C;
 }

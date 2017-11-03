@@ -1,7 +1,6 @@
 .titulolista{
     text-align:center;
     border-width:thick;
-    border-color:130px;
     color:#000;
 }
 .cartasdiv{
@@ -52,11 +51,6 @@
     border-width:0px;
 }
 
-div .description-card {
-    height: 100px;
-    overflow: scroll;
-}
-
 #editar{
     background-color:#F5B625;
 }
@@ -85,3 +79,21 @@ div .description-card {
     background-color:#AF5AE8;
 }
 
+.targetactividad{
+    padding-bottom:10px;
+    padding-top:10px;
+    width:100%;
+    
+}
+
+.actividadform{
+   margin-left:0px;
+   margin-right:0px;
+}
+
+.actividadformcont{
+    width:100%;
+}
+.listacarta{
+    overflow-y:scroll;
+}
