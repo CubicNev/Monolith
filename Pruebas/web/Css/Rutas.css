@@ -1,0 +1,62 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 23/10/2017, 12:51:08 PM
+    Author     : Alex
+*/
+
+
+.prime{
+    float: left;
+    width: 50%;
+    height:20%;
+    background-color:red;
+}
+.segu{
+    float:left;
+    width: 50%;
+    height:20%;
+    background-color: black;
+}
+.terce{
+    float:left;
+    width: 62%;
+    height:80%;
+    background-color: white;  /*#7EF2DF este es el color universal*/
+}
+.cuar{
+    float: left;
+    width: 38%;
+    height: 80%;
+    background-color:  #56E3FC;
+}
+.titulo{
+    background: #56E3FC;
+    text-align: center;
+    font-size: 185%;
+    border: 1px solid #4d5061;
+    border-radius: 0.3em;
+}
+.subtitulo{
+    background: #56A4FC;
+    border: 1px solid #4d5061;
+}
+.cajita{
+    text-align: center;
+    height:75%;
+    border: 5px solid #4d5061;
+}
+
+.cuadros{
+    margin-left: 10%;
+    width: 40%;
+    height: 60%;
+    float: bottom;
+    background-color: #ccccff;
+    border-radius: 0.3em;
+    margin: 5%;
+    box-sizing: border-box;
+}

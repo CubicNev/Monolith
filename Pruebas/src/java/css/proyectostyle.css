@@ -1,0 +1,68 @@
+.titulolista{
+    text-align:center;
+    background-color:#767674; 
+    color:#fff;
+}
+.cartasdiv{
+    padding:15px;
+    background-color:#117a8b;
+}
+
+.carta{
+    width: 20rem;
+    border-width:0px;
+}
+.carta h3{
+   text-align:center;
+   background-color:#767674;
+   color:#fff;
+}
+.card-text{
+    text-align:center;
+}
+.bloquecarta{
+    background-color:#767674;
+    color:#fff;
+}
+
+.bloquecarta button{
+    border-width:0px;
+}
+
+#editar{
+    background-color:#F5B625;
+}
+
+#editar:hover{
+    background-color:#D07F05;
+    
+}
+
+#checar{
+    background-color:#82D911;
+}
+#checar:hover{
+    background-color:#0588DF;
+}
+
+#borrar{
+    background-color:#E34627;
+}
+
+#borrar:hover{
+    background-color:#DF1F05;
+}
+
+#agregar{
+    background-color:#AF5AE8;
+}
+
+#chat{
+    background-color:#06369C;
+}
+
+#chat:hover{
+    background-color:#072668;
+}
+
+

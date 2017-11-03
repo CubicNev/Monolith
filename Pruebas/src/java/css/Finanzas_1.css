@@ -1,0 +1,40 @@
+
+
+.prime{
+    float: left;
+    width: 50%;
+    height:15%;
+    background-color: #7EF2DF;
+}
+.segu{
+    float:left;
+    width: 50%;
+    height:15%;
+    background-color: #7EF2DF;
+}
+.terce{
+    float:left;
+    width: 50%;
+    height:85%;
+    background-color: #7EF2DF;
+}
+.cuar{
+    float: left;
+    width: 50%;
+    height: 85%;
+    background-color: #7EF2DF;
+}
+.titulo{
+    background: #56E3FC;
+    text-align: center;
+    font-size: 30px;
+    border: 1px solid #4d5061;
+}
+.subtitulo{
+    background: #56A4FC;
+    border: 1px solid #4d5061;
+}
+.cajita{
+    text-align: center;
+    border: 5px solid #4d5061;
+}
