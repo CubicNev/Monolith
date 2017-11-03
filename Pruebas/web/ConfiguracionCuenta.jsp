@@ -1,7 +1,7 @@
 <%-- 
     Document   : ConfiguracionCuenta
     Created on : 20/10/2017, 08:08:26 AM
-    Author     : Alumno
+    Author     : HawkWard
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,7 +13,7 @@
         <link href="css/ConfiguracionCuenta.css" rel="stylesheet" type="text/css">
     </head>
     <body>
-        <ul>
+        <ul class="barraNav">
             <li class="elemento_navbar">img</li>
             <li class="elemento_navbar">Monolith</li>
             <li class="elemento_navbar">img</li>

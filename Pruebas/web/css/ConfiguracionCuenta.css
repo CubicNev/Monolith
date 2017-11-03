@@ -1,19 +1,17 @@
 /* 
     Created on : 20/10/2017, 08:19:45 AM
-    Author     : Carlos Nevarez
+    Author     : HawkWard
+    Reference  : ConfiguracionCuenta.jsp
 */
 
 body {
+    margin:0;
     background-color: #f1f1f1;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
 
-img .logo_navbar {
-    width: 14px;
-}
-
-ul .barraNav {
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -25,12 +23,28 @@ ul .barraNav {
     text-align: center;
 }
 
-li .elemento_navbar {
+
+li a{
+    float:left;
     display: block;
     color: white;
     text-align: center;
-    padding: 4px 6px;
+    padding-top: 14px;
+    padding-right: 16px;
+    padding-bottom: 16px;
+    padding-left: 14px;
     text-decoration: none;
     font-family: sans-serif;
 }
 
+li a:hover {
+    background-color: #111;
+}
+
+li img{
+    padding: 8px;
+}
+
+img {
+    width: 40px;
+}
