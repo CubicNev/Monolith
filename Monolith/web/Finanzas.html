@@ -1,20 +1,30 @@
 <html>
     <head>
-        <title>Actividades</title>
+        <title>Finanzas</title>
+        <!-- META -->
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <!-- Bootstrap CSS-->
+        <link href="Css/bootstraplogin.css" rel="stylesheet" type="text/css">
+        <link href="Css/bootstrap.css" rel="stylesheet" type="text/css">
+        
+        <!-- HawkWard CSS -->
         <link href="Css/actividadstyle.css" rel="stylesheet" type="text/css">
         <link href="Css/Menu.css" rel="stylesheet" type="text/css">
-        <link href="Css/bootstrap.css" rel="stylesheet" type="text/css">
         <link href="Css/finanzashtml.css" rel="stylesheet" type="text/css">
         <link href="Css/test1.css" rel="stylesheet" type="text/css">
-        <link href="Css/bootstraplogin.css" rel="stylesheet" type="text/css">
+        <link href="Css/Menu.css" rel="stylesheet" type="text/css">
+        
+        <!-- GOOGLE font -->
         <link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
-        <link rel="stylesheet" href="Css/Menu.css">
+        
+        <!--Dropdown, JQuery, Bootstrap JS, -->
         <script src="js/popper.min.js"></script>
         <script src='js/jquery-3.2.1.js'></script>
         <script src='js/bootstrap.min.js'></script>
-
+        
+        <!--Cartas JS-->
         <script type="text/javascript">
             // funcion para aumentar la fuente
             function agrandar() {
@@ -106,12 +116,12 @@
                 tamaño6.style.height = 130 + "%";
 
             }
-
-
         </script>
+        
     </head>
     <body>
-        <div class="container-fluid" style="padding-left:13px;padding-right:13px;">
+        
+        
             <div class="barraInicio navbar navbar-default " style="font-family:Mukta">Monolith<img  class="logo" src="img/logo.png" alt=""></div>
             <header>
                 <div class="col-12">
@@ -139,6 +149,7 @@
                     </div>
                 </div>
             </header> 
+            <div class="container-fluid" style="padding-left:13px;padding-right:13px;">
             <div class="row categorias" >
                 <div class="col-7">
                     <div class="row barrafinanza">
@@ -160,41 +171,30 @@
                     </div>
                     <div class="row listafinanza">
                         <div class="card-panel " style="padding-left:15%;padding-right:35%;">
+                            
                             <div class="card cartafinanza" >
                                 <div class="card-body">
-                                    <div class="row">
-                                        <div class="col-8">
-                                            <h4 class="card-title">Titulo Categoria Financiera</h4>
-                                        </div>
-                                        <div class="col-2">
-                                            <button class="btn btn-primary " type="submit">Ingresar</button>
-                                        </div>
+                                    <div class="card-block">
+                                        <h4 class="card-title">Titulo</h4>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-8">
-                                            Monto Total
-                                        </div>
+                                    <div class="card-block">
+                                        <p class="card-text">Monto total: $0.00</p>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <form class="form-inline formnuvcategoria">
-                                                <label>Ingreso</label>
-                                                 <input class="form-control "  placeholder="Monto Ingreso">
-                                                 <button class="btn btn-primary " type="submit">Ingresar</button>
-                                            </form>
-                                        </div>
+                                    <div class="card-block">
+                                        <form class="form-inline formnuvcategoria">
+                                            <input type="text" class="form-control" placeholder="Monto"/>
+                                            <a href="#" class="btn btn-primary">Ingresar</a>
+                                        </form>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-12">
-                                            <form class="form-inline formnuvcategoria">
-                                                <label>Retiro</label>
-                                                 <input class="form-control "  placeholder="Monto Retiro">
-                                                 <button class="btn btn-primary " type="submit">Retirar</button>
-                                            </form>
-                                        </div>
+                                    <div class="card-block">
+                                        <form class="form-inline formnuvcategoria">
+                                            <input type="text" class="form-control" placeholder="Monto"/>
+                                            <a href="#" class="btn btn-primary">Retirar</a>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
+                            
                             <div class="card cartafinanza" style="width: 20rem;">
                                 <div class="card-body">
                                     <h4 class="card-title">Special title treatment</h4>
