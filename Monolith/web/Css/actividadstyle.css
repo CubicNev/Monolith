@@ -1,8 +1,16 @@
+/*CSS Titulo de la Lista Actividades
+*/
 .titulolista{
     text-align:center;
     border-width:thick;
     color:#000;
 }
+
+/* Fin CSS Titulo de la Lista Actividades
+*/
+
+/* Css para carta de Actividades
+*/
 .cartasdiv{
     padding:15px;
     background-color:#DDD9D9;
@@ -47,6 +55,7 @@
     padding:18px;
 }
 
+/*CSS Botones de Cartas ctividades*/
 .bloquecarta button{
     border-width:0px;
 }
@@ -79,6 +88,13 @@
     background-color:#AF5AE8;
 }
 
+/*Fin CSS Botones de Cartas ctividades*/
+
+/*  Fin Css para carta de Actividades
+*/
+
+/*   Css para carta de Modal de Actividades
+*/
 .targetactividad{
     padding-bottom:10px;
     padding-top:10px;
@@ -97,3 +113,11 @@
 .listacarta{
     overflow-y:scroll;
 }
+
+.descripcionproyecto{
+    margin:8px;
+}
+
+/*   Css para carta de Modal de Actividades
+*/
+

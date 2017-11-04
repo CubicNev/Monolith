@@ -110,6 +110,8 @@
     <body>
         <div class="container-fluid" style="padding-left:13px;padding-right:13px;">
             <div class="barraInicio navbar navbar-default " style="font-family:Mukta">Monolith<img  class="logo" src="img/logo.png" alt=""></div>
+            
+            <!--Barra Navegacion-->
             <header>
                 <div class="col-12">
                     <div class="contenedor" id="uno" onclick="agrandar();" ondblclick="minimizar();">
@@ -136,13 +138,16 @@
                     </div>
                 </div>
             </header>
-
+      <!--Fin Barra de Navegacion-->
+      <!--Inicio Cartas de Actividades-->
+      <!---TIuloModulo-->
             <div class="row" style="padding-top:125px;">
                 <div class="titulolista col-12 ">
                     <h2 align="center">Lista actividades</h2>
                 </div>
             </div>
-
+     <!---Fin TituloModulo-->
+     <!--Ejemplo Cartas-->
             <div class="col-12 cartasdiv " style="margin-bottom:13px;">
                 <div class="card-columns ">
                     <div class="card carta" >
@@ -154,6 +159,7 @@
                             </div>
                         </div>
                     </div>
+                     <!--Modal de registro de Actividad-->
                     <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
@@ -204,9 +210,9 @@
                                                 </select>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <label for="message-text" class="form-control-label">Message:</label>
-                                            <textarea class="form-control" id="message-text"></textarea>
+                                        <div class="row descripcionproyecto">
+                                            <label for="message-text" class="form-control-label descripcionproyecto">Descripcion:</label>
+                                            <textarea class="form-control descripcionproyecto" id="message-text"></textarea>
                                         </div>
                                         <div class="row">
                                             <div class="col-5">
@@ -222,7 +228,7 @@
                             </div>
                         </div>
                     </div>
-
+    <!--Fin del Modal de Registro Actividad-->
                     <div class="card carta" >
                         <div class="">
                             <h3 class="cart-title titulocarta">Actividad 1</h3>
