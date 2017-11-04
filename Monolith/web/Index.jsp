@@ -46,9 +46,6 @@
                 </span>
             </div>
         </div>
-        <%
-        }
-        %>
         <!--Fin de seccion con imagenees del edificio  -->
         <!--Seccion explicando el sistema al usuario  -->
         <section class="section section-light">

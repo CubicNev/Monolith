@@ -1,30 +1,22 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
 <html>
     <head>
-        <title>Finanzas</title>
-        <!-- META -->
+        <title>Barra Navegacion</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <!-- Bootstrap CSS-->
-        <link href="Css/bootstraplogin.css" rel="stylesheet" type="text/css">
         <link href="Css/bootstrap.css" rel="stylesheet" type="text/css">
-        
-        <!-- HawkWard CSS -->
-        <link href="Css/actividadstyle.css" rel="stylesheet" type="text/css">
-        <link href="Css/Menu.css" rel="stylesheet" type="text/css">
-        <link href="Css/finanzashtml.css" rel="stylesheet" type="text/css">
-        <link href="Css/test1.css" rel="stylesheet" type="text/css">
-        <link href="Css/Menu.css" rel="stylesheet" type="text/css">
-        
-        <!-- GOOGLE font -->
+        <link href="Css/test1_1.css" rel="stylesheet" type="text/css">
+        <link href="Css/bootstraplogin.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
-        
-        <!--Dropdown, JQuery, Bootstrap JS, -->
+        <link rel="stylesheet" href="Css/Menu.css">
+        <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/popper.min.js"></script>
-        <script src='js/jquery-3.2.1.js'></script>
-        <script src='js/bootstrap.min.js'></script>
-        
-        <!--Cartas JS-->
+        <script src="js/bootstrap.min.js"></script>
         <script type="text/javascript">
             // funcion para aumentar la fuente
             function agrandar() {
@@ -116,13 +108,13 @@
                 tamaño6.style.height = 130 + "%";
 
             }
+
+
         </script>
-        
     </head>
     <body>
-        
-        
-             <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid" style="padding-left:13px;padding-right:13px;">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <a class="navbar-brand" href="#">Monlithe</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -140,6 +132,8 @@
                     </div>
                 </div>
             </nav>
+
+            <!--Barra Navegacion-->
             <header>
                 <div class="col-12">
                     <div class="contenedor" id="uno" onclick="agrandar();" ondblclick="minimizar();">
@@ -165,81 +159,8 @@
                         <img class="icon" src="img/ruta.png" alt="RutaLogo">
                     </div>
                 </div>
-            </header> 
-            <div class="container-fluid" style="padding-left:13px;padding-right:13px;">
-            <div class="row categorias" >
-                <div class="col-7">
-                    <div class="row barrafinanza">
-                        <div class="col-4 ">
-                            <h2 align="left" class="titubarrafinianza"> Lista Finanzas</h2>
-                        </div>
-                        <div class="col-8">
-                            <form class="form ">
-                                <div class="row formcategorias">
-                                    <div class="col-7">
-                                        <input class="form-control"  placeholder="Nueva Categoria">
-                                    </div>
-                                    <div class="col-5">
-                                        <button class="btn btn-primary" type="submit">Agregar</button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="row listafinanza">
-                        <div class="card-panel " style="padding-left:15%;padding-right:35%;">
-                            
-                            <div class="card cartafinanza" >
-                                <div class="card-body">
-                                    <div class="card-block">
-                                        <h4 class="card-title">Titulo</h4>
-                                    </div>
-                                    <div class="card-block">
-                                        <p class="card-text">Monto total: $0.00</p>
-                                    </div>
-                                    <div class="card-block">
-                                        <form class="form-inline formnuvcategoria">
-                                            <input type="text" class="form-control" placeholder="Monto"/>
-                                            <a href="#" class="btn btn-primary">Ingresar</a>
-                                        </form>
-                                    </div>
-                                    <div class="card-block">
-                                        <form class="form-inline formnuvcategoria">
-                                            <input type="text" class="form-control" placeholder="Monto"/>
-                                            <a href="#" class="btn btn-primary">Retirar</a>
-                                        </form>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="card cartafinanza" style="width: 20rem;">
-                                <div class="card-body">
-                                    <h4 class="card-title">Special title treatment</h4>
-                                    <form>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="card cartafinanza" style="width: 20rem;">
-                                <div class="card-body">
-                                    <h4 class="card-title">Special title treatment</h4>
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                            <div class="card cartafinanza" style="width: 20rem;">
-                                <div class="card-body">
-                                    <h4 class="card-title">Special title treatment</h4>
-                                    <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                    <a href="#" class="btn btn-primary">Go somewhere</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-5">
-
-                </div>
-            </div>
+            </header>
+            <!--Fin Barra de Navegacion-->
         </div>
     </body>
 </html>
