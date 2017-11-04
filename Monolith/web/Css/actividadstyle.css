@@ -110,14 +110,12 @@
 .actividadformcont{
     width:100%;
 }
-.listacarta{
-    overflow-y:scroll;
-}
+
 
 .descripcionproyecto{
-    margin:8px;
+    margin:15px;
 }
 
-/*   Css para carta de Modal de Actividades
+/* Fin  Css para carta de Modal de Actividades
 */
 
