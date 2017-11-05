@@ -7,4 +7,12 @@
         <servlet-name>Ingreso</servlet-name>
         <url-pattern>/Ingreso</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>Entrada</servlet-name>
+        <servlet-class>FunciónMonolith.Entrada</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Entrada</servlet-name>
+        <url-pattern>/Entrada</url-pattern>
+    </servlet-mapping>
 </web-app>
