@@ -1,3 +1,12 @@
+<%-- 
+    Document   : Actividades
+    Created on : 05-nov-2017, 16:05:25
+    Author     : Ricardo
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*,java.io.*;"%>
+<!DOCTYPE html>
 <html>
     <head>
         <title>Actividades</title>
@@ -120,8 +129,15 @@
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                            Usuario
                         </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Usuario:Usuuario 1</a>
+                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <%
+    HttpSession sesion = request.getSession();
+    String Usuario=sesion.getAttribute("usuario").toString();
+    out.println("<a class=\"dropdown-item\" href=\"#\">Usuario:"+Usuario+"</a>");
+    //////////////////////////////////////////////////////////////
+%>
+                       
+                            
                             <a class="dropdown-item" href="#">Configuracion</a>
                             <a class="dropdown-item" href="#">Cerrar Sesion</a>
                         </div>
@@ -144,7 +160,7 @@
                         <img class="icon" src="img/proyectos.png" alt="ProyectosLogo">
                     </div>
 
-                    <div class="contenedor" id="cuatro"   onclick="agrandar4();" ondblclick="minimizar();">
+                    <div class="contenedor" id="cuatro"   onclick="location.href='Actividades.jsp'" ondblclick="minimizar();">
                         <img class="icon" src="img/tareas.png" alt="TareasLogo">
                     </div>
 
@@ -188,13 +204,13 @@
                                     </button>
                                 </div>
                                 <div class="modal-body actividadformcont"  >
-                                    <form  class="actividadform" style="width:100%;"  >
+                                    <form  class="actividadform" method="post" action="IngresoActividad" style="width:100%;"  >
                                         <div class="row targetactividad"  style="width:100%;">
                                             <div class="col-6 col-sm-auto" style="width:100%;">
                                                 <label  class="col-form-label">Nombre actividad</label>
                                             </div>
                                             <div class="col-6  col-sm-auto" style="width:100%;">
-                                                <input type="text" class="form-control" id="recipient-name" placeholder="Nombre Actividad">
+                                                <input type="text" class="form-control" id="recipient-name" name="Titulo" placeholder="Nombre Actividad">
                                             </div>  
                                         </div> 
                                         <div class="row targetactividad" style="width:100%;">
@@ -202,7 +218,7 @@
                                                 <label  class="col-form-label">Forma de Entrega</label>
                                             </div>
                                             <div class="col-6  col-sm-auto" style="width:100%;">
-                                                <input type="text" class="form-control" id="recipient-name" placeholder="Forma de Entrega">
+                                                <input type="text" class="form-control" id="recipient-name" name="FormaEntrega" placeholder="Forma de Entrega">
                                             </div>
                                         </div> 
                                         <div class="row targetactividad" style="width:100%;" >
@@ -210,27 +226,27 @@
                                                 <label  class="col-form-label">Fecha de Entrega</label>
                                             </div>
                                             <div class="col-3">
-                                                <select id="inputState" class="form-control">
+                                                <select id="inputState" class="form-control" name="Dia">
                                                     <option selected>Dia</option>
                                                     <option>...</option>
                                                 </select>
                                             </div>
                                             <div class="col-3">
-                                                <select id="inputState" class="form-control">
+                                                <select id="inputState" class="form-control" name="Mes">
                                                     <option selected>Mes</option>
                                                     <option>...</option>
                                                 </select>
                                             </div>
                                             <div class="col-3">
-                                                <select id="inputState" class="form-control">
+                                                <select id="inputState" class="form-control" name="Año">
                                                     <option selected>Año</option>
                                                     <option>...</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="row descripcionproyecto">
-                                            <label for="message-text" class="form-control-label descripcionproyecto">Descripcion:</label>
-                                            <textarea class="form-control descripcionproyecto" id="message-text"></textarea>
+                                            <label for="message-text" class="form-control-label descripcionproyecto" >Descripcion:</label>
+                                            <textarea class="form-control descripcionproyecto" id="message-text" name="Descripcion"></textarea>
                                         </div>
                                         <div class="row">
                                             <div class="col-5">
@@ -372,3 +388,5 @@
         </div>
     </body>
 </html>
+
+

@@ -36,8 +36,26 @@ public class DataBase {
         c.close();
     }
     
-    public void ConsultarUsuario(Usuario usr){
+    public void IngresarActividad(Actividad act) throws SQLException {
+        String sql = "insert into actividad(Titulo,FormaDeEntregar,Descripcion,IDUsuario,FechaLimite,Estado) values (?,?,?,?,?,?);";
+        ps = c.prepareStatement(sql);
+        ps.setString(1, act.getTitulo());
+        ps.setString(2, act.getFormadeEntregar());
+        ps.setString(3, act.getDescripcion());
+        ps.setInt(4,ConsultarUsuario(act.getUsuario()));
+        ps.setDate(5,act.getFechaLimite());
+        ps.setString(6,"No finalizada" );
+        ps.execute();
+        c.close();
+    }
     
+    public int ConsultarUsuario(String usr) throws SQLException{
+         int num=0;
+        rs=st.executeQuery("select * from usuario where NombreUsuario='"+usr+"'");
+         if(rs.next()){
+              num=rs.getInt("IDUsuario");
+         }
+         return num;
     }
     
     

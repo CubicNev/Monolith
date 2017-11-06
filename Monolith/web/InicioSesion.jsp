@@ -23,179 +23,317 @@
     } catch (SQLException error) {
         out.print(error.toString());
     }
+    if (sesion.isNew()) {
+        try {
+            r = sta.executeQuery("select * from Usuario where NombreUsuario='" + Usuario + "';");
+            if (r.next()) {
 
-    //////////////////////////////////////////////////////////////
-    try {
-        r = sta.executeQuery("select * from Usuario where NombreUsuario='" + Usuario + "';");
-        if (r.next()) {
-            
-            r=sta.executeQuery("select * from Usuario where NombreUsuario='"+Usuario+"' and Contrasena='"+Password+"';");
-            if(r.next()){
-                sesion.setAttribute("usuario",Usuario);
-                sesion.setAttribute("password",Password);
-                out.println("<html>");
-                out.println("<head>");
-                out.println(" <title>Iniciso</title>");
-                out.println("<meta charset='UTF-8'>");
-                out.println("<meta name='viewport' content='width=device-width, initial-scale=1.0'>");
-                out.println("<link href='Css/bootstrap.css' rel='stylesheet' type='text/css'>");
-                out.println("<link href='Css/test1.css' rel='stylesheet' type='text/css'>");        
-               out.println("<link href='Css/bootstraplogin.css' rel='stylesheet' type='text/css'>");
-                out.println("<link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>");
-                out.println("<link rel=\"stylesheet\" href=\"Css/Menu.css\">");
-                out.println("<script src='js/jquery-3.2.1.min.js'></script>");
-                out.println("<script src='js/popper.min.js'></script>");
-                out.println("<script src='js/bootstrap.min.js'></script>");
-                out.println("<script type='text/javascript'>");
-               out.println(
-                       "function agrandar(){"+
-               "var tamano = document.getElementById('uno');"+
-               "var tamano2 = document.getElementById('dos');"+
-               "var tamano3 = document.getElementById('tres');"+
-               "var tamano4 = document.getElementById('cuatro');"+
-               "var tamano5 = document.getElementById('cinco');"+
-               "var tamano6 = document.getElementById('seis');"+
-               "tamano.style.height = 130 + '%';"+
-               "tamano2.style.height = 100 + '%';"+
-               "tamano3.style.height = 100 + '%';"+
-               "tamano4.style.height = 100 + '%';"+
-               "tamano5.style.height = 100 + '%';"+
-               "tamano6.style.height = 100 + '%';}"+
-            
-           "function agrandar2() {"+
-               " var tamano = document.getElementById('uno');"+
-                "var tamano2 = document.getElementById('dos');"+
-                "var tamano3 = document.getElementById('tres');"+
-                "var tamano4 = document.getElementById('cuatro');"+
-               "var tamano5 = document.getElementById('cinco');"+
-                "var tamano6 = document.getElementById('seis');"+
-                "tamano.style.height = 100 + '%';"+
-                "tamano2.style.height = 130 + '%';"+
-                "tamano3.style.height = 100 + '%';"+
-                "tamano4.style.height = 100 + '%';"+
-                "tamano5.style.height = 100 + '%';"+
-                "tamano6.style.height = 100 + '%'; }"+
-
-           
-            "function agrandar3() {"+
-                "var tamano = document.getElementById('uno');"+
-                "var tamano2 = document.getElementById('dos');"+
-                "var tamano3 = document.getElementById('tres');"+
-                "var tamano4 = document.getElementById('cuatro');"+
-                "var tamano5 = document.getElementById('cinco');"+
-                "var tamano6 = document.getElementById('seis');" +
-                "tamano.style.height = 100 + '%';"+
-               "tamano2.style.height = 100 + '%';"+
-               "tamano3.style.height = 130 + '%';"+
-               "tamano4.style.height = 100 + '%';"+
-                "tamano5.style.height = 100 + '%';"+
-                "tamano6.style.height = 100 + '%';}"+
-
-            
-            "function agrandar4() {"+
-                "var tamano = document.getElementById('uno');"+
-                "var tamano2 = document.getElementById('dos');"+
-                "var tamano3 = document.getElementById('tres');"+
-                "var tamano4 = document.getElementById('cuatro');"+
-                "var tamano5 = document.getElementById('cinco');"+
-                "var tamano6 = document.getElementById('seis');"+
-                "tamano.style.height = 100 + '%';"+
-                "tamano2.style.height = 100 + '%';"+
-                "tamano3.style.height = 100 + '%';"+
-                "tamano4.style.height = 130 + '%';"+
-                "tamano5.style.height = 100 + '%';"+
-                "tamano6.style.height = 100 + '%';}"+
-
-            
-           " function agrandar5() {"+
-                "var tamano = document.getElementById('uno');"+
-                "var tamano2 = document.getElementById('dos');"+
-                "var tamano3 = document.getElementById('tres');"+
-                "var tamano4 = document.getElementById('cuatro');"+
-                "var tamano5 = document.getElementById('cinco');"+
-                "var tamano6 = document.getElementById('seis');"+
-                "tamano.style.height = 100 + '%';"+
-                "tamano2.style.height = 100 + '%';"+
-                "tamano3.style.height = 100 + '%';"+
-                "tamano4.style.height = 100 + '%';"+
-                "tamano5.style.height = 130 + '%';"+
-                "tamano6.style.height = 100 + '%';}"+
-
-            "function agrandar6() {"+
-                "var tamano = document.getElementById('uno');"+
-               " var tamano2 = document.getElementById('dos');"+
-                "var tamano3 = document.getElementById('tres');"+
-                "var tamano4 = document.getElementById('cuatro');"+
-                "var tamano5 = document.getElementById('cinco');"+
-                "var tamano6 = document.getElementById('seis');"+
-                "tamano.style.height = 100 + '%';"+
-                "tamano2.style.height = 100 + '%';"+
-                "tamano3.style.height = 100 + '%';"+
-                "tamano4.style.height = 100 + '%';"+
-                "tamano5.style.height = 100 + '%';"+
-                "tamano6.style.height = 130 + '%';}"+
-        "</script>");
-                out.println("</head>");
-                out.println("<body>");
-                  out.println("<div class='container-fluid' style='padding-left:13px;padding-right:13px;'>");
+                r = sta.executeQuery("select * from Usuario where NombreUsuario='" + Usuario + "' and Contrasena='" + Password + "';");
+                if (r.next()) {
+                    sesion.setAttribute("usuario", Usuario);
+                    sesion.setAttribute("password", Password);
+                    out.println("<html>");
+                    out.println("<head>");
+                    out.println(" <title>Sin Sesion</title>");
+                    out.println("<meta charset='UTF-8'>");
+                    out.println("<meta name='viewport' content='width=device-width, initial-scale=1.0'>");
+                    out.println("<link href='Css/bootstrap.css' rel='stylesheet' type='text/css'>");
+                    out.println("<link href='Css/test1.css' rel='stylesheet' type='text/css'>");
+                    out.println("<link href='Css/bootstraplogin.css' rel='stylesheet' type='text/css'>");
+                    out.println("<link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>");
+                    out.println("<link rel='stylesheet' href='Css/Menu.css'>");
+                    out.println("<script src='js/jquery-3.2.1.min.js'></script>");
+                    out.println("<script src='js/popper.min.js'></script>");
+                    out.println("<script src='js/bootstrap.min.js'></script>");
+                    out.println("<script type='text/javascript'>");
+                    out.println(
+                            "function agrandar(){"
+                            + "var tamano = document.getElementById('uno');"
+                            + "var tamano2 = document.getElementById('dos');"
+                            + "var tamano3 = document.getElementById('tres');"
+                            + "var tamano4 = document.getElementById('cuatro');"
+                            + "var tamano5 = document.getElementById('cinco');"
+                            + "var tamano6 = document.getElementById('seis');"
+                            + "tamano.style.height = 130 + '%';"
+                            + "tamano2.style.height = 100 + '%';"
+                            + "tamano3.style.height = 100 + '%';"
+                            + "tamano4.style.height = 100 + '%';"
+                            + "tamano5.style.height = 100 + '%';"
+                            + "tamano6.style.height = 100 + '%';}"
+                            + "function agrandar2() {"
+                            + " var tamano = document.getElementById('uno');"
+                            + "var tamano2 = document.getElementById('dos');"
+                            + "var tamano3 = document.getElementById('tres');"
+                            + "var tamano4 = document.getElementById('cuatro');"
+                            + "var tamano5 = document.getElementById('cinco');"
+                            + "var tamano6 = document.getElementById('seis');"
+                            + "tamano.style.height = 100 + '%';"
+                            + "tamano2.style.height = 130 + '%';"
+                            + "tamano3.style.height = 100 + '%';"
+                            + "tamano4.style.height = 100 + '%';"
+                            + "tamano5.style.height = 100 + '%';"
+                            + "tamano6.style.height = 100 + '%'; }"
+                            + "function agrandar3() {"
+                            + "var tamano = document.getElementById('uno');"
+                            + "var tamano2 = document.getElementById('dos');"
+                            + "var tamano3 = document.getElementById('tres');"
+                            + "var tamano4 = document.getElementById('cuatro');"
+                            + "var tamano5 = document.getElementById('cinco');"
+                            + "var tamano6 = document.getElementById('seis');"
+                            + "tamano.style.height = 100 + '%';"
+                            + "tamano2.style.height = 100 + '%';"
+                            + "tamano3.style.height = 130 + '%';"
+                            + "tamano4.style.height = 100 + '%';"
+                            + "tamano5.style.height = 100 + '%';"
+                            + "tamano6.style.height = 100 + '%';}"
+                            + "function agrandar4() {"
+                            + "var tamano = document.getElementById('uno');"
+                            + "var tamano2 = document.getElementById('dos');"
+                            + "var tamano3 = document.getElementById('tres');"
+                            + "var tamano4 = document.getElementById('cuatro');"
+                            + "var tamano5 = document.getElementById('cinco');"
+                            + "var tamano6 = document.getElementById('seis');"
+                            + "tamano.style.height = 100 + '%';"
+                            + "tamano2.style.height = 100 + '%';"
+                            + "tamano3.style.height = 100 + '%';"
+                            + "tamano4.style.height = 130 + '%';"
+                            + "tamano5.style.height = 100 + '%';"
+                            + "tamano6.style.height = 100 + '%';}"
+                            + " function agrandar5() {"
+                            + "var tamano = document.getElementById('uno');"
+                            + "var tamano2 = document.getElementById('dos');"
+                            + "var tamano3 = document.getElementById('tres');"
+                            + "var tamano4 = document.getElementById('cuatro');"
+                            + "var tamano5 = document.getElementById('cinco');"
+                            + "var tamano6 = document.getElementById('seis');"
+                            + "tamano.style.height = 100 + '%';"
+                            + "tamano2.style.height = 100 + '%';"
+                            + "tamano3.style.height = 100 + '%';"
+                            + "tamano4.style.height = 100 + '%';"
+                            + "tamano5.style.height = 130 + '%';"
+                            + "tamano6.style.height = 100 + '%';}"
+                            + "function agrandar6() {"
+                            + "var tamano = document.getElementById('uno');"
+                            + " var tamano2 = document.getElementById('dos');"
+                            + "var tamano3 = document.getElementById('tres');"
+                            + "var tamano4 = document.getElementById('cuatro');"
+                            + "var tamano5 = document.getElementById('cinco');"
+                            + "var tamano6 = document.getElementById('seis');"
+                            + "tamano.style.height = 100 + '%';"
+                            + "tamano2.style.height = 100 + '%';"
+                            + "tamano3.style.height = 100 + '%';"
+                            + "tamano4.style.height = 100 + '%';"
+                            + "tamano5.style.height = 100 + '%';"
+                            + "tamano6.style.height = 130 + '%';}"
+                            + "</script>");
+                    out.println("</head>");
+                    out.println("<body>");
+                    out.println("<div class='container-fluid' style='padding-left:13px;padding-right:13px;'>");
                     out.println("<nav class='navbar navbar-expand-lg navbar-light bg-light'>");
-                      out.println("<a class='navbar-brand' href='#'>Monlithe</a>");
-                      out.println(" <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarOpcciones' aria-controls='navbarNavAltMarkup' aria-expanded='false' aria-label='Toggle navigation'>");
-                      out.println("<span class='navbar-toggler-icon'></span>");
-                      out.println(" </button>");
-                      out.println(" <div class='collapse navbar-collapse' id='navbarOpcciones'>");
-                         out.println("<div class='navbar-nav'>");
-                         out.println("<a class='nav-link dropdown-toggle' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>");
-                         out.println(" Usuario</a>");
-                     out.println(" <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>");
-                     out.println("<a class='dropdown-item' >Usuario:"+Usuario +"</a>"+  
-                            "<a class='dropdown-item' href='#'>Configuracion</a>"+
-                            "<a class='dropdown-item' href='#'>Cerrar Sesion</a>");
-                     out.println("</div>"+
-                     "</div>"+
-                    "</nav>");
-                     out.println("<header>");
-                       out.println("<div class='col-12'>");
-                         out.println(" <div class=\"contenedor\" id=\"uno\" onclick=\"location.href='Examenes.html';\" ondblclick=\"minimizar();\">");
-                           out.println(" <img class='icon' src='img/home.png' alt='HomeLogo'>");
-                         out.println("</div>");
-                        
-                         out.println("<div class='contenedor' id='dos' onclick='location.href='Examenes.html';' >");
-                           out.println(" <img class='icon' src='img/examen.png' alt='ExamenLogo'>");
-                         out.println("</div>");
-                         
-                         out.println(" <div class='contenedor' id='tres' onclick='location.href='Proyectos.html';' >");
-                           out.println(" <img class='icon' src='img/proyectos.png' alt='ProyectosLogo'>");
-                         out.println("</div>");
-                   
-                        out.println("<div class=\"contenedor\" id=\"cuatro\"   onclick=\"agrandar4();\" ondblclick=\"minimizar();\">");
-                           out.println(" <img class=\"icon\" src=\"img/tareas.png\" alt=\"TareasLogo\">");
-                        out.println("</div>");
-            
-                        out.println("<div class='contenedor' id='cinco' onclick='agrandar5();'>");
-                          out.println("<img class='icon' src='img/finanza.png' alt='FinanzasLogo'>");
-                        out.println("</div>");
-                       
-                        out.println(" <div class='contenedor' id='seis' onclick='agrandar6();'>");
-                             out.println("<img class='icon' src='img/ruta.png' alt='RutaLogo'>");
-                        out.println("</div>");
-                        
-                        out.println("</div>"+
-              " </header>");
-                     out.println("</div>");
-                out.println("</body>");
-                out.println("</html>");
-            }else{
-                out.println("<h3>Contraseña mal puesta</h3>");
+                    out.println("<a class='navbar-brand' href='#'>Monlithe</a>");
+                    out.println(" <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarOpcciones' aria-controls='navbarNavAltMarkup' aria-expanded='false' aria-label='Toggle navigation'>");
+                    out.println("<span class='navbar-toggler-icon'></span>");
+                    out.println(" </button>");
+                    out.println(" <div class='collapse navbar-collapse' id='navbarOpcciones'>");
+                    out.println("<div class='navbar-nav'>");
+                    out.println("<a class='nav-link dropdown-toggle' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>");
+                    out.println(" Usuario</a>");
+                    out.println(" <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>");
+                    out.println("<a class='dropdown-item' >Usuario:" + Usuario + "</a>"
+                            + "<a class='dropdown-item' href='#'>Configuracion</a>"
+                            + "<a class='dropdown-item' href='#'>Cerrar Sesion</a>");
+                    out.println("</div>"
+                            + "</div>"
+                            + "</nav>");
+                    out.println("<header>");
+                    out.println("<div class='col-12'>");
+                    out.println(" <div class=\"contenedor\" id=\"uno\" onclick=\"location.href='InicioSesion.jsp';\" ondblclick=\"minimizar();\">");
+                    out.println(" <img class='icon' src='img/home.png' alt='HomeLogo'>");
+                    out.println("</div>");
+
+                    out.println("<div class='contenedor' id='dos'  onclick=\"location.href='Examenes.html';\" >");
+                    out.println(" <img class='icon' src='img/examen.png' alt='ExamenLogo'>");
+                    out.println("</div>");
+
+                    out.println(" <div class='contenedor' id='tres' onclick='location.href='Proyectos.html';' >");
+                    out.println(" <img class='icon' src='img/proyectos.png' alt='ProyectosLogo'>");
+                    out.println("</div>");
+
+                    out.println("<div class=\"contenedor\" id=\"cuatro\"   onclick=\"location.href='Actividades.jsp';\" ondblclick=\"minimizar();\">");
+                    out.println(" <img class=\"icon\" src=\"img/tareas.png\" alt=\"TareasLogo\">");
+                    out.println("</div>");
+
+                    out.println("<div class='contenedor' id='cinco' onclick='agrandar5();'>");
+                    out.println("<img class='icon' src='img/finanza.png' alt='FinanzasLogo'>");
+                    out.println("</div>");
+
+                    out.println(" <div class='contenedor' id='seis' onclick='agrandar6();'>");
+                    out.println("<img class='icon' src='img/ruta.png' alt='RutaLogo'>");
+                    out.println("</div>");
+
+                    out.println("</div>"
+                            + " </header>");
+                    out.println("</div>");
+                    out.println("</body>");
+                    out.println("</html>");
+                } else {
+                    out.println("<h3>Contraseña mal puesta</h3>");
+                }
+            } else {
+                out.println("<h3>Usuario Inexistente</h3>");
             }
-        }else{
-            out.println("<h3>Usuario Inexistente</h3>");
+
+        } catch (SQLException error) {
+            out.print(error.toString());
         }
-                    
-                   
-    } catch (SQLException error) {
-        out.print(error.toString());
+    }else{
+       String User=sesion.getAttribute("usuario").toString();
+       out.println("<html>");
+                    out.println("<head>");
+                    out.println(" <title>Sin Sesion</title>");
+                    out.println("<meta charset='UTF-8'>");
+                    out.println("<meta name='viewport' content='width=device-width, initial-scale=1.0'>");
+                    out.println("<link href='Css/bootstrap.css' rel='stylesheet' type='text/css'>");
+                    out.println("<link href='Css/test1.css' rel='stylesheet' type='text/css'>");
+                    out.println("<link href='Css/bootstraplogin.css' rel='stylesheet' type='text/css'>");
+                    out.println("<link href='https://fonts.googleapis.com/css?family=Mukta' rel='stylesheet'>");
+                    out.println("<link rel='stylesheet' href='Css/Menu.css'>");
+                    out.println("<script src='js/jquery-3.2.1.min.js'></script>");
+                    out.println("<script src='js/popper.min.js'></script>");
+                    out.println("<script src='js/bootstrap.min.js'></script>");
+                    out.println("<script type='text/javascript'>");
+                    out.println(
+                            "function agrandar(){"
+                            + "var tamano = document.getElementById('uno');"
+                            + "var tamano2 = document.getElementById('dos');"
+                            + "var tamano3 = document.getElementById('tres');"
+                            + "var tamano4 = document.getElementById('cuatro');"
+                            + "var tamano5 = document.getElementById('cinco');"
+                            + "var tamano6 = document.getElementById('seis');"
+                            + "tamano.style.height = 130 + '%';"
+                            + "tamano2.style.height = 100 + '%';"
+                            + "tamano3.style.height = 100 + '%';"
+                            + "tamano4.style.height = 100 + '%';"
+                            + "tamano5.style.height = 100 + '%';"
+                            + "tamano6.style.height = 100 + '%';}"
+                            + "function agrandar2() {"
+                            + " var tamano = document.getElementById('uno');"
+                            + "var tamano2 = document.getElementById('dos');"
+                            + "var tamano3 = document.getElementById('tres');"
+                            + "var tamano4 = document.getElementById('cuatro');"
+                            + "var tamano5 = document.getElementById('cinco');"
+                            + "var tamano6 = document.getElementById('seis');"
+                            + "tamano.style.height = 100 + '%';"
+                            + "tamano2.style.height = 130 + '%';"
+                            + "tamano3.style.height = 100 + '%';"
+                            + "tamano4.style.height = 100 + '%';"
+                            + "tamano5.style.height = 100 + '%';"
+                            + "tamano6.style.height = 100 + '%'; }"
+                            + "function agrandar3() {"
+                            + "var tamano = document.getElementById('uno');"
+                            + "var tamano2 = document.getElementById('dos');"
+                            + "var tamano3 = document.getElementById('tres');"
+                            + "var tamano4 = document.getElementById('cuatro');"
+                            + "var tamano5 = document.getElementById('cinco');"
+                            + "var tamano6 = document.getElementById('seis');"
+                            + "tamano.style.height = 100 + '%';"
+                            + "tamano2.style.height = 100 + '%';"
+                            + "tamano3.style.height = 130 + '%';"
+                            + "tamano4.style.height = 100 + '%';"
+                            + "tamano5.style.height = 100 + '%';"
+                            + "tamano6.style.height = 100 + '%';}"
+                            + "function agrandar4() {"
+                            + "var tamano = document.getElementById('uno');"
+                            + "var tamano2 = document.getElementById('dos');"
+                            + "var tamano3 = document.getElementById('tres');"
+                            + "var tamano4 = document.getElementById('cuatro');"
+                            + "var tamano5 = document.getElementById('cinco');"
+                            + "var tamano6 = document.getElementById('seis');"
+                            + "tamano.style.height = 100 + '%';"
+                            + "tamano2.style.height = 100 + '%';"
+                            + "tamano3.style.height = 100 + '%';"
+                            + "tamano4.style.height = 130 + '%';"
+                            + "tamano5.style.height = 100 + '%';"
+                            + "tamano6.style.height = 100 + '%';}"
+                            + " function agrandar5() {"
+                            + "var tamano = document.getElementById('uno');"
+                            + "var tamano2 = document.getElementById('dos');"
+                            + "var tamano3 = document.getElementById('tres');"
+                            + "var tamano4 = document.getElementById('cuatro');"
+                            + "var tamano5 = document.getElementById('cinco');"
+                            + "var tamano6 = document.getElementById('seis');"
+                            + "tamano.style.height = 100 + '%';"
+                            + "tamano2.style.height = 100 + '%';"
+                            + "tamano3.style.height = 100 + '%';"
+                            + "tamano4.style.height = 100 + '%';"
+                            + "tamano5.style.height = 130 + '%';"
+                            + "tamano6.style.height = 100 + '%';}"
+                            + "function agrandar6() {"
+                            + "var tamano = document.getElementById('uno');"
+                            + " var tamano2 = document.getElementById('dos');"
+                            + "var tamano3 = document.getElementById('tres');"
+                            + "var tamano4 = document.getElementById('cuatro');"
+                            + "var tamano5 = document.getElementById('cinco');"
+                            + "var tamano6 = document.getElementById('seis');"
+                            + "tamano.style.height = 100 + '%';"
+                            + "tamano2.style.height = 100 + '%';"
+                            + "tamano3.style.height = 100 + '%';"
+                            + "tamano4.style.height = 100 + '%';"
+                            + "tamano5.style.height = 100 + '%';"
+                            + "tamano6.style.height = 130 + '%';}"
+                            + "</script>");
+                    out.println("</head>");
+                    out.println("<body>");
+                    out.println("<div class='container-fluid' style='padding-left:13px;padding-right:13px;'>");
+                    out.println("<nav class='navbar navbar-expand-lg navbar-light bg-light'>");
+                    out.println("<a class='navbar-brand' href='#'>Monlithe</a>");
+                    out.println(" <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarOpcciones' aria-controls='navbarNavAltMarkup' aria-expanded='false' aria-label='Toggle navigation'>");
+                    out.println("<span class='navbar-toggler-icon'></span>");
+                    out.println(" </button>");
+                    out.println(" <div class='collapse navbar-collapse' id='navbarOpcciones'>");
+                    out.println("<div class='navbar-nav'>");
+                    out.println("<a class='nav-link dropdown-toggle' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>");
+                    out.println(" Usuario</a>");
+                    out.println(" <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>");
+                    out.println("<a class='dropdown-item' >Usuario:" + User + "</a>"
+                            + "<a class='dropdown-item' href='#'>Configuracion</a>"
+                            + "<a class='dropdown-item' href='#'>Cerrar Sesion</a>");
+                    out.println("</div>"
+                            + "</div>"
+                            + "</nav>");
+                    out.println("<header>");
+                    out.println("<div class='col-12'>");
+                    out.println(" <div class=\"contenedor\" id=\"uno\" onclick=\"location.href='InicioSesion.jsp';\" ondblclick=\"minimizar();\">");
+                    out.println(" <img class='icon' src='img/home.png' alt='HomeLogo'>");
+                    out.println("</div>");
+
+                    out.println("<div class='contenedor' id='dos'  onclick=\"location.href='Examenes.html';\" >");
+                    out.println(" <img class='icon' src='img/examen.png' alt='ExamenLogo'>");
+                    out.println("</div>");
+
+                    out.println(" <div class='contenedor' id='tres' onclick=\"location.href='Proyectos.html';\" >");
+                    out.println(" <img class='icon' src='img/proyectos.png' alt='ProyectosLogo'>");
+                    out.println("</div>");
+
+                    out.println("<div class=\"contenedor\" id=\"cuatro\"   onclick=\"location.href='Actividades.jsp';\" ondblclick=\"minimizar();\">");
+                    out.println(" <img class=\"icon\" src=\"img/tareas.png\" alt=\"TareasLogo\">");
+                    out.println("</div>");
+
+                    out.println("<div class='contenedor' id='cinco' onclick=\"location.href='Finanzas.html';\">");
+                    out.println("<img class='icon' src='img/finanza.png' alt='FinanzasLogo'>");
+                    out.println("</div>");
+
+                    out.println(" <div class='contenedor' id='seis' onclick='agrandar6();'>");
+                    out.println("<img class='icon' src='img/ruta.png' alt='RutaLogo'>");
+                    out.println("</div>");
+
+                    out.println("</div>"
+                            + " </header>");
+                    out.println("</div>");
+                    out.println("</body>");
+                    out.println("</html>");
     }
+    //////////////////////////////////////////////////////////////
 
 
 %>

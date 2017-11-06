@@ -192,7 +192,7 @@ public class Entrada extends HttpServlet {
                     "</nav>");
                      out.println("<header>");
                        out.println("<div class='col-12'>");
-                         out.println(" <div class=\"contenedor\" id=\"uno\" onclick=\"location.href='Examenes.html';\" ondblclick=\"minimizar();\">");
+                         out.println(" <div class=\"contenedor\" id=\"uno\" onclick=\"location.href='Entrada';\" ondblclick=\"minimizar();\">");
                            out.println(" <img class='icon' src='img/home.png' alt='HomeLogo'>");
                          out.println("</div>");
                         
@@ -355,7 +355,7 @@ public class Entrada extends HttpServlet {
                     "</nav>");
                      out.println("<header>");
                        out.println("<div class='col-12'>");
-                         out.println(" <div class=\"contenedor\" id=\"uno\" onclick=\"location.href='Examenes.html';\" ondblclick=\"minimizar();\">");
+                         out.println(" <div class=\"contenedor\" id=\"uno\" onclick=\"location.href='Entrada';\" ondblclick=\"minimizar();\">");
                            out.println(" <img class='icon' src='img/home.png' alt='HomeLogo'>");
                          out.println("</div>");
                         

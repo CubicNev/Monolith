@@ -15,4 +15,12 @@
         <servlet-name>Entrada</servlet-name>
         <url-pattern>/Entrada</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>IngresoActividad</servlet-name>
+        <servlet-class>FunciónMonolith.IngresoActividad</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IngresoActividad</servlet-name>
+        <url-pattern>/IngresoActividad</url-pattern>
+    </servlet-mapping>
 </web-app>
