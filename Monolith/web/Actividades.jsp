@@ -117,34 +117,39 @@
         </script>
     </head>
     <body>
-        <div class="container-fluid" style="padding-left:13px;padding-right:13px;">
-            
-             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">Monlithe</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarOpcciones" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarOpcciones">
-                    <div class="navbar-nav">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                           Usuario
-                        </a>
-                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <%
+        
+        <!--Barra de usuario-->
+        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #00838F;">
+            <a class="navbar-brand text-white" href="#">
+                <img src="img/Logo.svg" width="30" height="30" class="d-inline-block align-top" alt="Logo">
+                Monolith
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+             </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+
+                <div class="navbar-nav ml-auto">
+                    <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Usuario
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                         <%
     HttpSession sesion = request.getSession();
     String Usuario=sesion.getAttribute("usuario").toString();
-    out.println("<a class=\"dropdown-item\" href=\"#\">Usuario:"+Usuario+"</a>");
+    out.println("<a class=\"dropdown-item\" href=\"#\">"+Usuario+"</a>");
     //////////////////////////////////////////////////////////////
 %>
                        
-                            
-                            <a class="dropdown-item" href="#">Configuracion</a>
-                            <a class="dropdown-item" href="#">Cerrar Sesion</a>
-                        </div>
+                        <a class="dropdown-item" href="#">Configuracion</a>
+                        <a class="dropdown-item" href="#">Cerrar Sesion</a>
                     </div>
                 </div>
-            </nav>
-            
+
+            </div>
+        </nav>
+        <div class="container-fluid" style="padding-left:13px;padding-right:13px;">
+        
             <!--Barra Navegacion-->
             <header>
                 <div class="col-12">
@@ -263,6 +268,7 @@
                         </div>
                     </div>
     <!--Fin del Modal de Registro Actividad-->
+    
                     <div class="card carta" >
                         <div class="">
                             <h3 class="cart-title titulocarta">Actividad 1</h3>

@@ -128,7 +128,6 @@
                             + "</script>");
                     out.println("</head>");
                     out.println("<body>");
-                    out.println("<div class='container-fluid' style='padding-left:13px;padding-right:13px;'>");
                     out.println("<nav class='navbar navbar-expand-lg navbar-light bg-light'>");
                     out.println("<a class='navbar-brand' href='#'>Monlithe</a>");
                     out.println(" <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarOpcciones' aria-controls='navbarNavAltMarkup' aria-expanded='false' aria-label='Toggle navigation'>");
@@ -145,6 +144,7 @@
                     out.println("</div>"
                             + "</div>"
                             + "</nav>");
+                    out.println("<div class='container-fluid' style='padding-left:13px;padding-right:13px;'>");
                     out.println("<header>");
                     out.println("<div class='col-12'>");
                     out.println(" <div class=\"contenedor\" id=\"uno\" onclick=\"location.href='InicioSesion.jsp';\" ondblclick=\"minimizar();\">");
