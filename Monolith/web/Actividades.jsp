@@ -311,6 +311,7 @@
                       out.println("</div>");  
                     out.println("</div>");    
                     out.println("</div>"); 
+                    /////////////////
         }
     } catch (SQLException error) {
         out.print(error.toString());
