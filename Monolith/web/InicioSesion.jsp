@@ -34,7 +34,7 @@
                     sesion.setAttribute("password", Password);
                     out.println("<html>");
                     out.println("<head>");
-                    out.println(" <title>Sin Sesion</title>");
+                    out.println(" <title>Inicio</title>");
                     out.println("<meta charset='UTF-8'>");
                     out.println("<meta name='viewport' content='width=device-width, initial-scale=1.0'>");
                     out.println("<link href='Css/bootstrap.css' rel='stylesheet' type='text/css'>");
@@ -128,22 +128,23 @@
                             + "</script>");
                     out.println("</head>");
                     out.println("<body>");
-                    out.println("<nav class='navbar navbar-expand-lg navbar-light bg-light'>");
-                    out.println("<a class='navbar-brand' href='#'>Monlithe</a>");
-                    out.println(" <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarOpcciones' aria-controls='navbarNavAltMarkup' aria-expanded='false' aria-label='Toggle navigation'>");
+                    out.println("<nav class='navbar navbar-expand-lg navbar-light' style='background-color: #00838F;'>");
+                    out.println("<a class='navbar-brand text-white' href='#'>");
+                    out.println("<img src='img/Logo.svg' width='30' height='30' class='d-inline-block align-top' alt='Logo'>Monolith</a>");
+                    out.println("<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNavAltMarkup' aria-controls='navbarNavAltMarkup' aria-expanded='false' aria-label='Toggle navigation'>");
                     out.println("<span class='navbar-toggler-icon'></span>");
-                    out.println(" </button>");
-                    out.println(" <div class='collapse navbar-collapse' id='navbarOpcciones'>");
-                    out.println("<div class='navbar-nav'>");
-                    out.println("<a class='nav-link dropdown-toggle' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>");
-                    out.println(" Usuario</a>");
-                    out.println(" <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>");
-                    out.println("<a class='dropdown-item' >Usuario:" + Usuario + "</a>"
-                            + "<a class='dropdown-item' href='#'>Configuracion</a>"
-                            + "<a class='dropdown-item' href='#'>Cerrar Sesion</a>");
-                    out.println("</div>"
-                            + "</div>"
-                            + "</nav>");
+                    out.println("</button>");
+                    out.println(" <div class='collapse navbar-collapse' id='navbarNavAltMarkup'>");
+                    out.println(" <div class='navbar-nav ml-auto'>");
+                    out.println("<a class='nav-link dropdown-toggle text-white' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Usuario</a>");
+                    out.println("<div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdownMenuLink'>");
+                     out.println("<a class=\"dropdown-item\" href=\"#\">"+Usuario+"</a>");
+                     out.println(" <a class='dropdown-item' href='#'>Configuracion</a>");
+                    out.println("<a class='dropdown-item' href='#'>Cerrar Sesion</a>");
+                    out.println("</div>"+
+                            "</div>" +
+                          "</div>"+
+                         "</nav>");
                     out.println("<div class='container-fluid' style='padding-left:13px;padding-right:13px;'>");
                     out.println("<header>");
                     out.println("<div class='col-12'>");
@@ -190,7 +191,7 @@
        String User=sesion.getAttribute("usuario").toString();
        out.println("<html>");
                     out.println("<head>");
-                    out.println(" <title>Sin Sesion</title>");
+                    out.println(" <title>Inicio</title>");
                     out.println("<meta charset='UTF-8'>");
                     out.println("<meta name='viewport' content='width=device-width, initial-scale=1.0'>");
                     out.println("<link href='Css/bootstrap.css' rel='stylesheet' type='text/css'>");
@@ -284,23 +285,24 @@
                             + "</script>");
                     out.println("</head>");
                     out.println("<body>");
-                    out.println("<div class='container-fluid' style='padding-left:13px;padding-right:13px;'>");
-                    out.println("<nav class='navbar navbar-expand-lg navbar-light bg-light'>");
-                    out.println("<a class='navbar-brand' href='#'>Monlithe</a>");
-                    out.println(" <button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarOpcciones' aria-controls='navbarNavAltMarkup' aria-expanded='false' aria-label='Toggle navigation'>");
+                    out.println("<nav class='navbar navbar-expand-lg navbar-light' style='background-color: #00838F;'>");
+                    out.println("<a class='navbar-brand text-white' href='#'>");
+                    out.println("<img src='img/Logo.svg' width='30' height='30' class='d-inline-block align-top' alt='Logo'>Monolith</a>");
+                    out.println("<button class='navbar-toggler' type='button' data-toggle='collapse' data-target='#navbarNavAltMarkup' aria-controls='navbarNavAltMarkup' aria-expanded='false' aria-label='Toggle navigation'>");
                     out.println("<span class='navbar-toggler-icon'></span>");
-                    out.println(" </button>");
-                    out.println(" <div class='collapse navbar-collapse' id='navbarOpcciones'>");
-                    out.println("<div class='navbar-nav'>");
-                    out.println("<a class='nav-link dropdown-toggle' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>");
-                    out.println(" Usuario</a>");
-                    out.println(" <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>");
-                    out.println("<a class='dropdown-item' >Usuario:" + User + "</a>"
-                            + "<a class='dropdown-item' href='#'>Configuracion</a>"
-                            + "<a class='dropdown-item' href='#'>Cerrar Sesion</a>");
-                    out.println("</div>"
-                            + "</div>"
-                            + "</nav>");
+                    out.println("</button>");
+                    out.println(" <div class='collapse navbar-collapse' id='navbarNavAltMarkup'>");
+                    out.println(" <div class='navbar-nav ml-auto'>");
+                    out.println("<a class='nav-link dropdown-toggle text-white' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Usuario</a>");
+                    out.println("<div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdownMenuLink'>");
+                     out.println("<a class=\"dropdown-item\" href=\"#\">"+User+"</a>");
+                     out.println(" <a class='dropdown-item' href='#'>Configuracion</a>");
+                    out.println("<a class='dropdown-item' href='#'>Cerrar Sesion</a>");
+                    out.println("</div>"+
+                            "</div>" +
+                          "</div>"+
+                         "</nav>");
+                    out.println("<div class='container-fluid' style='padding-left:13px;padding-right:13px;'>");
                     out.println("<header>");
                     out.println("<div class='col-12'>");
                     out.println(" <div class=\"contenedor\" id=\"uno\" onclick=\"location.href='InicioSesion.jsp';\" ondblclick=\"minimizar();\">");
