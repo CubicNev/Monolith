@@ -3,137 +3,139 @@
     Created on : 18/10/2017, 10:53:56 PM
     Author     : memo0
 --%>
-
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+<%@page import="java.sql.*, java.io.*"%>
 <html>
     <head>
-        <title>Menu General</title>
+        <title>Actividades</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="Css/bootstrap.min.css">
+        <link href="Css/actividadstyle.css" rel="stylesheet" type="text/css">
+        <link href="Css/Menu.css" rel="stylesheet" type="text/css">
+        <link href="Css/bootstrap.css" rel="stylesheet" type="text/css">
+        <link href="Css/finanzashtml.css" rel="stylesheet" type="text/css">
         <link href="Css/test1.css" rel="stylesheet" type="text/css">
         <link href="Css/bootstraplogin.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
         <link rel="stylesheet" href="Css/Menu.css">
-        <link rel="stylesheet" href="Css/Finanzas.css">
-        <title>Finanzas</title>
-        <style>
-            .parte1{
-                background: red;
-            }
-        </style>
+        <script src="js/popper.min.js"></script>
+        <script src='js/jquery-3.2.1.js'></script>
+        <script src='js/bootstrap.min.js'></script>
+        <script src='js/menu.js'></script>
     </head>
     <body>
-        <div class="barraInicio navbar navbar-default " style="font-family:Mukta">Monolith<img  class="logo" src="img/logo.png" alt=""></div>
-        <header>
+        <%
+            String titulo;
+            titulo = request.getParameter("titulo");
 
-            <div class="contenedor" id="uno">
-                <img class="icon" src="img/home.png" alt="HomeLogo">
-            </div>
+            Connection c = null;
+            Statement sta = null;
+            ResultSet r = null;
 
-            <div class="contenedor" id="dos">
-                <img class="icon" src="img/examen.png" alt="ExamenLogo">
-            </div>
-
-            <div class="contenedor" id="tres">
-                <img class="icon" src="img/proyectos.png" alt="ProyectosLogo">
-            </div>
-
-            <div class="contenedor" id="cuatro">
-                <img class="icon" src="img/tareas.png" alt="TareasLogo">
-            </div>
-
-            <div class="contenedor" id="cinco">
-                <img class="icon" src="img/finanza.png" alt="FinanzasLogo">
-            </div>
-
-            <div class="contenedor" id="seis">
-                <img class="icon" src="img/ruta.png" alt="RutaLogo">
-            </div>
-        </header>
-        <div class="encubador">
-            <div class="prime">
-
-            </div>
-            <div class="segu">
-
-            </div>
-            <div class="terce">
-                <div class="row justify-content-center">
-                    <div class="col-auto titulo">
-                        CATEGORIA FINANZAS
-                    </div>
-                    <div class="col-11 subtitulo">
-                        <h2>Monto total: 2000</h2>
+            try {
+                Class.forName("com.mysql.jdbc.Driver").newInstance();
+                c = DriverManager.getConnection("jdbc:mysql://localhost/monolith", "root", "n0m3l0");
+                sta = c.createStatement();
+                sta.executeUpdate("insert into Finanzas values ('" + titulo + "','" + 0 + "','" + 0 + "','" + 0 + "');");
+                out.print("<script> alert('Te has registrado exitosamente'); </script>");
+                out.print("<script> window.location='index.html'; </script>");
+            } catch (SQLException error) {
+                out.print(error.toString());
+            }
+        %>
+        <div class="container-fluid" style="padding-left:13px;padding-right:13px;">
+            <div class="barraInicio navbar navbar-default " style="font-family:Mukta">Monolith<img  class="logo" src="img/logo.png" alt=""></div>
+            <header>
+                <div class="col-12">
+                    <div class="contenedor" id="uno" onclick="agrandar();" ondblclick="minimizar();">
+                        <img class="icon" src="img/home.png" alt="HomeLogo">
                     </div>
 
+                    <div class="contenedor" id="dos" onclick="agrandar2();" ondblclick="minimizar();">
+                        <img class="icon" src="img/examen.png" alt="ExamenLogo">
+                    </div>
+
+                    <div class="contenedor" id="tres" onclick="agrandar3();" ondblclick="minimizar();">
+                        <img class="icon" src="img/proyectos.png" alt="ProyectosLogo">
+                    </div>
+
+                    <div class="contenedor" id="cuatro" onclick="agrandar4();" ondblclick="minimizar();">
+                        <img class="icon" src="img/tareas.png" alt="TareasLogo">
+                    </div>
+
+                    <div class="contenedor" id="cinco" onclick="agrandar5();" ondblclick="minimizar();">
+                        <img class="icon" src="img/finanza.png" alt="FinanzasLogo">
+                    </div>
+                    <div class="contenedor" id="seis" onclick="agrandar6();" ondblclick="minimizar();">
+                        <img class="icon" src="img/ruta.png" alt="RutaLogo">
+                    </div>
                 </div>
-                <br><br>
-                <div class="row justify-content-center">
-                    <div class="col-7 align-self-center">
-                        <div class="card bg-primary text-white">
-                            <img src="img/bg.jpg" class="card-img-top img-fluid" alt="">
-                            <div class="card-body cajita">
-                                <h3 class="card-title">Transporte</h3>
-                                Monto total
-                                <input type="text" id="total" name="total">
-                                <br>
-                                Ingreso
-                                <input type="text" id="ingreso" name="ingreso">
-                                <a href="#" class="btn btn-primary">Ir al post</a>
-                                <br>
-                                Retiro 
-                                <input type="text" id="retiro" name="retiro">
-                                <a href="#" class="btn btn-secondary">Ir al post</a>
-                            </div>
+            </header> 
+            <div class="row categorias" >
+                <div class="col-7">
+                    <div class="row barrafinanza">
+                        <div class="col-4 ">
+                            <h2 align="left" class="titubarrafinianza"> Lista Finanzas</h2>
+                        </div>
+                        <div class="col-8">
+                            <form class="form" action="Finanzas.jsp" method="post">
+                                <div class="row formcategorias">
+                                    <div class="col-7">
+                                        <input class="form-control" name="titulo" id="titulo" placeholder="Nueva Categoria">
+                                    </div>
+                                    <div class="col-5">
+                                        <button class="btn btn-primary" type="submit">Agregar</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
-
-                </div>
-                <br><br>
-                <div class="row justify-content-center">
-                    <div class="col-7 align-self-center">
-                        <div class="card text-white bg-success">
-                            <div class="card-body cajita">
-                                <h3 class="card-title">Comida</h3>
-                                Monto total
-                                <input type="text" id="total" name="total">
-                                <br>
-                                Ingreso
-                                <input type="text" id="ingreso" name="ingreso">
-                                <a href="#" class="btn btn-primary">Ir al post</a>
-                                <br>
-                                Retiro 
-                                <input type="text" id="retiro" name="retiro">
-                                <a href="#" class="btn btn-secondary">Ir al post</a>
-                            </div>
+                    <div class="row listafinanza">
+                        <div class="card-panel">
+                            <div class="card cartafinanza" >
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-8">
+                                            <h4 class="card-title">Titulo Categoria Financiera</h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-8">
+                                            Monto Total
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <form class="form-inline formnuvcategoria">
+                                                <label>Ingreso</label>
+                                                 <input class="form-control "  placeholder="Monto Ingreso">
+                                                 <button class="btn btn-primary " type="submit">Ingresar</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <form class="form-inline formnuvcategoria">
+                                                <label>Retiro</label>
+                                                 <input class="form-control "  placeholder="Monto Retiro">
+                                                 <button class="btn btn-primary " type="submit">Retirar</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> 
                         </div>
                     </div>
-
                 </div>
-
-            </div>
-            <div class="cuar">
-                <div class="row justify-content-center">
-                    <div class="col-auto titulo">
-                        GRAFICA FINANZAS
-                    </div>
-                    <div class="col-11 subtitulo">
-                        <h2>Gastos en las ultimas 2 semanas</h2>
-                    </div>
-                </div>
-                <br><br>
-                <div class="row justify-content-center">
-                    <div class="col-12 align-self-center">
-                        <center><img src="img/grafica.png" alt=""></center>
+                <div class="col-5">
+                    <div class="row barragrafica">
+                        <div class="col-auto ">
+                            <h2 align="left" class="titubarrafinianza">Grafico</h2>
+                            <br>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
-        <script src="js/jquery-3.2.1.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
     </body>
 </html>
-

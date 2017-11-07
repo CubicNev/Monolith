@@ -1,5 +1,5 @@
 .categorias{
-   margin-top:200px;
+   margin-top:150px;
    margin-bottom:30px;
 }
 
@@ -51,4 +51,8 @@
 .cartafinanza form{
    margin-left:0px;
    margin-right:0px;
+}
+
+.barragrafica{
+    background-color:#0AAB9F;
 }

@@ -14,101 +14,7 @@
         <script src="js/popper.min.js"></script>
         <script src='js/jquery-3.2.1.js'></script>
         <script src='js/bootstrap.min.js'></script>
-
-        <script type="text/javascript">
-            // funcion para aumentar la fuente
-            function agrandar() {
-                var tamaño = document.getElementById("uno");
-                var tamaño2 = document.getElementById("dos");
-                var tamaño3 = document.getElementById("tres");
-                var tamaño4 = document.getElementById("cuatro");
-                var tamaño5 = document.getElementById("cinco");
-                var tamaño6 = document.getElementById("seis");
-                tamaño.style.height = 130 + "%";
-                tamaño2.style.height = 100 + "%";
-                tamaño3.style.height = 100 + "%";
-                tamaño4.style.height = 100 + "%";
-                tamaño5.style.height = 100 + "%";
-                tamaño6.style.height = 100 + "%";
-            }
-            function agrandar2() {
-                var tamaño = document.getElementById("uno");
-                var tamaño2 = document.getElementById("dos");
-                var tamaño3 = document.getElementById("tres");
-                var tamaño4 = document.getElementById("cuatro");
-                var tamaño5 = document.getElementById("cinco");
-                var tamaño6 = document.getElementById("seis");
-                tamaño.style.height = 100 + "%";
-                tamaño2.style.height = 130 + "%";
-                tamaño3.style.height = 100 + "%";
-                tamaño4.style.height = 100 + "%";
-                tamaño5.style.height = 100 + "%";
-                tamaño6.style.height = 100 + "%";
-
-            }
-            function agrandar3() {
-                var tamaño = document.getElementById("uno");
-                var tamaño2 = document.getElementById("dos");
-                var tamaño3 = document.getElementById("tres");
-                var tamaño4 = document.getElementById("cuatro");
-                var tamaño5 = document.getElementById("cinco");
-                var tamaño6 = document.getElementById("seis");
-                tamaño.style.height = 100 + "%";
-                tamaño2.style.height = 100 + "%";
-                tamaño3.style.height = 130 + "%";
-                tamaño4.style.height = 100 + "%";
-                tamaño5.style.height = 100 + "%";
-                tamaño6.style.height = 100 + "%";
-
-            }
-            function agrandar4() {
-                var tamaño = document.getElementById("uno");
-                var tamaño2 = document.getElementById("dos");
-                var tamaño3 = document.getElementById("tres");
-                var tamaño4 = document.getElementById("cuatro");
-                var tamaño5 = document.getElementById("cinco");
-                var tamaño6 = document.getElementById("seis");
-                tamaño.style.height = 100 + "%";
-                tamaño2.style.height = 100 + "%";
-                tamaño3.style.height = 100 + "%";
-                tamaño4.style.height = 130 + "%";
-                tamaño5.style.height = 100 + "%";
-                tamaño6.style.height = 100 + "%";
-
-            }
-            function agrandar5() {
-                var tamaño = document.getElementById("uno");
-                var tamaño2 = document.getElementById("dos");
-                var tamaño3 = document.getElementById("tres");
-                var tamaño4 = document.getElementById("cuatro");
-                var tamaño5 = document.getElementById("cinco");
-                var tamaño6 = document.getElementById("seis");
-                tamaño.style.height = 100 + "%";
-                tamaño2.style.height = 100 + "%";
-                tamaño3.style.height = 100 + "%";
-                tamaño4.style.height = 100 + "%";
-                tamaño5.style.height = 130 + "%";
-                tamaño6.style.height = 100 + "%";
-
-            }
-            function agrandar6() {
-                var tamaño = document.getElementById("uno");
-                var tamaño2 = document.getElementById("dos");
-                var tamaño3 = document.getElementById("tres");
-                var tamaño4 = document.getElementById("cuatro");
-                var tamaño5 = document.getElementById("cinco");
-                var tamaño6 = document.getElementById("seis");
-                tamaño.style.height = 100 + "%";
-                tamaño2.style.height = 100 + "%";
-                tamaño3.style.height = 100 + "%";
-                tamaño4.style.height = 100 + "%";
-                tamaño5.style.height = 100 + "%";
-                tamaño6.style.height = 130 + "%";
-
-            }
-
-
-        </script>
+        <script src='js/menu.js'></script>
     </head>
     <body>
         <div class="container-fluid" style="padding-left:13px;padding-right:13px;">
@@ -146,7 +52,7 @@
                             <h2 align="left" class="titubarrafinianza"> Lista Finanzas</h2>
                         </div>
                         <div class="col-8">
-                            <form class="form ">
+                            <form class="form" action="">
                                 <div class="row formcategorias">
                                     <div class="col-7">
                                         <input class="form-control"  placeholder="Nueva Categoria">
@@ -159,7 +65,7 @@
                         </div>
                     </div>
                     <div class="row listafinanza">
-                        <div class="card-panel " style="padding-left:15%;padding-right:35%;">
+                        <div class="card-panel">
                             <div class="card cartafinanza" >
                                 <div class="card-body">
                                     <div class="row">
@@ -193,6 +99,15 @@
                                 </div>
                             </div> 
                         </div>
+                    </div>
+                </div>
+                <div class="col-5">
+                    <div class="row barragrafica">
+                        <div class="col-auto ">
+                            <h2 align="left" class="titubarrafinianza">Grafico</h2>
+                            <br>
+                        </div>
+                        
                     </div>
                 </div>
             </div>
