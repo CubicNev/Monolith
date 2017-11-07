@@ -140,7 +140,7 @@
                     out.println("<div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdownMenuLink'>");
                      out.println("<a class=\"dropdown-item\" href=\"#\">"+Usuario+"</a>");
                      out.println(" <a class='dropdown-item' href='#'>Configuracion</a>");
-                    out.println("<a class='dropdown-item' href='#'>Cerrar Sesion</a>");
+                    out.println("<a class='dropdown-item' href='CerrarSesion.jsp'>Cerrar Sesion</a>");
                     out.println("</div>"+
                             "</div>" +
                           "</div>"+
@@ -297,7 +297,7 @@
                     out.println("<div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdownMenuLink'>");
                      out.println("<a class=\"dropdown-item\" href=\"#\">"+User+"</a>");
                      out.println(" <a class='dropdown-item' href='#'>Configuracion</a>");
-                    out.println("<a class='dropdown-item' href='#'>Cerrar Sesion</a>");
+                    out.println("<a class='dropdown-item' href='CerrarSesion.jsp'>Cerrar Sesion</a>");
                     out.println("</div>"+
                             "</div>" +
                           "</div>"+
