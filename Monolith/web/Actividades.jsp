@@ -187,6 +187,7 @@
             </div>
      <!---Fin TituloModulo-->
      <!--Ejemplo Cartas-->
+      
             <div class="col-12 cartasdiv " style="margin-bottom:13px;">
                 <div class="card-columns ">
                     <div class="card carta" >
@@ -268,129 +269,57 @@
                         </div>
                     </div>
     <!--Fin del Modal de Registro Actividad-->
+     <%
+    Connection con = null;
+    Statement sta = null;
+    ResultSet r = null;
+    try {
+        Class.forName("com.mysql.jdbc.Driver").newInstance();
+        con = DriverManager.getConnection("jdbc:mysql://localhost/monolith", "root", "n0m3l0");
+        sta = con.createStatement();
+        r = sta.executeQuery("select * from Actividad inner join usuario on actividad.IDUsuario=usuario.IDUsuario where usuario.NombreUsuario='"+Usuario+"';");
+        while(r.next()){
+            out.println(" <div class=\"card carta\" >");
+               out.println("<div class=\"\">");
+                  out.println("<h3 class=\"cart-title titulocarta\">"+r.getString("Titulo")+"</h3>"); 
+                    out.println("</div>");       
+                        out.println(" <div class=\"card-body bloquecarta\">");
+                         out.println("<div class=\"container\">");
+                           out.println("<div id=\"accordion\" role=\"tablist\" aria-multiselectable=\"false\">");
+                              out.println("<div class=\"card\">");
+                              out.println("<div class='card-header' role='tab' id='"+r.getInt("IDActividad")+r.getString("Titulo")+"'>");
+                                out.println("<div class='card-header' role='tab' id='"+r.getInt("IDActividad")+r.getString("Titulo")+"'>");
+                                out.println("<h5 class='mb-0'>");
+                                  out.println("<a class='collapsed' data-toggle='collapse' data-parent='#accordion' href='#"+r.getInt("IDActividad")+"' aria-expanded='false' aria-controls='"+r.getInt("IDActividad")+"'>");
+                                    out.println("Descripcion");
+                                  out.println(" </a>");      
+                                 out.println("</h5>");                  
+                                out.println("</div>");              
+                                out.println("<div id='"+r.getInt("IDActividad")+"' class='collapse' role='tabpanel' aria-labelledby='"+r.getInt("IDActividad")+r.getString("Titulo")+"'>");    
+                                out.println("<div class='card-block'>");   
+                                 out.println(r.getString("Descripcion"));
+                               out.println("</div>");      
+                              out.println("</div>");              
+                             out.println("</div>");               
+                            out.println("</div>");             
+                        out.println("</div>");
+                      out.println(" <div class='btn-group grupo-btn'>");
+                         out.println(" <button class='btn btn-primary' id='checar'>Final</button>");
+                         out.println("<button class='btn btn-primary' id='editar' data-toggle='modal' data-target='#exampleModal2'>Editar</button>");     
+                         out.println("<button class='btn btn-primary' id='borrar'>Borrar</button>");     
+                         out.println("</div>");
+                      out.println("</div>");  
+                    out.println("</div>");    
+                    out.println("</div>"); 
+        }
+    } catch (SQLException error) {
+        out.print(error.toString());
+    }
+    //////////////////////////////////////////////////////////////
+%>
     
-                    <div class="card carta" >
-                        <div class="">
-                            <h3 class="cart-title titulocarta">Actividad 1</h3>
-                        </div>
-                        <div class="card-body bloquecarta">
-                            <div class="container">
-                                <div id="accordion" role="tablist" aria-multiselectable="false">
-                                    <div class="card">
-                                        <div class="card-header" role="tab" id="headingOne">
-                                            <h5 class="mb-0">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                                    Descripcion
-                                                </a>
-                                            </h5>
-                                        </div>
-                                        <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headinOne">
-                                            <div class="card-block">
-                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="btn-group grupo-btn">
-                                <button class="btn btn-primary" id="checar">Final</button>
-                                <button class="btn btn-primary" id="editar" data-toggle="modal" data-target="#exampleModal2">Editar</button>
-                                <button class="btn btn-primary" id="borrar">Borrar</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card carta" >
-                        <div class="">
-                            <h3 class="cart-title titulocarta">Actividad 2</h3>
-                        </div>
-                        <div class="card-body bloquecarta">
-                            <div class="container">
-                                <div id="accordion" role="tablist" aria-multiselectable="false">
-                                    <div class="card">
-                                        <div class="card-header" role="tab" id="headingTwo">
-                                            <h5 class="mb-0">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                                    Descripcion
-                                                </a>
-                                            </h5>
-                                        </div>
-                                        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
-                                            <div class="card-block">
-                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="btn-group grupo-btn">
-                                <button class="btn btn-primary" id="checar">Final</button>
-                                <button class="btn btn-primary" id="editar">Editar</button>
-                                <button class="btn btn-primary" id="borrar">Borrar</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card carta" >
-                        <div class="">
-                            <h3 class="cart-title titulocarta">Actividad 3</h3>
-                        </div>
-                        <div class="card-body bloquecarta">
-                            <div class="container">
-                                <div id="accordion" role="tablist" aria-multiselectable="false">
-                                    <div class="card">
-                                        <div class="card-header" role="tab" id="headingThree">
-                                            <h5 class="mb-0">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                                    Descripcion
-                                                </a>
-                                            </h5>
-                                        </div>
-                                        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
-                                            <div class="card-block">
-                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="btn-group grupo-btn">
-                                <button class="btn btn-primary" id="checar">Final</button>
-                                <button class="btn btn-primary" id="editar">Editar</button>
-                                <button class="btn btn-primary" id="borrar">Borrar</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card carta" >
-                        <div class="">
-                            <h3 class="cart-title titulocarta">Actividad 4</h3>
-                        </div>
-                        <div class="card-body bloquecarta">
-                            <div class="container">
-                                <div id="accordion" role="tablist" aria-multiselectable="false">
-                                    <div class="card">
-                                        <div class="card-header" role="tab" id="headingFour">
-                                            <h5 class="mb-0">
-                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                                    Descripcion
-                                                </a>
-                                            </h5>
-                                        </div>
-                                        <div id="collapseFour" class="collapse" role="tabpanel" aria-labelledby="headingFour">
-                                            <div class="card-block">
-                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="btn-group grupo-btn">
-                                <button class="btn btn-primary" id="checar">Final</button>
-                                <button class="btn btn-primary" id="editar">Editar</button>
-                                <button class="btn btn-primary" id="borrar">Borrar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
+        </div> 
         </div>
     </body>
 </html>

@@ -162,6 +162,23 @@ form{
     color:#fff;
 }
 
+.loginBox button{
+    border:none;
+    outline:none;
+    height:40px;
+    color:#1f2e2e;
+    font-size:24px;
+    font-weight:bold;
+    background:#e6ffff;
+    cursor:pointer;
+    border-radius:20px;
+}
+
+.loginBox button:hover{
+    background:#5d8989;
+    color:#fff;
+}
+
 #forgotpass {
     text-align:center;
     color:#80bdff;

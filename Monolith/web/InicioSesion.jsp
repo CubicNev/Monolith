@@ -156,7 +156,7 @@
                     out.println(" <img class='icon' src='img/examen.png' alt='ExamenLogo'>");
                     out.println("</div>");
 
-                    out.println(" <div class='contenedor' id='tres' onclick='location.href='Proyectos.html';' >");
+                    out.println(" <div class='contenedor' id='tres' onclick='location.href='Proyectos.jsp';' >");
                     out.println(" <img class='icon' src='img/proyectos.png' alt='ProyectosLogo'>");
                     out.println("</div>");
 
@@ -313,7 +313,7 @@
                     out.println(" <img class='icon' src='img/examen.png' alt='ExamenLogo'>");
                     out.println("</div>");
 
-                    out.println(" <div class='contenedor' id='tres' onclick=\"location.href='Proyectos.html';\" >");
+                    out.println(" <div class='contenedor' id='tres' onclick=\"location.href='Proyectos.jsp';\" >");
                     out.println(" <img class='icon' src='img/proyectos.png' alt='ProyectosLogo'>");
                     out.println("</div>");
 
