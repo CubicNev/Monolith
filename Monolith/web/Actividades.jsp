@@ -1,4 +1,4 @@
-<%-- 
+    <%-- 
     Document   : Actividades
     Created on : 05-nov-2017, 16:05:25
     Author     : Ricardo
@@ -187,7 +187,8 @@
             </div>
      <!---Fin TituloModulo-->
      <!--Ejemplo Cartas-->
-      
+     
+      <!--inico Carta Nueva Actividad-->
             <div class="col-12 cartasdiv " style="margin-bottom:13px;">
                 <div class="card-columns ">
                     <div class="card carta" >
@@ -199,7 +200,9 @@
                             </div>
                         </div>
                     </div>
-                     <!--Modal de registro de Actividad-->
+       <!--Fin Carta Nueva Actividad-->
+       
+       <!--Inicio Modal Nueva Actividad-->
                     <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
@@ -210,13 +213,13 @@
                                     </button>
                                 </div>
                                 <div class="modal-body actividadformcont"  >
-                                    <form  class="actividadform" method="post" action="IngresoActividad" style="width:100%;"  >
+                                    <form  class="actividadform" style="width:100%;" method="post" action="IngresoActividad"  >
                                         <div class="row targetactividad"  style="width:100%;">
                                             <div class="col-6 col-sm-auto" style="width:100%;">
                                                 <label  class="col-form-label">Nombre actividad</label>
                                             </div>
                                             <div class="col-6  col-sm-auto" style="width:100%;">
-                                                <input type="text" class="form-control" id="recipient-name" name="Titulo" placeholder="Nombre Actividad">
+                                                <input type="text" class="form-control" id="recipient-name" placeholder="Nombre Actividad" name="Titulo">
                                             </div>  
                                         </div> 
                                         <div class="row targetactividad" style="width:100%;">
@@ -224,7 +227,7 @@
                                                 <label  class="col-form-label">Forma de Entrega</label>
                                             </div>
                                             <div class="col-6  col-sm-auto" style="width:100%;">
-                                                <input type="text" class="form-control" id="recipient-name" name="FormaEntrega" placeholder="Forma de Entrega">
+                                                <input type="text" class="form-control" id="recipient-name" placeholder="Forma de Entrega"  name="FormaEntrega">
                                             </div>
                                         </div> 
                                         <div class="row targetactividad" style="width:100%;" >
@@ -232,26 +235,26 @@
                                                 <label  class="col-form-label">Fecha de Entrega</label>
                                             </div>
                                             <div class="col-3">
-                                                <select id="inputState" class="form-control" name="Dia">
+                                                <select id="inputState" class="form-control">
                                                     <option selected>Dia</option>
                                                     <option>...</option>
                                                 </select>
                                             </div>
                                             <div class="col-3">
-                                                <select id="inputState" class="form-control" name="Mes">
+                                                <select id="inputState" class="form-control">
                                                     <option selected>Mes</option>
                                                     <option>...</option>
                                                 </select>
                                             </div>
                                             <div class="col-3">
-                                                <select id="inputState" class="form-control" name="Año">
+                                                <select id="inputState" class="form-control">
                                                     <option selected>Año</option>
                                                     <option>...</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <div class="row descripcionproyecto">
-                                            <label for="message-text" class="form-control-label descripcionproyecto" >Descripcion:</label>
+                                            <label for="message-text" class="form-control-label descripcionproyecto">Descripcion:</label>
                                             <textarea class="form-control descripcionproyecto" id="message-text" name="Descripcion"></textarea>
                                         </div>
                                         <div class="row">
@@ -268,6 +271,10 @@
                             </div>
                         </div>
                     </div>
+                    <!--Fin Modal Nueva Actividad-->
+                     <!--Modal de registro de Actividad-->
+                     <jsp:include page="modal.jsp" />
+                    
     <!--Fin del Modal de Registro Actividad-->
      <%
     Connection con = null;
@@ -279,6 +286,7 @@
         sta = con.createStatement();
         r = sta.executeQuery("select * from Actividad inner join usuario on actividad.IDUsuario=usuario.IDUsuario where usuario.NombreUsuario='"+Usuario+"';");
         while(r.next()){
+            /*Cartas de Actividades */
             out.println(" <div class=\"card carta\" >");
                out.println("<div class=\"\">");
                   out.println("<h3 class=\"cart-title titulocarta\">"+r.getString("Titulo")+"</h3>"); 
@@ -287,15 +295,15 @@
                          out.println("<div class=\"container\">");
                            out.println("<div id=\"accordion\" role=\"tablist\" aria-multiselectable=\"false\">");
                               out.println("<div class=\"card\">");
-                              out.println("<div class='card-header' role='tab' id='"+r.getInt("IDActividad")+r.getString("Titulo")+"'>");
-                                out.println("<div class='card-header' role='tab' id='"+r.getInt("IDActividad")+r.getString("Titulo")+"'>");
+                              out.println("<div class='card-header' role='tab' id='"+r.getInt("IDActividad")+r.getString("Titulo")+r.getInt("IDActividad")+"'>");
+                                out.println("<div class='card-header' role='tab' id='"+r.getInt("IDActividad")+r.getString("Titulo")+r.getInt("IDActividad")+"'>");
                                 out.println("<h5 class='mb-0'>");
-                                  out.println("<a class='collapsed' data-toggle='collapse' data-parent='#accordion' href='#"+r.getInt("IDActividad")+"' aria-expanded='false' aria-controls='"+r.getInt("IDActividad")+"'>");
+                                  out.println("<a class='collapsed' data-toggle='collapse' data-parent='#accordion' href='#"+r.getInt("IDActividad")+r.getString("Titulo")+"' aria-expanded='false' aria-controls='"+r.getInt("IDActividad")+"'>");
                                     out.println("Descripcion");
                                   out.println(" </a>");      
                                  out.println("</h5>");                  
                                 out.println("</div>");              
-                                out.println("<div id='"+r.getInt("IDActividad")+"' class='collapse' role='tabpanel' aria-labelledby='"+r.getInt("IDActividad")+r.getString("Titulo")+"'>");    
+                                out.println("<div id='"+r.getInt("IDActividad")+r.getString("Titulo")+"' class='collapse' role='tabpanel' aria-labelledby='"+r.getString("Titulo")+r.getInt("IDActividad")+"'>");    
                                 out.println("<div class='card-block'>");   
                                  out.println(r.getString("Descripcion"));
                                out.println("</div>");      
@@ -305,13 +313,90 @@
                         out.println("</div>");
                       out.println(" <div class='btn-group grupo-btn'>");
                          out.println(" <button class='btn btn-primary' id='checar'>Final</button>");
-                         out.println("<button class='btn btn-primary' id='editar' data-toggle='modal' data-target='#exampleModal2'>Editar</button>");     
+                         out.println("<button class='btn btn-primary' id='editar' data-toggle='modal' data-target='#"+r.getInt("IDActividad")+"'>Editar</button>");     
                          out.println("<button class='btn btn-primary' id='borrar'>Borrar</button>");     
                          out.println("</div>");
                       out.println("</div>");  
                     out.println("</div>");    
-                    out.println("</div>"); 
-                    /////////////////
+                    out.println("</div>");
+                   
+                    /*Final de Actividades ya hechas*/
+                   
+                    //Modal de Actividades ya hechas/*
+                  out.println("<div class='modal fade bd-example-modal-lg'  id='"+r.getInt("IDActividad")+"' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel' aria-hidden='true'>");
+                     out.println("<div class='modal-dialog modal-lg'>");
+                        out.println("<div class='modal-content'>");
+                           out.println("<div class='modal-header'>");
+                              out.println("<h5 class='modal-title' align='center' style='text-align:center'  id='"+r.getInt("IDActividad")+"'>"+r.getString("Titulo")+"</h5>");
+                                  out.println("<button type='button' class='close' data-dismiss='modal' aria-label='Close'>");
+                                     out.println("<span aria-hidden='true'>&times;</span>");
+                                    out.println("</button>");
+                          out.println("</div>");
+                         out.println("<div class='modal-body actividadformcont'>");
+                         out.println("<form  class='actividadform' style='width:100%;' method='post' action='CambioActividad' >");
+                          out.println("<div class='row targetactividad'  style='width:100%;'>");;
+                                  out.println("<div class='col-6 col-sm-auto' style='width:100%;'>");
+                                      out.println("<label  class='col-form-label' name='Identificador' value='"+r.getInt("IDActividad")+"'>Nombre actividad</label>");
+                                       out.println(" <input type='hidden' name='Identificador' id='price' value='"+r.getInt("IDActividad")+"'>");
+                                      out.println("</div>");
+                                     out.println("<div class='col-6  col-sm-auto' style='width:100%;'>");
+                                       out.println("<input type='text' class='form-control' id='recipient-name' placeholder='Nombre Actividad' name='Titulo' value='"+r.getString("Titulo")+"'>");
+                                    out.println("</div>");  
+                                    out.println(" </div>");
+                                    out.println("<div class='row targetactividad' style='width:100%;'>");
+                                       out.println("<div class='col-6 col-sm-auto' style='width:100%;'>");
+                                          out.println("<label  class='col-form-label'>Forma de Entrega</label>");
+                                     out.println("</div>");
+                                    out.println("<div class='col-6  col-sm-auto' style='width:100%;'>");
+                                    out.println("<input type='text' class='form-control' id='recipient-name' placeholder='Forma de Entrega'  name='FormaEntrega' value='"+r.getString("FormaDeEntregar")+"'>");
+                                        out.println(" </div>");   
+                                     out.println("</div>"); 
+                                out.println("<div class='row targetactividad' style='width:100%;' >");
+                                    out.println("<div class='col-3 targetactividadfecha'>");
+                                 out.println("<label  class='col-form-label'>Fecha de Entrega</label>");
+                                out.println("</div>");
+                                out.println("<div class='col-3'>");
+                                   out.println("<select id='inputState' class='form-control'>");
+                                          out.println("<option selected>Dia</option>");
+                                          out.println("<option>...</option>");
+                                        out.println("</select>");
+                                out.println("</div>");
+                                 out.println("<div class='col-3'>");
+                                        out.println("<select id='inputState' class='form-control'>");
+                                        out.println("<option selected>Mes</option>");
+                                        out.println("<option>...</option>");
+                                        out.println("</select>");
+                                    out.println("</div>");
+                                 out.println("<div class='col-3'>");
+                                   out.println("<select id='inputState' class='form-control'>");
+                                       out.println("<option selected>Año</option>");
+                                       out.println(" <option>...</option>");
+                                    out.println("</select>");
+                                  out.println("</div>");
+                                 out.println("</div>");       
+                       out.println("<div class='row descripcionproyecto'>");
+                             out.println("<label for='message-text' class='form-control-label descripcionproyecto'>Descripcion:</label>");
+                                out.println("<textarea class='form-control descripcionproyecto' id='message-text' name='Descripcion'>"+r.getString("Descripcion")+"</textarea>");
+                                   out.println("</div>");
+                                     out.println("<div class='row'>");
+                                      out.println("<div class='col-5'>");
+                                         out.println("</div>");
+                                           out.println("<div class='col-4'>");
+                                              out.println("<button class='btn btn-primary'>Guardar Cambios</button>");
+                                         out.println("</div>");
+                                       out.println("<div class='col-3'>");
+                                  out.println("</div>");
+                              out.println("</div>");
+                            out.println("</form>");
+                      out.println("</div>");
+                     out.println("</div>");
+                 out.println(" </div>");
+              out.println(" </div>");
+                    /*Modal Actividades ya hechas*/    
+        
+    
+
+                    
         }
     } catch (SQLException error) {
         out.print(error.toString());

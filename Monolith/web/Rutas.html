@@ -15,11 +15,11 @@
         <script  src="js/Menu.js">
 
         </script>
-        <style>
+        <!--<style>
             .parte1{
                 background: red;
             }
-        </style>
+        </style>-->
     </head>
     <body>
         <div class="barraInicio navbar navbar-default " style="font-family:Mukta">Monolith<img  class="logo" src="img/logo.png" alt=""></div>
@@ -59,38 +59,54 @@
             <div class="terce">
                 <div class="row justify-content-center">
                     <div class="col-11 titulo ">
-                        MAPA
+                        <img class="image1" src="img/ImagenRutaMapa.png" alt="LogoMapa"/>
+                        Mapa
+                        <img class="image2" src="img/ImagenRutaMapa.png" alt="LogoMapa"/>
                     </div>
 
                 </div>
-                <br>
-                <div class="row ">
-                    <div class="col-11 align-self-center cajita">
-                        <input type="text" id="partida" name="partida" class="cuadros" placeholder="partida">
-                        <br>
-                        <input type="text" id="salida" name="salida" class="cuadros" placeholder="salida">
-
-
-                    </div>
-
+                <div class="row">
+                    <div class="div1">
+                            <input type="text" id="partida" name="partida" class="cuadros" placeholder=" Partida">
+                            <input type="text" id="salida" name="salida" class="cuadros" placeholder=" Salida">
+                        </div>
+                        <div class="div2">
+                            <img class="image3" src="img/ImagenEstrella.jpg" alt="LogoMapa"/>
+                            <img class="image3" src="img/ImagenBuscar.png" alt="LogoMapa"/>
+                        </div>
+                    <!--<div class="col-11 align-self-center">
+                        
+                    </div>-->
                 </div>
-                <br><br>
+                <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15035.755755219057!2d-99.0073675!3d19.5871165!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2smx!4v1509768142725" width="600" height="450" frameborder="0" style="border:0" allowfullscreen>
 
+                </iframe>
 
             </div>
             <div class="cuar">
                 <div class="row justify-content-center">
-                    <div class="col-11 titulo">
-                        LISTA DE RUTAS
+                    <div class="col-11 titulo ">
+                        <img class="image1" src="img/ImagenUbicacion.png" alt="LogoMapa"/>
+                        Lista de rutas
+                        <img class="image2" src="img/ImagenUbicacion.png" alt="LogoMapa"/>
                     </div>
-                    <br>
-                    
+
                 </div>
                 <br/>
                 <div class="row justify-content-center">
-                    <div class="col-11 subtitulo">
+                    <input type="text" class="rutas" name="rutas" placeholder=" Ruta 1"/>
+                    <img src="img/ImagenRutaEliminar.png" alt="Borrar" class="img-borra"/>
+                    <input type="text" class="rutas" name="rutas" placeholder=" Ruta 2"/>
+                    <img src="img/ImagenRutaEliminar.png" alt="Borrar" class="img-borra"/>
+                    <input type="text" class="rutas" name="rutas" placeholder=" Ruta 3"/>
+                    <img src="img/ImagenRutaEliminar.png" alt="Borrar" class="img-borra"/>
+                    <input type="text" class="rutas" name="rutas" placeholder=" Ruta 4"/>
+                    <img src="img/ImagenRutaEliminar.png" alt="Borrar" class="img-borra"/>
+                    <input type="text" class="rutas" name="rutas" placeholder=" Ruta 5"/>
+                    <img src="img/ImagenRutaEliminar.png" alt="Borrar" class="img-borra"/>
+                    <!--<div class="col-11 subtitulo">
                         <h2>Gastos en las ultimas 2 semanas</h2>
-                    </div>
+                    </div>-->
                 </div>
                 <br>
                 <div class="row justify-content-center">

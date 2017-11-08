@@ -8,11 +8,8 @@ import javax.servlet.*;
 import javax.servlet.annotation.*;
 import javax.servlet.http.*;
 
-
-@WebServlet(name = "IngresoActividad", urlPatterns = {"/IngresoActividad"})
-public class IngresoActividad extends HttpServlet {
-    
-    
+@WebServlet(name = "CambioActividad", urlPatterns = {"/CambioActividad"})
+public class CambioActividad extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -59,6 +56,7 @@ public class IngresoActividad extends HttpServlet {
         try {
             Actividad act=new Actividad();
             HttpSession sesion = request.getSession();
+            String identificador=request.getParameter("Identificador");
             String nombre=request.getParameter("Titulo");
             String entrega=request.getParameter("FormaEntrega");
             String descripcion=request.getParameter("Descripcion");
@@ -67,11 +65,11 @@ public class IngresoActividad extends HttpServlet {
             act.setFechaLimite(java.sql.Date.valueOf("2018-11-05"));
             act.setUsuario(sesion.getAttribute("usuario").toString());
             act.setDescripcion(descripcion);
-             db.IngresarActividad(act);
+             db.CambiarActividad(act,identificador);
             response.sendRedirect("Actividades.jsp");
             
         } catch (Exception ex) {
-              out.print(ex.toString());
+              out.print(ex.toString() +"Clase Cambio error");
         }
     }
 
@@ -80,6 +78,4 @@ public class IngresoActividad extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }
-
 }
-

@@ -23,4 +23,12 @@
         <servlet-name>IngresoActividad</servlet-name>
         <url-pattern>/IngresoActividad</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>CambioActividad</servlet-name>
+        <servlet-class>FunciónMonolith.CambioActividad</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CambioActividad</servlet-name>
+        <url-pattern>/CambioActividad</url-pattern>
+    </servlet-mapping>
 </web-app>
