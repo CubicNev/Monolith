@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Finanzaconect
-    Created on : 7/11/2017, 08:04:22 AM
+    Document   : tarjetas
+    Created on : 7/11/2017, 12:34:42 PM
     Author     : Alumno
 --%>
 <%@page import="java.sql.*, java.io.*"%>
@@ -14,22 +14,31 @@
     <body>
         <%
             String titulo;
-            titulo = request.getParameter("titulo");
-
+            int total;
+            int retiro;
+            int ingreso;
             Connection c = null;
             Statement sta = null;
-            ResultSet r = null;
+            ResultSet rs = null;
 
             try {
                 Class.forName("com.mysql.jdbc.Driver").newInstance();
                 c = DriverManager.getConnection("jdbc:mysql://localhost/monolith", "root", "n0m3l0");
                 sta = c.createStatement();
-                sta.executeUpdate("insert into Finanzas values ('" + titulo + "','" + 0 + "','" + 0 + "','" + 0 + "');");
-                out.print("<script> alert('se ha añadido exitosamente'); </script>");
-                out.print("<script> window.location='Finanzas.jsp'; </script>");
+                rs=sta.executeQuery("select * from Finanzas");
+                while(rs.next()){
+                    titulo=rs.getString("IDCategoria");
+                    total=rs.getInt("Montototal");
+                    retiro=rs.getInt("Retiro");
+                    ingreso=rs.getInt("Ingreso");
+                    
+                }
+                
+                
             } catch (SQLException error) {
                 out.print(error.toString());
             }
+        %>
         %>
     </body>
 </html>
