@@ -3,6 +3,7 @@
     Created on : 18/10/2017, 10:53:56 PM
     Author     : memo0
 --%>
+<%@page import="Funcionfianan.conectar"%>
 <%@page import="java.sql.*, java.io.*"%>
 <html>
     <head>
@@ -21,27 +22,13 @@
         <script src='js/jquery-3.2.1.js'></script>
         <script src='js/bootstrap.min.js'></script>
         <script src='js/menu.js'></script>
+
+        <%
+            conectar conec = new conectar();
+        %>
     </head>
     <body>
-        <%
-            String titulo;
-            titulo = request.getParameter("titulo");
 
-            Connection c = null;
-            Statement sta = null;
-            ResultSet r = null;
-
-            try {
-                Class.forName("com.mysql.jdbc.Driver").newInstance();
-                c = DriverManager.getConnection("jdbc:mysql://localhost/monolith", "root", "n0m3l0");
-                sta = c.createStatement();
-                sta.executeUpdate("insert into Finanzas values ('" + titulo + "','" + 0 + "','" + 0 + "','" + 0 + "');");
-                out.print("<script> alert('Te has registrado exitosamente'); </script>");
-                out.print("<script> window.location='index.html'; </script>");
-            } catch (SQLException error) {
-                out.print(error.toString());
-            }
-        %>
         <div class="container-fluid" style="padding-left:13px;padding-right:13px;">
             <div class="barraInicio navbar navbar-default " style="font-family:Mukta">Monolith<img  class="logo" src="img/logo.png" alt=""></div>
             <header>
@@ -77,19 +64,28 @@
                             <h2 align="left" class="titubarrafinianza"> Lista Finanzas</h2>
                         </div>
                         <div class="col-8">
-                            <form class="form" action="Finanzas.jsp" method="post">
-                                <div class="row formcategorias">
-                                    <div class="col-7">
-                                        <input class="form-control" name="titulo" id="titulo" placeholder="Nueva Categoria">
-                                    </div>
-                                    <div class="col-5">
+
+                            <div class="row formcategorias">
+                                <div class="col-4">
+                                    <input class="form-control" name="titulo" id="titulo" placeholder="Nueva Categoria" required="">
+                                </div>
+                                <form class="form" action="Finanzaconect.jsp" method="post">
+                                    <div class="col-4">
                                         <button class="btn btn-primary" type="submit">Agregar</button>
                                     </div>
-                                </div>
-                            </form>
+                                </form>
+                                <form class="form" action="" method="post">
+                                    <div class="col-4">
+                                        <button class="btn btn-primary" type="submit">Guardar</button>
+                                    </div>
+                                </form>
+
+                            </div>
+
                         </div>
                     </div>
                     <div class="row listafinanza">
+
                         <div class="card-panel">
                             <div class="card cartafinanza" >
                                 <div class="card-body">
@@ -107,8 +103,8 @@
                                         <div class="col-12">
                                             <form class="form-inline formnuvcategoria">
                                                 <label>Ingreso</label>
-                                                 <input class="form-control "  placeholder="Monto Ingreso">
-                                                 <button class="btn btn-primary " type="submit">Ingresar</button>
+                                                <input type="number" class="form-control "  placeholder="Monto Ingreso">
+                                                <button class="btn btn-primary " type="submit">Ingresar</button>
                                             </form>
                                         </div>
                                     </div>
@@ -116,8 +112,8 @@
                                         <div class="col-12">
                                             <form class="form-inline formnuvcategoria">
                                                 <label>Retiro</label>
-                                                 <input class="form-control "  placeholder="Monto Retiro">
-                                                 <button class="btn btn-primary " type="submit">Retirar</button>
+                                                <input type="number" class="form-control "  placeholder="Monto Retiro">
+                                                <button class="btn btn-primary " type="submit">Retirar</button>
                                             </form>
                                         </div>
                                     </div>
@@ -132,7 +128,7 @@
                             <h2 align="left" class="titubarrafinianza">Grafico</h2>
                             <br>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
