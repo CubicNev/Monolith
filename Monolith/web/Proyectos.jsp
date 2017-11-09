@@ -335,10 +335,12 @@
                                 </div>
                             </div>
                             <div class="btn-group grupo-btn">
+                              
                                 <button class="btn btn-primary" id="checar">Final</button>
                                 <button class="btn btn-primary" id="editar">Editar</button>
-                                <button class="btn btn-primary" id="Chat">Chat</button>
+                                <button class="btn btn-primary" onclick="location.href='ChatWindow'" id="Chat">Chat</button>
                                 <button class="btn btn-primary" id="borrar">Borrar</button>
+                               
                             </div>
                         </div>
                     </div>

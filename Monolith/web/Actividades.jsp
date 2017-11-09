@@ -161,7 +161,7 @@
                         <img class="icon" src="img/examen.png"  alt="ExamenLogo">
                     </div>
 
-                    <div class="contenedor" id="tres" onclick="agrandar3();" ondblclick="minimizar();">
+                    <div class="contenedor" id="tres" onclick="location.href='Proyectos.jsp'" ondblclick="minimizar();">
                         <img class="icon" src="img/proyectos.png" alt="ProyectosLogo">
                     </div>
 
@@ -298,6 +298,7 @@
                               out.println("<div class='card-header' role='tab' id='"+r.getInt("IDActividad")+r.getString("Titulo")+r.getInt("IDActividad")+"'>");
                                 out.println("<div class='card-header' role='tab' id='"+r.getInt("IDActividad")+r.getString("Titulo")+r.getInt("IDActividad")+"'>");
                                 out.println("<h5 class='mb-0'>");
+                                out.println("<input type='hidden' name='IdentificadorBorrar' id='price' value='"+r.getInt("IDActividad")+"'>");
                                   out.println("<a class='collapsed' data-toggle='collapse' data-parent='#accordion' href='#"+r.getInt("IDActividad")+r.getString("Titulo")+"' aria-expanded='false' aria-controls='"+r.getInt("IDActividad")+"'>");
                                     out.println("Descripcion");
                                   out.println(" </a>");      
@@ -314,7 +315,7 @@
                       out.println(" <div class='btn-group grupo-btn'>");
                          out.println(" <button class='btn btn-primary' id='checar'>Final</button>");
                          out.println("<button class='btn btn-primary' id='editar' data-toggle='modal' data-target='#"+r.getInt("IDActividad")+"'>Editar</button>");     
-                         out.println("<button class='btn btn-primary' id='borrar'>Borrar</button>");     
+                         out.println("<button class='btn btn-primary' id='borrar' data-toggle='modal' data-target='#"+r.getInt("IDActividad")+"Borrar'>Borrar</button>");     
                          out.println("</div>");
                       out.println("</div>");  
                     out.println("</div>");    
@@ -392,11 +393,38 @@
                      out.println("</div>");
                  out.println(" </div>");
               out.println(" </div>");
-                    /*Modal Actividades ya hechas*/    
-        
+                    /*Modal Actividades ya hechas*/
+                    
+                    //Modal ELimiana Actividad /*
+        out.println("<div class='modal fade bd-example-modal-lg'  id='"+r.getInt("IDActividad")+"Borrar' tabindex='-1' role='dialog' aria-labelledby='myLargeModalLabel' aria-hidden='true'>");
+                     out.println("<div class='modal-dialog modal-lg'>");
+                        out.println("<div class='modal-content'>");
+                           out.println("<div class='modal-header'>");
+                              out.println("<h5 class='modal-title' align='center' style='text-align:center'>Seguro que quieres borrar la Actividad:"+r.getString("Titulo")+"</h5>");
+                                  out.println("<button type='button' class='close' data-dismiss='modal' aria-label='Close'>");
+                                     out.println("<span aria-hidden='true'>&times;</span>");
+                                    out.println("</button>");
+                          out.println("</div>");
+                         out.println("<div class='modal-body actividadformcont'>");
+                         out.println("<form  class='actividadform' style='width:100%;' method='post' action='ELiminarActividad' >");
+                          out.println("<div class='row targetactividad'  style='width:100%;'>");;
+                                  out.println("<div class='col-6 col-sm-auto' style='width:100%;'>");
+                                      out.println("<label  class='col-form-label'>La Actividad:"+r.getString("Titulo")+" se borra permenentemente del sistema</label>");
+                                       out.println(" <input type='hidden' name='IdentificadorBorrar' id='price' value='"+r.getInt("IDActividad")+"'>");
+                                      out.println("</div>");
+                                 out.println("<div class='row ' style='width:100%;padding-left:39%;padding-right:39%;'>");
+                                          out.println("<button type='button' style='margin-right:3px;margin-bottom:3px;' class='btn btn-primary' data-dismiss='modal' aria-label='Close'>Cancelar</button>");
+                                          out.println("<button type='sumbit' style='margin-left:3px;' class='btn btn-primary '>Aceptar</button>");
+                                  out.println("</div>");
+                              out.println("</div>");
+                            out.println("</form>");
+                      out.println("</div>");
+                     out.println("</div>");
+                 out.println(" </div>");
+              out.println(" </div>");
     
 
-                    
+                    // Fin Modal ELimiana Actividad /*
         }
     } catch (SQLException error) {
         out.print(error.toString());
