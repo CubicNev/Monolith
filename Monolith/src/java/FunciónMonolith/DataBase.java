@@ -59,6 +59,14 @@ public class DataBase {
         ps.execute();
         c.close();
     }
+      
+      public void EliminarActividad(String id) throws SQLException {
+         int identic=Integer.parseInt(id);
+        String sql = "delete from actividad where IDActividad="+identic+";";
+        ps = c.prepareStatement(sql);
+        ps.execute();
+        c.close();
+    }
     
     public int ConsultarUsuario(String usr) throws SQLException{
          int num=0;
@@ -69,6 +77,14 @@ public class DataBase {
          return num;
     }
     
+    public int ConsultarColaborador(String usr) throws SQLException{
+         int num=0;
+        rs=st.executeQuery("select * from colaboradoes inner join usuario on usuario.IDUsuario=colaboradoes.IDUsuario where usuario.NombreUsuario='"+usr+"'");
+         if(rs.next()){
+              num=rs.getInt("IDUsuario");
+         }
+         return num;
+    }
     
     
 }
