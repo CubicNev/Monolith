@@ -61,9 +61,10 @@ public class CambioExamen extends HttpServlet{
             String nombre=request.getParameter("Titulo");
             String entrega=request.getParameter("FormaEntrega");
             String descripcion=request.getParameter("Descripcion");
+            String Fecha=request.getParameter("FechaEntrega");
             ex.setTitulo(nombre);
             ex.setFormadeEntregar(entrega);
-            ex.setFechaLimite(java.sql.Date.valueOf("2018-11-05"));
+            ex.setFechaLimite(java.sql.Date.valueOf(Fecha));
             ex.setUsuario(sesion.getAttribute("usuario").toString());
             ex.setDescripcion(descripcion);
              db.CambiarExamen(ex,identificador);

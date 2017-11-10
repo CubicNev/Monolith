@@ -231,26 +231,9 @@
                                             </div>
                                         </div> 
                                         <div class="row targetactividad" style="width:100%;" >
-                                            <div class="col-3 targetactividadfecha">
-                                                <label  class="col-form-label">Fecha de Entrega</label>
-                                            </div>
-                                            <div class="col-3">
-                                                <select id="inputState" class="form-control">
-                                                    <option selected>Dia</option>
-                                                    <option>...</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-3">
-                                                <select id="inputState" class="form-control">
-                                                    <option selected>Mes</option>
-                                                    <option>...</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-3">
-                                                <select id="inputState" class="form-control">
-                                                    <option selected>Año</option>
-                                                    <option>...</option>
-                                                </select>
+                                            <div class="col-12 targetactividadfecha">
+                                                <label  class='col-form-label'>Fecha de Entrega</label>
+                                                <input type="date"  class="col-12" name="FechaEntrega"> 
                                             </div>
                                         </div>
                                         <div class="row descripcionproyecto">
@@ -352,29 +335,15 @@
                                     out.println("<input type='text' class='form-control' id='recipient-name' placeholder='Forma de Entrega'  name='FormaEntrega' value='"+r.getString("FormaDeEntregar")+"'>");
                                         out.println(" </div>");   
                                      out.println("</div>"); 
-                                out.println("<div class='row targetactividad' style='width:100%;' >");
-                                    out.println("<div class='col-3 targetactividadfecha'>");
+                                     
+                                 out.println("<div class='row targetactividad' style='width:100%;' >");
+                                    out.println("<div class='col-12 targetactividadfecha'>");
                                  out.println("<label  class='col-form-label'>Fecha de Entrega</label>");
+                                 out.println("<input type='date'  class='col-12' name='FechaEntrega' value='"+r.getString("FechaLimite")+"'> ");
                                 out.println("</div>");
-                                out.println("<div class='col-3'>");
-                                   out.println("<select id='inputState' class='form-control'>");
-                                          out.println("<option selected>Dia</option>");
-                                          out.println("<option>...</option>");
-                                        out.println("</select>");
-                                out.println("</div>");
-                                 out.println("<div class='col-3'>");
-                                        out.println("<select id='inputState' class='form-control'>");
-                                        out.println("<option selected>Mes</option>");
-                                        out.println("<option>...</option>");
-                                        out.println("</select>");
-                                    out.println("</div>");
-                                 out.println("<div class='col-3'>");
-                                   out.println("<select id='inputState' class='form-control'>");
-                                       out.println("<option selected>Año</option>");
-                                       out.println(" <option>...</option>");
-                                    out.println("</select>");
-                                  out.println("</div>");
                                  out.println("</div>");       
+                                 
+                                 
                        out.println("<div class='row descripcionproyecto'>");
                              out.println("<label for='message-text' class='form-control-label descripcionproyecto'>Descripcion:</label>");
                                 out.println("<textarea class='form-control descripcionproyecto' id='message-text' name='Descripcion'>"+r.getString("Descripcion")+"</textarea>");

@@ -157,7 +157,7 @@
                         <img class="icon" src="img/home.png" alt="HomeLogo">
                     </div>
 
-                    <div class="contenedor" id="dos" onclick="agrandar2();" ondblclick="minimizar();">
+                    <div class="contenedor" id="dos"  onclick="location.href='Examen.jsp'" ondblclick="minimizar();">
                         <img class="icon" src="img/examen.png"  alt="ExamenLogo">
                     </div>
 

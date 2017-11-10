@@ -84,11 +84,12 @@ public class DataBase {
      
       public void CambiarExamen(Examen ex,String id) throws SQLException {
          int identic=Integer.parseInt(id);
-        String sql = "update examen set Titulo=?,FormaDeEntregar=?,Descripcion = ? where IDExamen="+identic+";";
+        String sql = "update examen set Titulo=?,FormaDeEntregar=?,FechaLimite=? ,Descripcion = ? where IDExamen="+identic+";";
         ps = c.prepareStatement(sql);
         ps.setString(1, ex.getTitulo());
         ps.setString(2, ex.getFormadeEntregar());
-        ps.setString(3, ex.getDescripcion());
+        ps.setDate(3, ex.getFechaLimite());
+        ps.setString(4, ex.getDescripcion());
         ps.execute();
         c.close();
     }
