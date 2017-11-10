@@ -67,7 +67,7 @@ public class CambioExamen extends HttpServlet{
             ex.setUsuario(sesion.getAttribute("usuario").toString());
             ex.setDescripcion(descripcion);
              db.CambiarExamen(ex,identificador);
-            response.sendRedirect("Actividades.jsp");
+            response.sendRedirect("Examen.jsp");
             
         } catch (Exception ex) {
               out.print(ex.toString() +"Clase Cambio error");

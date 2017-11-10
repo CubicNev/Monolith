@@ -231,26 +231,8 @@
                                             </div>
                                         </div> 
                                         <div class="row targetactividad" style="width:100%;" >
-                                            <div class="col-3 targetactividadfecha">
-                                                <label  class="col-form-label">Fecha de Entrega</label>
-                                            </div>
-                                            <div class="col-3">
-                                                <select id="inputState" class="form-control">
-                                                    <option selected>Dia</option>
-                                                    <option>...</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-3">
-                                                <select id="inputState" class="form-control">
-                                                    <option selected>Mes</option>
-                                                    <option>...</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-3">
-                                                <select id="inputState" class="form-control">
-                                                    <option selected>Año</option>
-                                                    <option>...</option>
-                                                </select>
+                                            <div class="col-12 targetactividadfecha">
+                                                <input type="date" name="Fecha" class="col-12"> 
                                             </div>
                                         </div>
                                         <div class="row descripcionproyecto">

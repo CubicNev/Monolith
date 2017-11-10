@@ -47,4 +47,12 @@
         <servlet-name>ChatWindow</servlet-name>
         <url-pattern>/ChatWindow</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>IngresarMensaje</servlet-name>
+        <servlet-class>FunciónMonolith.IngresarMensaje</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IngresarMensaje</servlet-name>
+        <url-pattern>/IngresarMensaje</url-pattern>
+    </servlet-mapping>
 </web-app>

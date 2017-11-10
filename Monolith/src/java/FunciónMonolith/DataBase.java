@@ -67,6 +67,38 @@ public class DataBase {
         ps.execute();
         c.close();
     }
+      
+     public void IngresarExamen(Examen exa) throws SQLException {
+        String sql = "insert into examen(Titulo,FormaDeEntregar,Descripcion,IDUsuario,FechaLimite,Estado) values (?,?,?,?,?,?);";
+        ps = c.prepareStatement(sql);
+        ps.setString(1, exa.getTitulo());
+        ps.setString(2, exa.getFormadeEntregar());
+        ps.setString(3, exa.getDescripcion());
+        ps.setInt(4,ConsultarUsuario(exa.getUsuario()));
+        ps.setDate(5,exa.getFechaLimite());
+        ps.setString(6,"No finalizada" );
+        ps.execute();
+        c.close();
+    }
+     
+      public void CambiarExamen(Examen ex,String id) throws SQLException {
+         int identic=Integer.parseInt(id);
+        String sql = "update examen set Titulo=?,FormaDeEntregar=?,Descripcion = ? where IDExamen="+identic+";";
+        ps = c.prepareStatement(sql);
+        ps.setString(1, ex.getTitulo());
+        ps.setString(2, ex.getFormadeEntregar());
+        ps.setString(3, ex.getDescripcion());
+        ps.execute();
+        c.close();
+    }
+      
+     public void EliminarExamen(String id) throws SQLException {
+         int identic=Integer.parseInt(id);
+        String sql = "delete from examen where IDExamen="+identic+";";
+        ps = c.prepareStatement(sql);
+        ps.execute();
+        c.close();
+    }
     
     public int ConsultarUsuario(String usr) throws SQLException{
          int num=0;
