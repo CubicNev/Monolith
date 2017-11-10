@@ -51,11 +51,12 @@ public class DataBase {
     
       public void CambiarActividad(Actividad act,String id) throws SQLException {
          int identic=Integer.parseInt(id);
-        String sql = "update actividad set Titulo=?,FormaDeEntregar=?,Descripcion = ? where IDActividad="+identic+";";
+        String sql = "update actividad set Titulo=?,FormaDeEntregar=?,FechaLimite=? ,Descripcion = ? where IDActividad="+identic+";";
         ps = c.prepareStatement(sql);
         ps.setString(1, act.getTitulo());
         ps.setString(2, act.getFormadeEntregar());
-        ps.setString(3, act.getDescripcion());
+        ps.setDate(3, act.getFechaLimite());
+        ps.setString(4, act.getDescripcion());
         ps.execute();
         c.close();
     }
