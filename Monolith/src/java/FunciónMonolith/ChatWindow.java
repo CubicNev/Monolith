@@ -47,14 +47,16 @@ public class ChatWindow extends HttpServlet {
       out.println(" <script src=\"js/jquery-3.2.1.min.js\"></script> ");
       out.println("<script src=\"js/popper.min.js\"></script>");
       out.println("<script src=\"js/bootstrap.min.js\"></script>");
+       out.println("<script src=\"js/Chat.jss\"></script>");
       out.println("<title>JSP Page</title>");  
       out.println("</head>");  
     out.println("<body>");
             
          out.println("<div class=\"container\">");
+         
             out.println("<div class=\"row\" >");
                out.println("<div class=\"col-md-12\" >");
-                out.println("<div class=\"panel panel-primary\">");
+                out.println("<div class=\"panel panel-primary\" id='Scroll'>");
                 out.println("<div class=\"panel-body\" style=\"height:420px;\">");
                  out.println("<ul class=\"chat\">");   
                         String sql2="select *from Mensaje";

@@ -81,6 +81,10 @@ public class Ingreso extends HttpServlet {
         u.setDireccion(Direccion);
         u.setCorreo(Correo);
         u.setPassword(Password);
+        HttpSession sesion = request.getSession();
+        sesion.setAttribute("usuario", Nombre);
+        sesion.setAttribute("password", Password);
+        response.sendRedirect("InicioSesion.jsp");
         
         try {
             db.IngresarUsuario(u);

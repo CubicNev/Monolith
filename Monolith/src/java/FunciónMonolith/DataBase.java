@@ -113,7 +113,7 @@ public class DataBase {
     
     public int ConsultarColaborador(String usr) throws SQLException{
          int num=0;
-        rs=st.executeQuery("select * from colaboradoes inner join usuario on usuario.IDUsuario=colaboradoes.IDUsuario where usuario.NombreUsuario='"+usr+"'");
+        rs=st.executeQuery("select * from colaboradores inner join usuario on usuario.IDUsuario=colaboradores.IDUsuario where usuario.NombreUsuario='"+usr+"'");
          if(rs.next()){
               num=rs.getInt("IDUsuario");
          }
