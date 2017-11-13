@@ -1,10 +1,11 @@
 <%-- 
-    Document   : Finanzaconect
-    Created on : 7/11/2017, 08:04:22 AM
-    Author     : Alumno
+    Document   : FinanzaIngreso
+    Created on : 12/11/2017, 02:55:06 PM
+    Author     : memo0
 --%>
-<%@page import="java.sql.*, java.io.*"%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.sql.*, java.io.*"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -13,30 +14,23 @@
     </head>
     <body>
         <%
-            String titulo;
-            titulo = request.getParameter("titulo");
-            int num=0;
-            int aux=0;
+            String razon = request.getParameter("ingrerazo");
+            String aux = request.getParameter("ingrecanti");
+            int monto= Integer.parseInt(aux);
             Connection c = null;
             Statement sta = null;
             ResultSet r = null;
-            HttpSession sesion = request.getSession();
-            aux=Integer.parseInt(sesion.getAttribute("idusario").toString());
-            int monto=0;
             try {
                 Class.forName("com.mysql.jdbc.Driver").newInstance();
                 c = DriverManager.getConnection("jdbc:mysql://localhost/monolith", "root", "n0m3l0");
                 sta = c.createStatement();
-                r=sta.executeQuery("select IDCuenta from Cuenta where IDusuario='"+aux+"'");
-                while(r.next()){
-                    num=r.getInt("IDCuenta");
-                }
-                sta.executeUpdate("insert into CategoriaCuenta(NombreCategoria,Monto,IDCuenta) values ('" + titulo + "','" + monto + "','" + num + "');");
+                sta.executeUpdate("insert into RegistroFinanza(IDCategoriaCuenta,Fecha,Monto,Accion) values ('" + 1 + "',now(),'" + monto + "','" + razon + "');");
                 out.print("<script> alert('se ha añadido exitosamente'); </script>");
                 out.print("<script> window.location='Finanzas.jsp'; </script>");
             } catch (SQLException error) {
                 out.print(error.toString());
             }
+
         %>
     </body>
 </html>

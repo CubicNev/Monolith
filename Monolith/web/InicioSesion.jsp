@@ -164,7 +164,7 @@
                     out.println(" <img class=\"icon\" src=\"img/tareas.png\" alt=\"TareasLogo\">");
                     out.println("</div>");
 
-                    out.println("<div class='contenedor' id='cinco' onclick='agrandar5();'>");
+                    out.println("<div class='contenedor' id='cinco' onclick=\"location.href='Finanzas.jsp';\">");
                     out.println("<img class='icon' src='img/finanza.png' alt='FinanzasLogo'>");
                     out.println("</div>");
 
@@ -321,7 +321,7 @@
                     out.println(" <img class=\"icon\" src=\"img/tareas.png\" alt=\"TareasLogo\">");
                     out.println("</div>");
 
-                    out.println("<div class='contenedor' id='cinco' onclick=\"location.href='Finanzas.html';\">");
+                    out.println("<div class='contenedor' id='cinco' onclick=\"location.href='Finanzas.jsp';\">");
                     out.println("<img class='icon' src='img/finanza.png' alt='FinanzasLogo'>");
                     out.println("</div>");
 
