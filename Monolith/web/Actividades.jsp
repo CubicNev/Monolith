@@ -169,7 +169,7 @@
                         <img class="icon" src="img/tareas.png" alt="TareasLogo">
                     </div>
 
-                    <div class="contenedor" id="cinco" onclick="agrandar5();" ondblclick="minimizar();">
+                    <div class="contenedor" id="cinco" onclick="location.href='Finanzas.jsp'" ondblclick="minimizar();">
                         <img class="icon" src="img/finanza.png" alt="FinanzasLogo">
                     </div>
                     <div class="contenedor" id="seis" onclick="agrandar6();" ondblclick="minimizar();">

@@ -6,6 +6,11 @@
         <link href="Css/test1.css" rel="stylesheet" type="text/css">
         <link href="Css/bootstraplogin.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
+         <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/Ingreso.js"></script>
         
     </head>
     <body class="container-fluid">
@@ -37,20 +42,24 @@
         <div class="pimg2">
             <div class="login">
                     <div class="loginBox">
-                        <form method="post" action="InicioSesion.jsp">
+                        <form method="post" id="login" action="InicioSesion.jsp">
                               <img src="img/user.png" class="user">
                              <h2>Ingresa Aqui</h2>
                              <p>Nombre Usuario</p>
-                             <input type="text" name="usuario" placeholder="Nombre de Usuario" required>
+                             <input type="text" id="usuario" name="usuario" placeholder="Nombre de Usuario" required>
                              <p>Contraseña</p>
-                             <input type="password" name="contrasenia" placeholder="Contraseña" required>
+                             <input type="password" id="contrasenia" name="contrasenia" placeholder="Contraseña" required>
                              <input type="submit" name="ingresar" value="Ingresar">
                          </form>
-                         <a id="forgotpass" href="https://www.w3schools.com/html/html_links.asp">¿Olvidaste tu contraseña?</a>
-                         <h2 id="nocuenta">¿No tienes cuenta?</h2>
                          <div class="row">
-                             <div class="col-12">
+                             <div class="col-4">
+                                 
+                             </div>
+                             <div class="col-6">
                            <button id="registro" onclick="location.href='registro.html'" name="registro" >Registrarse</button>
+                             </div>
+                             <div class="col-2">
+                                 
                              </div>
                           </div>
                      </div>

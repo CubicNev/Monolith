@@ -153,28 +153,6 @@ section{
     color:#fff;
 }
 
-#forgotpass {
-    text-align:center;
-    color:#80bdff;
-    align-content:center;
-    font-size:25px;
-    font-weight:bold;
-    align-items:center;
-    padding-left:30%;
-    padding-right:25%;
-    
-    background-color: transparent; 
-}
-
-#forgotpass:active{
-    color:#efed40;
-   
-}
-
-#forgotpass:hover{
-    color:#efed40;
-    text-decoration:none;
-}
 
 #nocuenta{
     padding-top:10%;
@@ -183,4 +161,8 @@ section{
 
 #registro{
     margin-bottom:40px;
+}
+
+label.error {
+  color: red;
 }
