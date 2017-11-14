@@ -8,6 +8,7 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import java.sql.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -21,6 +22,7 @@ public class IngresarMensaje extends HttpServlet{
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
          try{
+             response.setHeader("Refresh", "15");
             String driver = "com.mysql.jdbc.Driver";
             String ruta = "jdbc:mysql://localhost/monolith";
             String usuario = "root";
@@ -37,15 +39,15 @@ public class IngresarMensaje extends HttpServlet{
             String usaurio=sesion.getAttribute("usuario").toString();
             DataBase db=new DataBase();
              int numIDCol=db.ConsultarColaborador(usaurio);
-                       String sql1="insert into Mensaje (IDConversacionProyecto,IDColaborador,OrdenConversacion,Contenido)"+
+                         String sql1="insert into Mensaje (IDColaborador,Contenido,Fecha,IDProyecto)"+
                                "values(?,?,?,?)";
                        ps=c.prepareStatement(sql1);
-                       ps.setInt(1, 1);
-                       ps.setInt(2,numIDCol);
-                       ps.setInt(3,1);
-                       ps.setString(4,request.getParameter("Mensaje"));
+                       ps.setInt(1,numIDCol);
+                       ps.setString(2,request.getParameter("q"));
+                       ps.setTimestamp(3,java.sql.Timestamp.valueOf(LocalDateTime.now()));
+                       ps.setInt(4,1);
                        ps.execute();
-                       response.sendRedirect("ChatWindow");
+                      
           }catch(SQLException ex){
             out.println(ex.toString());
         }

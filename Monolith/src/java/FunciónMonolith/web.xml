@@ -55,4 +55,12 @@
         <servlet-name>IngresarMensaje</servlet-name>
         <url-pattern>/IngresarMensaje</url-pattern>
     </servlet-mapping>
+     <servlet>
+        <servlet-name>ActualizarChat</servlet-name>
+        <servlet-class>FunciónMonolith.ActualizarChat</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ActualizarChat</servlet-name>
+        <url-pattern>/ActualizarChat</url-pattern>
+    </servlet-mapping>
 </web-app>

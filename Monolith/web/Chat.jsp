@@ -4,8 +4,6 @@
     Author     : Alumno
 --%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -15,81 +13,66 @@
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <title>JSP Page</title>
+        <script>
+            
+          var cont = 0;
+            function contador() {
+                var xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function () {
+
+                    document.getElementById("ventanaMensaje").innerHTML = xmlhttp.responseText;
+                }
+                xmlhttp.open('Post', 'ActualizarChat', true);
+                xmlhttp.send();
+                cont++;
+            }
+
+               
+            function mensaje(){
+                var men=document.getElementById("btn-input").value;
+                var xmlhttp=new XMLHttpRequest();
+                 xmlhttp.open('Post',"IngresarMensaje?q="+men,true);
+                 xmlhttp.send();
+                document.getElementById("btn-input").value="";
+            }
+            
+            setInterval('contador()', 4000);
+
+            
+            
+           
+        </script>
+        <script>
+             $(document).ready(
+                function(){
+                    $('.panel-body').sticky()({
+			speed: 0 // The scroll animation speed
+		});
+                }
+            );
+        </script>
     </head>
-    <body>
+    <body onLoad="contador();">
         <div class="container">
             <div class="row" >
                 <div class="col-md-12" >
                     <div class="panel panel-primary">
                         
                         <div class="panel-body" style="height:420px;">
-                            <ul class="chat">
-                                <li class="left clearfix"><span class="chat-img pull-left">
-                                        <img src="img/UserChat.png" alt="User Avatar" class="img-circle" />
-                                    </span>
-                                    <div class="chat-body clearfix">
-                                        <div class="header">
-                                            <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
-                                                <span class="glyphicon glyphicon-time"></span>12 mins ago</small>
-                                        </div>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                            dolor, quis ullamcorper ligula sodales.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="right clearfix"><span class="chat-img pull-right">
-                                        <img src="img/UserChat.png" alt="User Avatar" class="img-circle" />
-                                    </span>
-                                    <div class="chat-body clearfix">
-                                        <div class="header">
-                                            <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>13 mins ago</small>
-                                            <strong class="pull-right primary-font">Bhaumik Patel</strong>
-                                        </div>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                            dolor, quis ullamcorper ligula sodales.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="left clearfix"><span class="chat-img pull-left">
-                                        <img src="img/UserChat.png" alt="User Avatar" class="img-circle" />
-                                    </span>
-                                    <div class="chat-body clearfix">
-                                        <div class="header">
-                                            <strong class="primary-font">Jack Sparrow</strong> <small class="pull-right text-muted">
-                                                <span class="glyphicon glyphicon-time"></span>14 mins ago</small>
-                                        </div>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                            dolor, quis ullamcorper ligula sodales.
-                                        </p>
-                                    </div>
-                                </li>
-                                <li class="right clearfix"><span class="chat-img pull-right">
-                                        <img src="img/UserChat.png" alt="User Avatar" class="img-circle" />
-                                    </span>
-                                    <div class="chat-body clearfix">
-                                        <div class="header">
-                                            <small class=" text-muted"><span class="glyphicon glyphicon-time"></span>15 mins ago</small>
-                                            <strong class="pull-right primary-font">Bhaumik Patel</strong>
-                                        </div>
-                                        <p>
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum ornare
-                                            dolor, quis ullamcorper ligula sodales.
-                                        </p>
-                                    </div>
-                                </li>
+                            <ul class="chat" id='ventanaMensaje'>
+                                
                             </ul>
                         </div>
                         <div class="panel-footer" >
+                            <form>
                             <div class="input-group">
-                                <input id="btn-input" type="text" class="form-control input-sm" placeholder="Type your message here..." />
+                                <input id="btn-input" type="text" id="Mensaje" name='Mensaje' class="form-control input-sm" placeholder="Type your message here..." />
                                 <span class="input-group-btn">
-                                    <button class="btn btn-warning btn-sm" id="btn-chat">
+                                    <button class="btn btn-warning btn-sm"  id="btn-chat" onclick="mensaje();">
                                         Send</button>
                                 </span>
                             </div>
+                            </form>
                         </div>
                     </div>
                 </div>

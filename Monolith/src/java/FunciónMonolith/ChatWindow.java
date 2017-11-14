@@ -47,7 +47,7 @@ public class ChatWindow extends HttpServlet {
       out.println(" <script src=\"js/jquery-3.2.1.min.js\"></script> ");
       out.println("<script src=\"js/popper.min.js\"></script>");
       out.println("<script src=\"js/bootstrap.min.js\"></script>");
-       out.println("<script src=\"js/Chat.jss\"></script>");
+       out.println("<script src=\"js/Chat.js\"></script>");
       out.println("<title>JSP Page</title>");  
       out.println("</head>");  
     out.println("<body>");
