@@ -55,4 +55,12 @@
         <servlet-name>IngresarMensaje</servlet-name>
         <url-pattern>/IngresarMensaje</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>userLogin</servlet-name>
+        <servlet-class>FunciónMonolith.userLogin</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>userLogin</servlet-name>
+        <url-pattern>/userLogin</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -81,8 +81,40 @@ public class IngresarMensaje extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-      
+        PrintWriter out=response.getWriter();
+        
+         try{
+            String driver = "com.mysql.jdbc.Driver";
+            String ruta = "jdbc:mysql://localhost/monolith";
+            String usuario = "root";
+            String clave = "n0m3l0";
+            Connection c = null;
+            Statement st = null;
+            PreparedStatement ps = null;
+            ResultSet rs = null;
+            
+            Class.forName(driver).newInstance();
+            c = DriverManager.getConnection(ruta, usuario, clave);
+            st = c.createStatement();
+            HttpSession sesion = request.getSession();
+            String usaurio=sesion.getAttribute("usuario").toString();
+            DataBase db=new DataBase();
+             int numIDCol=db.ConsultarColaborador(usaurio);
+                       String sql1="insert into Mensaje (IDColaborador,Contenido,Fecha,IDProyecto)"+
+                               "values(?,?,?,?)";
+                       ps=c.prepareStatement(sql1);
+                       ps.setInt(1,numIDCol);
+                       ps.setString(2,request.getParameter("q"));
+                       ps.setTimestamp(3,java.sql.Timestamp.valueOf(LocalDateTime.now()));
+                       ps.setInt(4,1);
+                       ps.execute();
+                      
+          }catch(Exception ex){
+            out.println(ex.toString());
+        }
     }
+     
+  
 
     /**
      * Returns a short description of the servlet.

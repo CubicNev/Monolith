@@ -18,9 +18,11 @@
         <link href="Css/bootstraplogin.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
         <link rel="stylesheet" href="Css/Menu.css">
-        <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/popper.min.js"></script>
+        <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/validacionactividades.js"></script>
         <script type="text/javascript">
             // funcion para aumentar la fuente
             function agrandar() {
@@ -213,7 +215,7 @@
                                     </button>
                                 </div>
                                 <div class="modal-body actividadformcont"  >
-                                    <form  class="actividadform" style="width:100%;" method="post" action="IngresoActividad"  >
+                                    <form  class="actividadform" id="actividadform" style="width:100%;" method="post" action="IngresoActividad"  >
                                         <div class="row targetactividad"  style="width:100%;">
                                             <div class="col-6 col-sm-auto" style="width:100%;">
                                                 <label  class="col-form-label">Nombre actividad</label>

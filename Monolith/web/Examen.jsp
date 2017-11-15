@@ -11,7 +11,7 @@
         <title>Examenes</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="Css/actividadstyle.css" rel="stylesheet" type="text/css">
+        <link href="Css/examenstyle.css" rel="stylesheet" type="text/css">
         <link href="Css/bootstrap.css" rel="stylesheet" type="text/css">
         <link href="Css/test1.css" rel="stylesheet" type="text/css">
         <link href="Css/bootstraplogin.css" rel="stylesheet" type="text/css">
@@ -20,6 +20,8 @@
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/validacionexamen.js"></script>
         <script type="text/javascript">
             // funcion para aumentar la fuente
             function agrandar() {
@@ -213,7 +215,7 @@
                                     </button>
                                 </div>
                                 <div class="modal-body actividadformcont"  >
-                                    <form  class="actividadform" style="width:100%;" method="post" action="IngresoExamen"  >
+                                    <form  class="examenform" style="width:100%;" method="post" action="IngresoExamen"  >
                                         <div class="row targetactividad"  style="width:100%;">
                                             <div class="col-6 col-sm-auto" style="width:100%;">
                                                 <label  class="col-form-label">Nombre actividad</label>
@@ -271,7 +273,7 @@
         while(r.next()){
             /*Cartas de Actividades */
             out.println(" <div class=\"card carta\" >");
-               out.println("<div class=\"\">");
+               out.println("<div class=\"\">");              
                   out.println("<h3 class=\"cart-title titulocarta\">"+r.getString("Titulo")+"</h3>"); 
                     out.println("</div>");       
                         out.println(" <div class=\"card-body bloquecarta\">");
