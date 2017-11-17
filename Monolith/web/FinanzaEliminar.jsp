@@ -1,6 +1,6 @@
 <%-- 
-    Document   : Finanzaconect
-    Created on : 7/11/2017, 08:04:22 AM
+    Document   : FinanzaEliminar
+    Created on : 17/11/2017, 08:41:45 AM
     Author     : Alumno
 --%>
 <%@page import="java.sql.*, java.io.*"%>
@@ -13,8 +13,7 @@
     </head>
     <body>
         <%
-            String titulo;
-            titulo = request.getParameter("titulo");
+            String titulo = request.getParameter("id");
             int num=0;
             int aux=0;
             Connection c = null;
@@ -31,8 +30,15 @@
                 while(r.next()){
                     num=r.getInt("IDCuenta");
                 }
-                sta.executeUpdate("insert into CategoriaCuenta(NombreCategoria,Monto,IDCuenta) values ('"+titulo+"','" + monto + "','" + num + "');");
-                out.print("<script> alert('se ha añadido exitosamente'); </script>");
+                r=sta.executeQuery("select * from CategoriaCuenta where NombreCategoria='"+titulo+"';");
+                if(r.next()){
+                    sta.executeUpdate("delete from CategoriaCuenta where NombreCategoria='"+titulo+"';");
+                }
+                else{
+                    out.print("<script> alert('no existe'); </script>");
+                    out.print("<script> window.location='Finanzas.jsp'; </script>");
+                }
+                out.print("<script> alert('se ha eliminado exitosamente exitosamente'); </script>");
                 out.print("<script> window.location='Finanzas.jsp'; </script>");
             } catch (SQLException error) {
                 out.print(error.toString());

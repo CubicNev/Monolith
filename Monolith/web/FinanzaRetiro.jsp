@@ -1,10 +1,8 @@
 <%-- 
-    Document   : FinanzaIngreso
-    Created on : 12/11/2017, 02:55:06 PM
+    Document   : FinanzaRetiro
+    Created on : 15/11/2017, 08:35:33 PM
     Author     : memo0
 --%>
-
-<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.sql.*, java.io.*"%>
 <!DOCTYPE html>
@@ -16,8 +14,8 @@
     <body>
         <%
             HttpSession sesion = request.getSession();
-            String razon = request.getParameter("ingrerazo");
-            String aux = request.getParameter("ingrecanti");
+            String razon = request.getParameter("retrerazon");
+            String aux = request.getParameter("retirecanti");
             String titulo = request.getParameter("id");
             //String tipo= request.getParameter("name");
             int cuenta= Integer.parseInt(sesion.getAttribute("cuenta").toString());
@@ -39,9 +37,9 @@
                 while(r.next()){
                     categoria=r.getInt("IDCategoriaCuenta");
                 }
-                sta.executeUpdate("insert into RegistroFinanza(IDCategoriaCuenta,Fecha,Monto,Accion) values ('" + categoria + "',now(),'" + monto + "','" + razon + "');");
+                sta.executeUpdate("insert into RegistroFinanza(IDCategoriaCuenta,Fecha,Monto,Accion) values ('" + categoria + "',now(),'-" + monto + "','" + razon + "');");
                 
-                 r=sta.executeQuery("select Monto from RegistroFinanza where IDCategoriaCuenta='"+categoria+"';");
+                r=sta.executeQuery("select Monto from RegistroFinanza where IDCategoriaCuenta='"+categoria+"';");
                 while(r.next()){
                     aux1=r.getInt("Monto");
                     total=total+aux1;

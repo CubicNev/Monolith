@@ -132,12 +132,11 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                          <%
-    HttpSession sesion = request.getSession();
-    String Usuario=sesion.getAttribute("usuario").toString();
-    out.println("<a class=\"dropdown-item\" href=\"#\">"+Usuario+"</a>");
-    //////////////////////////////////////////////////////////////
-%>
-                       
+                            HttpSession sesion = request.getSession();
+                            String Usuario=sesion.getAttribute("usuario").toString();
+                            out.println("<a class=\"dropdown-item\" href=\"#\">"+Usuario+"</a>");
+                            //////////////////////////////////////////////////////////////
+                        %>
                         <a class="dropdown-item" href="#">Configuracion</a>
                         <a class="dropdown-item" href="CerrarSesion.jsp">Cerrar Sesion</a>
                     </div>
