@@ -284,12 +284,12 @@
                                 out.println("<div class='card-header' role='tab' id='"+r.getInt("IDActividad")+r.getString("Titulo")+r.getInt("IDActividad")+"'>");
                                 out.println("<h5 class='mb-0'>");
                                 out.println("<input type='hidden' name='IdentificadorBorrar' id='price' value='"+r.getInt("IDActividad")+"'>");
-                                  out.println("<a class='collapsed' data-toggle='collapse' data-parent='#accordion' href='#"+r.getInt("IDActividad")+r.getString("Titulo")+"' aria-expanded='false' aria-controls='"+r.getInt("IDActividad")+"'>");
+                                  out.println("<a class='collapsed' data-toggle='collapse' data-parent='#accordion' href='#"+r.getInt("IDActividad")+"-"+ r.getInt("IDActividad")+"' aria-expanded='false' aria-controls='"+r.getInt("IDActividad")+"'>");
                                     out.println("Descripcion");
                                   out.println(" </a>");      
                                  out.println("</h5>");                  
                                 out.println("</div>");              
-                                out.println("<div id='"+r.getInt("IDActividad")+r.getString("Titulo")+"' class='collapse' role='tabpanel' aria-labelledby='"+r.getString("Titulo")+r.getInt("IDActividad")+"'>");    
+                                out.println("<div id='"+r.getInt("IDActividad")+"-"+ r.getInt("IDActividad")+"' class='collapse' role='tabpanel' aria-labelledby='"+r.getString("Titulo")+r.getInt("IDActividad")+"'>");    
                                 out.println("<div class='card-block'>");   
                                  out.println(r.getString("Descripcion"));
                                out.println("</div>");      
@@ -319,14 +319,14 @@
                                     out.println("</button>");
                           out.println("</div>");
                          out.println("<div class='modal-body actividadformcont'>");
-                         out.println("<form  class='actividadform' style='width:100%;' method='post' action='CambioActividad' >");
+                         out.println("<form  class=\"actividadform\" id=\"actividadform\" style='width:100%;' method='post' action='CambioActividad' >");
                           out.println("<div class='row targetactividad'  style='width:100%;'>");;
                                   out.println("<div class='col-6 col-sm-auto' style='width:100%;'>");
                                       out.println("<label  class='col-form-label' name='Identificador' value='"+r.getInt("IDActividad")+"'>Nombre actividad</label>");
                                        out.println(" <input type='hidden' name='Identificador' id='price' value='"+r.getInt("IDActividad")+"'>");
                                       out.println("</div>");
                                      out.println("<div class='col-6  col-sm-auto' style='width:100%;'>");
-                                       out.println("<input type='text' class='form-control' id='recipient-name' placeholder='Nombre Actividad' name='Titulo' value='"+r.getString("Titulo")+"'>");
+                                       out.println("<input type='text' class='form-control' id='Titulo' placeholder='Nombre Actividad' name='Titulo' value='"+r.getString("Titulo")+"'>");
                                     out.println("</div>");  
                                     out.println(" </div>");
                                     out.println("<div class='row targetactividad' style='width:100%;'>");
@@ -342,14 +342,14 @@
                                 out.println("<div class='row targetactividad' style='width:100%;' >");
                                     out.println("<div class='col-12 targetactividadfecha'>");
                                  out.println("<label  class='col-form-label'>Fecha de Entrega</label>");
-                                 out.println("<input type='date'  class='col-12' name='FechaEntrega' value='"+r.getString("FechaLimite")+"'> ");
+                                 out.println("<input type='date' id='FechaEntrega' class='col-12' name='FechaEntrega' value='"+r.getString("FechaLimite")+"'> ");
                                 out.println("</div>");
                                  out.println("</div>");       
                                  
                                  
                        out.println("<div class='row descripcionproyecto'>");
                              out.println("<label for='message-text' class='form-control-label descripcionproyecto'>Descripcion:</label>");
-                                out.println("<textarea class='form-control descripcionproyecto' id='message-text' name='Descripcion'>"+r.getString("Descripcion")+"</textarea>");
+                                out.println("<textarea class='form-control descripcionproyecto' id='Descripcion' name='Descripcion'>"+r.getString("Descripcion")+"</textarea>");
                                    out.println("</div>");
                                      out.println("<div class='row'>");
                                       out.println("<div class='col-5'>");
@@ -408,6 +408,7 @@
         </div> 
         </div>
     </body>
+   
 </html>
 
 
