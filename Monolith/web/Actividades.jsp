@@ -221,7 +221,7 @@
                                                 <label  class="col-form-label">Nombre actividad</label>
                                             </div>
                                             <div class="col-6  col-sm-auto" style="width:100%;">
-                                                <input type="text" class="form-control" id="recipient-name" placeholder="Nombre Actividad" name="Titulo">
+                                                <input type="text" class="form-control" id="Titulo" placeholder="Nombre Actividad" name="Titulo">
                                             </div>  
                                         </div> 
                                         <div class="row targetactividad" style="width:100%;">
@@ -229,24 +229,24 @@
                                                 <label  class="col-form-label">Forma de Entrega</label>
                                             </div>
                                             <div class="col-6  col-sm-auto" style="width:100%;">
-                                                <input type="text" class="form-control" id="recipient-name" placeholder="Forma de Entrega"  name="FormaEntrega">
+                                                <input type="text" class="form-control" id="FormaEntrega" placeholder="Forma de Entrega"  name="FormaEntrega">
                                             </div>
                                         </div> 
                                         <div class="row targetactividad" style="width:100%;" >
                                             <div class="col-12 targetactividadfecha">
                                                 <label  class='col-form-label'>Fecha de Entrega</label>
-                                                <input type="date"  class="col-12" name="FechaEntrega"> 
+                                                <input type="date"  class="col-12" id="FechaEntrega" name="FechaEntrega"> 
                                             </div>
                                         </div>
                                         <div class="row descripcionproyecto">
                                             <label for="message-text" class="form-control-label descripcionproyecto">Descripcion:</label>
-                                            <textarea class="form-control descripcionproyecto" id="message-text" name="Descripcion"></textarea>
+                                            <textarea id="Descripcion" class="form-control descripcionproyecto" id="message-text" name="Descripcion"></textarea>
                                         </div>
                                         <div class="row">
                                             <div class="col-5">
                                             </div>
                                             <div class="col-4">
-                                                <button class="btn btn-primary">Guardar Actividad</button>
+                                                <button class="btn btn-primary" type="submit">Guardar Actividad</button>
                                             </div>
                                             <div class="col-3">
                                             </div>

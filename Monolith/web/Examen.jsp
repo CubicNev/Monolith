@@ -20,7 +20,7 @@
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/popper.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
-        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/jquery.validate.js"></script>
         <script src="js/validacionexamen.js"></script>
         <script type="text/javascript">
             // funcion para aumentar la fuente
@@ -159,7 +159,7 @@
                         <img class="icon" src="img/home.png" alt="HomeLogo">
                     </div>
 
-                    <div class="contenedor" id="dos" onclick="location.href='Examenes.jsp'" ondblclick="minimizar();">
+                    <div class="contenedor" id="dos" onclick="location.href='Examen.jsp'" ondblclick="minimizar();">
                         <img class="icon" src="img/examen.png"  alt="ExamenLogo">
                     </div>
 
@@ -215,7 +215,7 @@
                                     </button>
                                 </div>
                                 <div class="modal-body actividadformcont"  >
-                                    <form  class="examenform" style="width:100%;" method="post" action="IngresoExamen"  >
+                                    <form  class="examenform" id="examenform" style="width:100%;" method="post" action="IngresoExamen"  >
                                         <div class="row targetactividad"  style="width:100%;">
                                             <div class="col-6 col-sm-auto" style="width:100%;">
                                                 <label  class="col-form-label">Nombre actividad</label>

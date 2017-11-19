@@ -12,7 +12,7 @@
         <script src="js/jquery.validate.min.js"></script>
         <script src="js/Ingreso.js"></script>
         <script>
-   
+   /*
             function ingresar(){
                 var nom=document.getElementById("usuario").value;
                 var con=document.getElementById("contrasenia").value;
@@ -21,7 +21,7 @@
                   xmlhttp.open('Post',"InicioSesion?c="+con,true);
                  xmlhttp.send();
                  document.getElementById("MensajeServer").innerHTML = xmlhttp.responseText;
-             }  
+             }  */
         </script>
     </head>
     <body class="container-fluid">
@@ -53,7 +53,7 @@
         <div class="pimg2">
             <div class="login">
                     <div class="loginBox">
-                        <form>
+                        <form method="Post" action="InicioSesion.jsp">
                               <img src="img/user.png" class="user">
                              <h2>Ingresa Aqui</h2>
                              <p>Nombre Usuario</p>
@@ -65,7 +65,7 @@
                                          
                                  </div>
                              </div>
-                             <input type="submit" name="ingresar" value="Ingresar" onclick="ingresar();">
+                             <input type="submit" name="ingresar" value="Ingresar" >
                          </form>
                          <div class="row">
                              <div class="col-4">
