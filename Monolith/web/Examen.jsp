@@ -221,7 +221,7 @@
                                                 <label  class="col-form-label">Nombre actividad</label>
                                             </div>
                                             <div class="col-6  col-sm-auto" style="width:100%;">
-                                                <input type="text" class="form-control" id="recipient-name" placeholder="Nombre Examen" name="Titulo">
+                                                <input type="text" class="form-control" id="Titulo" placeholder="Nombre Examen" name="Titulo">
                                             </div>  
                                         </div> 
                                         <div class="row targetactividad" style="width:100%;">
@@ -229,18 +229,18 @@
                                                 <label  class="col-form-label">Forma de Entrega</label>
                                             </div>
                                             <div class="col-6  col-sm-auto" style="width:100%;">
-                                                <input type="text" class="form-control" id="recipient-name" placeholder="Forma de Entrega"  name="FormaEntrega">
+                                                <input type="text" class="form-control" id="FormaEntrega" placeholder="Forma de Entrega"  name="FormaEntrega">
                                             </div>
                                         </div> 
                                         <div class="row targetactividad" style="width:100%;" >
                                             <div class="col-12 targetactividadfecha">
                                                 <label  class='col-form-label'>Fecha de Entrega</label>
-                                                <input type="date"  class="col-12" name="FechaEntrega"> 
+                                                <input type="date" id="FechaEntrega" class="col-12" name="FechaEntrega"> 
                                             </div>
                                         </div>
                                         <div class="row descripcionproyecto">
                                             <label for="message-text" class="form-control-label descripcionproyecto">Descripcion:</label>
-                                            <textarea class="form-control descripcionproyecto" id="message-text" name="Descripcion"></textarea>
+                                            <textarea class="form-control descripcionproyecto" id="Descripcion" name="Descripcion"></textarea>
                                         </div>
                                         <div class="row">
                                             <div class="col-5">
@@ -284,12 +284,12 @@
                                 out.println("<div class='card-header' role='tab' id='"+r.getInt("IDExamen")+r.getString("Titulo")+r.getInt("IDExamen")+"'>");
                                 out.println("<h5 class='mb-0'>");
                                 out.println("<input type='hidden' name='IdentificadorBorrar' id='price' value='"+r.getInt("IDExamen")+"'>");
-                                  out.println("<a class='collapsed' data-toggle='collapse' data-parent='#accordion' href='#"+r.getInt("IDExamen")+r.getString("Titulo")+"' aria-expanded='false' aria-controls='"+r.getInt("IDExamen")+"'>");
+                                  out.println("<a class='collapsed' data-toggle='collapse' data-parent='#accordion' href='#"+r.getInt("IDExamen")+"-"+r.getInt("IDExamen")+"' aria-expanded='false' aria-controls='"+r.getInt("IDExamen")+"'>");
                                     out.println("Descripcion");
                                   out.println(" </a>");      
                                  out.println("</h5>");                  
                                 out.println("</div>");              
-                                out.println("<div id='"+r.getInt("IDExamen")+r.getString("Titulo")+"' class='collapse' role='tabpanel' aria-labelledby='"+r.getString("Titulo")+r.getInt("IDExamen")+"'>");    
+                                out.println("<div id='"+r.getInt("IDExamen")+"-"+r.getInt("IDExamen")+"' class='collapse' role='tabpanel' aria-labelledby='"+r.getString("Titulo")+r.getInt("IDExamen")+"'>");    
                                 out.println("<div class='card-block'>");   
                                  out.println(r.getString("Descripcion"));
                                out.println("</div>");      
@@ -298,7 +298,7 @@
                             out.println("</div>");             
                         out.println("</div>");
                       out.println(" <div class='btn-group grupo-btn'>");
-                         out.println(" <button class='btn btn-primary' id='checar'>Final</button>");
+                         out.println(" <button class='btn btn-primary' id='checar'data-toggle='modal' data-target='#"+r.getInt("IDExamen")+"Final'>Final</button>");
                          out.println("<button class='btn btn-primary' id='editar' data-toggle='modal' data-target='#"+r.getInt("IDExamen")+"'>Editar</button>");     
                          out.println("<button class='btn btn-primary' id='borrar' data-toggle='modal' data-target='#"+r.getInt("IDExamen")+"Borrar'>Borrar</button>");     
                          out.println("</div>");
@@ -319,14 +319,14 @@
                                     out.println("</button>");
                           out.println("</div>");
                          out.println("<div class='modal-body actividadformcont'>");
-                         out.println("<form  class='actividadform' style='width:100%;' method='post' action='CambioExamen' >");
+                         out.println("<form  class='examenform' style='width:100%;' method='post' action='CambioExamen' >");
                           out.println("<div class='row targetactividad'  style='width:100%;'>");;
                                   out.println("<div class='col-6 col-sm-auto' style='width:100%;'>");
                                       out.println("<label  class='col-form-label' name='Identificador' value='"+r.getInt("IDExamen")+"'>Nombre Examen</label>");
                                        out.println(" <input type='hidden' name='Identificador' id='price' value='"+r.getInt("IDExamen")+"'>");
                                       out.println("</div>");
                                      out.println("<div class='col-6  col-sm-auto' style='width:100%;'>");
-                                       out.println("<input type='text' class='form-control' id='recipient-name' placeholder='Nombre Examen' name='Titulo' value='"+r.getString("Titulo")+"'>");
+                                       out.println("<input type='text' class='form-control' id='Titulo' placeholder='Nombre Examen' name='Titulo' value='"+r.getString("Titulo")+"'>");
                                     out.println("</div>");  
                                     out.println(" </div>");
                                     out.println("<div class='row targetactividad' style='width:100%;'>");
@@ -334,21 +334,21 @@
                                           out.println("<label  class='col-form-label'>Forma de Entrega</label>");
                                      out.println("</div>");
                                     out.println("<div class='col-6  col-sm-auto' style='width:100%;'>");
-                                    out.println("<input type='text' class='form-control' id='recipient-name' placeholder='Forma de Entrega'  name='FormaEntrega' value='"+r.getString("FormaDeEntregar")+"'>");
+                                    out.println("<input type='text'  class='form-control' id='FormaEntrega' placeholder='Forma de Entrega'  name='FormaEntrega' value='"+r.getString("FormaDeEntregar")+"'>");
                                         out.println(" </div>");   
                                      out.println("</div>"); 
                                      
                                  out.println("<div class='row targetactividad' style='width:100%;' >");
                                     out.println("<div class='col-12 targetactividadfecha'>");
                                  out.println("<label  class='col-form-label'>Fecha de Entrega</label>");
-                                 out.println("<input type='date'  class='col-12' name='FechaEntrega' value='"+r.getString("FechaLimite")+"'> ");
+                                 out.println("<input type='date'  class='col-12' name='FechaEntrega' id='FechaEntrega' value='"+r.getString("FechaLimite")+"'> ");
                                 out.println("</div>");
                                  out.println("</div>");       
                                  
                                  
                        out.println("<div class='row descripcionproyecto'>");
                              out.println("<label for='message-text' class='form-control-label descripcionproyecto'>Descripcion:</label>");
-                                out.println("<textarea class='form-control descripcionproyecto' id='message-text' name='Descripcion'>"+r.getString("Descripcion")+"</textarea>");
+                                out.println("<textarea class='form-control descripcionproyecto' id='Descripcion' name='Descripcion'>"+r.getString("Descripcion")+"</textarea>");
                                    out.println("</div>");
                                      out.println("<div class='row'>");
                                       out.println("<div class='col-5'>");
@@ -396,6 +396,8 @@
     
 
                     // Fin Modal ELimiana Actividad /*
+                    
+                    
         }
     } catch (SQLException error) {
         out.print(error.toString());

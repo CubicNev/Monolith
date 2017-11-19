@@ -162,6 +162,26 @@ form{
     color:#fff;
 }
 
+.loginBox button{
+    width:100%;
+    display:block;
+    margin-bottom:50px;
+    border:none;
+    outline:none;
+    height:40px;
+    color:#1f2e2e;
+    font-size:24px;
+    font-weight:bold;
+    background:#e6ffff;
+    cursor:pointer;
+    border-radius:20px;
+}
+
+.loginBox button:hover{
+    background:#5d8989;
+    color:#fff;
+}
+
 #nocuenta{
     padding-top:10%;
     padding-bottom:10%;

@@ -377,7 +377,7 @@
                                         }
                                     } else {
                                         out.println("<div class='w3-card-4'>");
-                                        out.println("<img src='img/huskyFinanzas.jpg' alt='Norway'  style='width: 60%'>");
+                                        out.println("<img src='img/huskyFinanzas.jpg' alt='Norway' margin-right:30%; style='width: 60%'>");
                                         out.println("<div class='w3-container w3-center'>");
                                         out.println("<p>Hola, puedes agragar mas categorias</p>");
                                         out.println("</div>");
