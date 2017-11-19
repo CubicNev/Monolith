@@ -3,19 +3,19 @@
     Created on : 18/10/2017, 10:53:56 PM
     Author     : memo0
 --%>
-<%@page import="Funcionfianan.conectar"%>
-<%@page import="java.sql.*, java.io.*"%>
+<%@page import="java.sql.*,java.io.*"%>
 <html>
     <head>
-        <title>Actividades</title>
+        <title>Finanzas</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="Css/actividadstyle.css" rel="stylesheet" type="text/css">
-        <link rel="stylesheet" href="Css/Menu.css">
+        <link rel="stylesheet" href="Css/Menu_1.css">
         <link href="Css/bootstrap.css" rel="stylesheet" type="text/css">
-        <link href="Css/finanzashtml.css" rel="stylesheet" type="text/css">
         <link href="Css/test1.css" rel="stylesheet" type="text/css">
         <link href="Css/bootstraplogin.css" rel="stylesheet" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
+        <link rel="stylesheet" href="Css/Menu.css">
+        <link href="Css/finanzashtml.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
         <link rel="stylesheet" href="Css/Menu.css">
         <script src="js/popper.min.js"></script>
@@ -149,6 +149,7 @@
             }
         %>
         <!--Barra de usuario-->
+         <!--Barra de usuario-->
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #00838F;">
             <a class="navbar-brand text-white" href="#">
                 <img src="img/Logo.svg" width="30" height="30" class="d-inline-block align-top" alt="Logo">
@@ -165,7 +166,6 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
                          <%
-    //HttpSession sesion = request.getSession();
     String Usuario=sesion.getAttribute("usuario").toString();
     out.println("<a class=\"dropdown-item\" href=\"#\">"+Usuario+"</a>");
     //////////////////////////////////////////////////////////////
@@ -178,9 +178,8 @@
 
             </div>
         </nav>
-        <div class="container-fluid" style="padding-left:13px;padding-right:13px;">
-        
-            <!--Barra Navegacion-->
+
+ <!--Barra Navegacion-->
             <header>
                 <div class="col-12">
                     <div class="contenedor" id="uno" onclick="location.href='InicioSesion.jsp'" ondblclick="minimizar();">
@@ -207,6 +206,12 @@
                     </div>
                 </div>
             </header>
+ 
+        <div class="container-fluid" style="padding-left:13px;padding-right:13px;">
+        
+           
+            
+            
             <div class="row categorias" >
                 <div class="col-7">
                     <div class="row barrafinanza">
@@ -377,9 +382,8 @@
                                         }
                                     } else {
                                         out.println("<div class='w3-card-4'>");
-                                        out.println("<img src='img/huskyFinanzas.jpg' alt='Norway' margin-right:30%; style='width: 60%'>");
+                                        out.println("<img src='img/huskyFinanzas.jpg' alt='Norway' style='width:80%; margin-left:30%; margin-right:30%;margin-top:20px;'  >");
                                         out.println("<div class='w3-container w3-center'>");
-                                        out.println("<p>Hola, puedes agragar mas categorias</p>");
                                         out.println("</div>");
                                         out.println("</div>");
                                     }

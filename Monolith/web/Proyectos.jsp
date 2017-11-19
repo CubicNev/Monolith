@@ -421,7 +421,7 @@
                             </div>
                         </div>
                     </div>
-                </div>-->
+                </div>
  <div class="card-body bloquecarta">
                             <div class="container">
                                 <div id="accordion" role="tablist" aria-multiselectable="false">
@@ -448,7 +448,7 @@
                                 <button class="btn btn-primary" id="borrar">Borrar</button>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
             </div>
         </div>
     </body>
