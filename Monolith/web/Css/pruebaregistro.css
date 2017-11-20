@@ -47,6 +47,14 @@ h1{
     border-radius:7px;
 }
 
+.Noencontrado{
+    width:95%;
+    max-width:900px;
+    margin:auto;
+    margin-top:80px;
+    background-color:#fff;
+    border-radius:7px;
+}
 .form-titulo{
    background:deepskyblue;
    color:#fff;
