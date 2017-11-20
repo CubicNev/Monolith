@@ -1,33 +1,26 @@
 <%-- 
-    Document   : Finanzas
-    Created on : 18/10/2017, 10:53:56 PM
-    Author     : Alex
+    Document   : Configuracion
+    Created on : 20-nov-2017, 11:46:57
+    Author     : Ricardo
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Rutas
-        </title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="Css/bootstrap.min.css">
-        <link href="Css/test1.css" rel="stylesheet" type="text/css">
-        <link href="Css/bootstraplogin.css" rel="stylesheet" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
-        <link rel="stylesheet" href="Css/Menu.css">
-        <link rel="stylesheet" href="Css/Rutas.css">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="Css/actividadstyle.css" rel="stylesheet" type="text/css">
         <link href="Css/bootstrap.css" rel="stylesheet" type="text/css">
         <link href="Css/test1.css" rel="stylesheet" type="text/css">
         <link href="Css/bootstraplogin.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
         <link rel="stylesheet" href="Css/Menu.css">
+        <script src="js/popper.min.js"></script>
         <script src="js/jquery-3.2.1.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
-         <script src="js/popper.min.js"></script>
-        <script type="text/javascript">
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/FormularioRegistro.js"></script>
+         <script type="text/javascript">
             // funcion para aumentar la fuente
             function agrandar() {
                 var tamaño = document.getElementById("uno");
@@ -121,15 +114,10 @@
 
 
         </script>
-        <!--<style>
-            .parte1{
-                background: red;
-            }
-        </style>-->
+        <title>Configuracion</title>
     </head>
     <body>
-        
-        <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #00838F;">
+       <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #00838F;">
             <a class="navbar-brand text-white" href="#">
                 <img src="img/Logo.svg" width="30" height="30" class="d-inline-block align-top" alt="Logo">
                 Monolith
@@ -158,11 +146,11 @@
 
             </div>
         </nav>
-
-
-
-        <header>
-          <div class="col-12">
+        <div class="container-fluid" style="padding-left:13px;padding-right:13px;">
+        
+            <!--Barra Navegacion-->
+            <header>
+                <div class="col-12">
                     <div class="contenedor" id="uno" onclick="location.href='InicioSesion.jsp'" ondblclick="minimizar();">
                         <img class="icon" src="img/home.png" alt="HomeLogo">
                     </div>
@@ -182,82 +170,10 @@
                     <div class="contenedor" id="cinco" onclick="location.href='Finanzas.jsp'" ondblclick="minimizar();">
                         <img class="icon" src="img/finanza.png" alt="FinanzasLogo">
                     </div>
-                    <div class="contenedor" id="seis" onclick="location.href='Rutas.jsp'" ondblclick="minimizar();">
+                    <div class="contenedor" id="seis" onclick="agrandar6();" ondblclick="minimizar();">
                         <img class="icon" src="img/ruta.png" alt="RutaLogo">
                     </div>
                 </div>
-        </header>
-
-        <div class="encubador">
-            <div class="prime">
-
-            </div>
-            <div class="segu">
-
-            </div>
-            <div class="terce">
-                <div class="row justify-content-center">
-                    <div class="col-11 titulo ">
-                        <img class="image1" src="img/ImagenRutaMapa.png" alt="LogoMapa"/>
-                        Mapa
-                        <img class="image2" src="img/ImagenRutaMapa.png" alt="LogoMapa"/>
-                    </div>
-
-                </div>
-                <div class="row">
-                    <div class="div1">
-                            <input type="text" id="partida" name="partida" class="cuadros" placeholder=" Partida">
-                            <input type="text" id="salida" name="salida" class="cuadros" placeholder=" Salida">
-                        </div>
-                        <div class="div2">
-                            <img class="image3" src="img/ImagenEstrella.jpg" alt="LogoMapa"/>
-                            <img class="image3" src="img/ImagenBuscar.png" alt="LogoMapa"/>
-                        </div>
-                    <!--<div class="col-11 align-self-center">
-                        
-                    </div>-->
-                </div>
-                <iframe class="mapa" src="https://www.google.com/maps/embed?pb=!1m10!1m8!1m3!1d15035.755755219057!2d-99.0073675!3d19.5871165!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2smx!4v1509768142725" width="600" height="450" frameborder="0" style="border:0" allowfullscreen>
-
-                </iframe>
-
-            </div>
-            <div class="cuar">
-                <div class="row justify-content-center">
-                    <div class="col-11 titulo ">
-                        <img class="image1" src="img/ImagenUbicacion.png" alt="LogoMapa"/>
-                        Lista de rutas
-                        <img class="image2" src="img/ImagenUbicacion.png" alt="LogoMapa"/>
-                    </div>
-
-                </div>
-                <br/>
-                <div class="row justify-content-center">
-                    <input type="text" class="rutas" name="rutas" placeholder=" Ruta 1"/>
-                    <img src="img/ImagenRutaEliminar.png" alt="Borrar" class="img-borra"/>
-                    <input type="text" class="rutas" name="rutas" placeholder=" Ruta 2"/>
-                    <img src="img/ImagenRutaEliminar.png" alt="Borrar" class="img-borra"/>
-                    <input type="text" class="rutas" name="rutas" placeholder=" Ruta 3"/>
-                    <img src="img/ImagenRutaEliminar.png" alt="Borrar" class="img-borra"/>
-                    <input type="text" class="rutas" name="rutas" placeholder=" Ruta 4"/>
-                    <img src="img/ImagenRutaEliminar.png" alt="Borrar" class="img-borra"/>
-                    <input type="text" class="rutas" name="rutas" placeholder=" Ruta 5"/>
-                    <img src="img/ImagenRutaEliminar.png" alt="Borrar" class="img-borra"/>
-                    <!--<div class="col-11 subtitulo">
-                        <h2>Gastos en las ultimas 2 semanas</h2>
-                    </div>-->
-                </div>
-                <br>
-                <div class="row justify-content-center">
-                    <div class="col-12 align-self-center">
-                        <center><img src="img/grafica.png" alt=""></center>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <script src="js/jquery-3.2.1.min.js"></script>
-        <script src="js/popper.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+            </header>
     </body>
 </html>
-
