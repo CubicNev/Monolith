@@ -8,6 +8,14 @@
         <url-pattern>/Ingreso</url-pattern>
     </servlet-mapping>
     <servlet>
+        <servlet-name>CambiosUsuarios</servlet-name>
+        <servlet-class>FunciónMonolith.CambiosUsuarios</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CambiosUsuarios</servlet-name>
+        <url-pattern>/CambiosUsuarios</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>Entrada</servlet-name>
         <servlet-class>FunciónMonolith.Entrada</servlet-class>
     </servlet>

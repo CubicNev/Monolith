@@ -143,7 +143,7 @@
     //////////////////////////////////////////////////////////////
 %>
                        
-                        <a class="dropdown-item" href="#">Configuracion</a>
+                        <a class="dropdown-item" href="Configuracion.jsp">Configuracion</a>
                         <a class="dropdown-item" href="CerrarSesion.jsp">Cerrar Sesion</a>
                     </div>
                 </div>

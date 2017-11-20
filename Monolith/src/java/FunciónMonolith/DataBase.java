@@ -36,6 +36,21 @@ public class DataBase {
         c.close();
     }
     
+    public void CambiarUsuario(Usuario user, String usuariopeticion)throws SQLException{
+        String sql = "update Usuario set NombreUsuario=?,Institucion=?,NivelEstudio=?,Direccion=?,Correo=?,Edad=?,Pais=?,Contrasena=? where Nombreusuario='"+usuariopeticion+"';";
+          ps = c.prepareStatement(sql);
+        ps.setString(1, user.getNombre());
+        ps.setString(2, user.getInstitucion());
+        ps.setString(3, user.getNivelEstudios());
+        ps.setString(4, user.getDireccion());
+        ps.setString(5, user.getCorreo());
+        ps.setInt(6, user.getEdad());
+        ps.setString(7, user.getPais());
+        ps.setString(8, user.getPassword());
+        ps.execute();
+        c.close(); 
+    }
+    
     public void IngresarActividad(Actividad act) throws SQLException {
         String sql = "insert into actividad(Titulo,FormaDeEntregar,Descripcion,IDUsuario,FechaLimite,Estado) values (?,?,?,?,?,?);";
         ps = c.prepareStatement(sql);
