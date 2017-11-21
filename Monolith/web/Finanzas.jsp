@@ -172,7 +172,7 @@
                                 out.println("<script>location.replace('Error404.jsp');</script>");
                             } else {
                                 String usuario = sesion.getAttribute("usuario").toString();
-                                out.println("<a class=\"dropdown-item\" href=\"#\">" + usuario + "</a>");
+                                out.println("<a class=\"dropdown-item\" " + usuario + "</a>");
                             }
                             //HttpSession sesion = request.getSession();
                             
@@ -181,7 +181,7 @@
                             //////////////////////////////////////////////////////////////
                         %>
 
-                        <a class="dropdown-item" href="#">Configuracion</a>
+                        <a class="dropdown-item" href="Configuracion.jsp">Configuracion</a>
                         <a class="dropdown-item" href="CerrarSesion.jsp">Cerrar Sesion</a>
                     </div>
                 </div>
@@ -212,7 +212,7 @@
                 <div class="contenedor" id="cinco" onclick="location.href = 'Finanzas.jsp'" ondblclick="minimizar();">
                     <img class="icon" src="img/finanza.png" alt="FinanzasLogo">
                 </div>
-                <div class="contenedor" id="seis" onclick="location.href = 'Rutas.html'" ondblclick="minimizar();">
+                <div class="contenedor" id="seis" onclick="location.href = 'Rutas.jsp'" ondblclick="minimizar();">
                     <img class="icon" src="img/ruta.png" alt="RutaLogo">
                 </div>
             </div>

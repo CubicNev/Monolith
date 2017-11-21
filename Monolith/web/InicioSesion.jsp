@@ -144,8 +144,8 @@
                     out.println(" <div class='navbar-nav ml-auto'>");
                     out.println("<a class='nav-link dropdown-toggle text-white' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Usuario</a>");
                     out.println("<div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdownMenuLink'>");
-                     out.println("<a class=\"dropdown-item\" href=\"#\">"+Usuario+"</a>");
-                     out.println(" <a class='dropdown-item' href='#'>Configuracion</a>");
+                     out.println("<a class=\"dropdown-item\" >"+Usuario+"</a>");
+                     out.println(" <a class='dropdown-item' href='Configuracion.jsp'>Configuracion</a>");
                     out.println("<a class='dropdown-item' href='CerrarSesion.jsp'>Cerrar Sesion</a>");
                     out.println("</div>"+
                             "</div>" +
@@ -174,7 +174,7 @@
                     out.println("<img class='icon' src='img/finanza.png' alt='FinanzasLogo'>");
                     out.println("</div>");
 
-                    out.println(" <div class='contenedor' id='seis' onclick='agrandar6();'>");
+                    out.println(" <div class='contenedor' id='seis' onclick=\"location.href='Rutas.jsp';\">");
                     out.println("<img class='icon' src='img/ruta.png' alt='RutaLogo'>");
                     out.println("</div>");
 
@@ -304,8 +304,8 @@
                     out.println(" <div class='navbar-nav ml-auto'>");
                     out.println("<a class='nav-link dropdown-toggle text-white' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Usuario</a>");
                     out.println("<div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdownMenuLink'>");
-                     out.println("<a class=\"dropdown-item\" href=\"#\">"+User+"</a>");
-                     out.println(" <a class='dropdown-item' href='#'>Configuracion</a>");
+                     out.println("<a class=\"dropdown-item\" >"+User+"</a>");
+                     out.println(" <a class='dropdown-item' href='Configuracion.jsp'>Configuracion</a>");
                     out.println("<a class='dropdown-item' href='CerrarSesion.jsp'>Cerrar Sesion</a>");
                     out.println("</div>"+
                             "</div>" +
@@ -334,7 +334,7 @@
                     out.println("<img class='icon' src='img/finanza.png' alt='FinanzasLogo'>");
                     out.println("</div>");
 
-                    out.println(" <div class='contenedor' id='seis' onclick='agrandar6();'>");
+                    out.println(" <div class='contenedor' id='seis' onclick=\"location.href='Rutas.jsp';\">");
                     out.println("<img class='icon' src='img/ruta.png' alt='RutaLogo'>");
                     out.println("</div>");
 

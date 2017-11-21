@@ -139,7 +139,7 @@
                          <%
     HttpSession sesion = request.getSession();
     String Usuario=sesion.getAttribute("usuario").toString();
-    out.println("<a class=\"dropdown-item\" href=\"#\">"+Usuario+"</a>");
+    out.println("<a class=\"dropdown-item\" >"+Usuario+"</a>");
     //////////////////////////////////////////////////////////////
 %>
                        

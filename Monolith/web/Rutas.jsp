@@ -147,11 +147,11 @@
                          <%
     HttpSession sesion = request.getSession();
     String Usuario=sesion.getAttribute("usuario").toString();
-    out.println("<a class=\"dropdown-item\" href=\"#\">"+Usuario+"</a>");
+    out.println("<a class=\"dropdown-item\""+Usuario+"</a>");
     //////////////////////////////////////////////////////////////
 %>
                        
-                        <a class="dropdown-item" href="#">Configuracion</a>
+                        <a class="dropdown-item" href="Configuracion.jsp">Configuracion</a>
                         <a class="dropdown-item" href="CerrarSesion.jsp">Cerrar Sesion</a>
                     </div>
                 </div>
