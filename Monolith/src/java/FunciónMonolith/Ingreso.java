@@ -7,9 +7,10 @@ import javax.servlet.*;
 import javax.servlet.annotation.*;
 import javax.servlet.http.*;
 
+
+
 @WebServlet(name = "Ingreso", urlPatterns = {"/Ingreso"})
 public class Ingreso extends HttpServlet {
-
     private String Nombre;
     private String Correo;
     private String Password;
@@ -18,7 +19,8 @@ public class Ingreso extends HttpServlet {
     private String Direccion;
     private String Institucion;
     private String NivelEstudios;
-
+    
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -27,7 +29,7 @@ public class Ingreso extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Ingreso</title>");
+            out.println("<title>Servlet Ingreso</title>");            
             out.println("</head>");
             out.println("<body>");
             out.println("<h1>Servlet Ingreso at " + request.getContextPath() + "</h1>");
@@ -36,12 +38,14 @@ public class Ingreso extends HttpServlet {
         }
     }
 
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -51,15 +55,15 @@ public class Ingreso extends HttpServlet {
         try {
             db = new DataBase();
         } catch (ClassNotFoundException ex) {
-
+           
         } catch (InstantiationException ex) {
             out.print(ex.toString());
         } catch (IllegalAccessException ex) {
-            out.print(ex.toString());
+                        out.print(ex.toString());
         } catch (SQLException ex) {
-            out.print(ex.toString());
+                      out.print(ex.toString());
         }
-
+        
         Nombre = request.getParameter("nombre");
         Institucion = request.getParameter("direccion");
         NivelEstudios = request.getParameter("estudios");
@@ -68,34 +72,29 @@ public class Ingreso extends HttpServlet {
         Direccion = request.getParameter("direccion");
         Correo = request.getParameter("correo");
         Password = request.getParameter("contra");
+        
+        u.setNombre(Nombre);
+        u.setInstitucion(Institucion);
+        u.setNivelEstudios(NivelEstudios);
+        u.setEdad(Edad);
+        u.setPais(Pais);
+        u.setDireccion(Direccion);
+        u.setCorreo(Correo);
+        u.setPassword(Password);
+        HttpSession sesion = request.getSession();
+        sesion.setAttribute("usuario", Nombre);
+        sesion.setAttribute("password", Password);
+        response.sendRedirect("InicioSesion.jsp");
+        
         try {
-             ServerCliente server=new ServerCliente();
-            u.setNombre(Nombre);
-            u.setInstitucion(Institucion);
-            u.setNivelEstudios(NivelEstudios);
-            u.setEdad(Edad);
-            u.setPais(Pais);
-            u.setDireccion(Direccion);
-            u.setCorreo(Correo);
-            u.setPassword(Password);
-           server.EnviarServidor(Nombre, Password);
+            db.IngresarUsuario(u);
             
-            
-            try {
-                db.IngresarUsuario(u);
-                HttpSession sesion = request.getSession();
-                sesion.setAttribute("usuario", Nombre);
-                sesion.setAttribute("password", Password);
-                response.sendRedirect("InicioSesion.jsp");
-
-            } catch (SQLException ex) {
-               response.sendRedirect("Error404.jsp");
-            }
-        } catch (Exception ex) {
-            response.sendRedirect("Error404.jsp");
+        } catch (SQLException ex) {
+                        out.print(ex.toString());
         }
     }
 
+    
     @Override
     public String getServletInfo() {
         return "Short description";
