@@ -24,6 +24,7 @@ public class ServerCliente {
         Socket skCliente=new Socket(HOST,PUERTO);
         alServidor=new PrintWriter(skCliente.getOutputStream(),true);
         delServidor=new DataInputStream(skCliente.getInputStream());
+        alServidor.println(1);
         alServidor.println(NombreUsuario);
         alServidor.println(Password);
         
