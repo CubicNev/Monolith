@@ -1,0 +1,128 @@
+/*CSS Titulo de la Lista Actividades
+*/
+.titulolista{
+    text-align:center;
+    border-width:thick;
+    color:#000;
+}
+
+/* Fin CSS Titulo de la Lista Actividades
+*/
+
+/* Css para carta de Actividades
+*/
+.cartasdiv{
+    padding:15px;
+    background-color:#DDD9D9;
+}
+
+.carta{
+    width: 20rem;
+    border-width:120px;
+    border-color:#000;
+    background-color:#000;
+    
+}
+
+.btn-carta {
+    font-size: 20px;
+    font-family: sans-serif;
+    font-weight:400;
+}
+
+.titulocarta{
+    border-width:12px;
+    border-color:#000;
+    color:#fff;
+    background-color:#1FD7E4;
+    font-weight:400;
+}
+
+
+.carta h3{
+   text-align:center;
+   font-family:sans-serif;
+   font-weight:400;
+   padding-top:15px;
+   color:#fff;
+   height:70px;
+}
+
+.bloquecarta{
+    text-align: center; 
+   background-color:#fff;
+    color:#000;
+    padding:18px;
+}
+
+/*CSS Botones de Cartas ctividades*/
+.bloquecarta button{
+    border-width:0px;
+}
+
+#editar{
+    background-color:#F5B625;
+}
+
+#editar:hover{
+    background-color:#D07F05;
+    
+}
+
+#checar{
+    background-color:#82D911;
+}
+#checar:hover{
+    background-color:#0588DF;
+}
+
+#borrar{
+    background-color:#E34627;
+}
+
+#borrar:hover{
+    background-color:#DF1F05;
+}
+
+#agregar{
+    background-color:#AF5AE8;
+}
+
+/*Fin CSS Botones de Cartas ctividades*/
+
+/*  Fin Css para carta de Actividades
+*/
+
+/*   Css para carta de Modal de Actividades
+*/
+.targetactividad{
+    padding-bottom:10px;
+    padding-top:10px;
+    width:100%;
+    
+}
+
+.actividadform{
+   margin-left:0px;
+   margin-right:0px;
+}
+
+.actividadformcont{
+    width:100%;
+}
+
+
+.descripcionproyecto{
+    margin:15px;
+}
+.descripcionproyecto label{
+    padding-right:15px;
+}
+
+.error {
+  color: red;
+}
+
+/* Fin  Css para carta de Modal de Actividades
+*/
+

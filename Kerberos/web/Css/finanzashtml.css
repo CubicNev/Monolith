@@ -1,0 +1,63 @@
+body {
+    font-family: sans-serif;
+}
+
+.categorias{
+   margin-top:150px;
+   margin-bottom:30px;
+}
+
+.barrafinanza{
+    background-color:#006064;
+}
+.titubarrafinianza{
+    margin-top:10%;
+}
+
+.formcategorias button{
+  align-items:center;
+  margin-right:30%;
+  text-align:center;
+  width:100%;
+}
+
+.listafinanza{
+    height:600px;
+    padding-left:10%;
+    padding-right:10%;
+    overflow-y: scroll;
+}
+
+.formnuvcategoria{
+    width:auto;
+}
+
+.formnuvcategoria label{
+    padding-left:15px;
+    padding-right:15px;
+}
+
+.formnuvcategoria button{
+    margin-left:15px;
+    margin-right:15px;
+}
+
+.formnuvcategoria inpput{
+    margin-left:15px;
+    margin-right:15px;
+}
+
+.cartafinanza{
+    margin-top:15px;
+    margin-bottom: 15px;
+}
+
+.cartafinanza form{
+   margin-left:0px;
+   margin-right:0px;
+}
+
+.barragrafica{
+    background-color:#0AAB9F;
+    
+}
