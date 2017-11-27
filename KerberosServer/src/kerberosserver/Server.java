@@ -33,26 +33,30 @@ public class Server {
                 socket = server.accept();
                 entrada = new BufferedReader(new InputStreamReader(socket.getInputStream()));
                 salida = new DataOutputStream(socket.getOutputStream());
-                String NombreUsuario = entrada.readLine();
-                String Contra = entrada.readLine();
-                String Ticket = "";
-                Hash boletin = new Hash();
-                Ticket = boletin.Boleto(NombreUsuario, Contra);
-                try {
-                    Class.forName(driver).newInstance();
-                    c = DriverManager.getConnection(ruta, usuario, clave);
-                    st = c.createStatement();
-                    String sql = "insert into UsuarioTicket(NombreUsuario,Ticket) values (?,?);";
-                    ps = c.prepareStatement(sql);
-                    ps.setString(1, NombreUsuario);
-                    ps.setString(2, Ticket);
-                    ps.execute();
-                    c.close();
+                String opccion = entrada.readLine();
+                if (opccion.equalsIgnoreCase("")) {
+                    String NombreUsuario = entrada.readLine();
+                    String Contra = entrada.readLine();
+                    String Ticket = "";
+                    Hash boletin = new Hash();
+                    Ticket = boletin.Boleto(NombreUsuario, Contra);
+                    try {
+                        Class.forName(driver).newInstance();
+                        c = DriverManager.getConnection(ruta, usuario, clave);
+                        st = c.createStatement();
+                        String sql = "insert into UsuarioTicket(NombreUsuario,Ticket) values (?,?);";
+                        ps = c.prepareStatement(sql);
+                        ps.setString(1, NombreUsuario);
+                        ps.setString(2, Ticket);
+                        ps.execute();
+                        c.close();
 
-                } catch (SQLException ex) {
-                    System.out.println(ex.toString());
+                    } catch (SQLException ex) {
+                        System.out.println(ex.toString());
+                    }
+                }else if(opccion.equalsIgnoreCase("2")){
+                    
                 }
-               
 
             }
         } catch (Exception ex) {
