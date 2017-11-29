@@ -12,14 +12,28 @@ import java.net.Socket;
 
 
 public class ServerCliente {
-     static final String HOST="192.168.0.4";
+     static final String HOST="192.168.21.13";
      static final int PUERTO=5000;
      PrintWriter alServidor;
      BufferedReader delTeclado;
      DataInputStream delServidor;
      
     
-    public void EnviarServidor(String NombreUsuario,String Password ){
+    public void EnviarServidor(String NombreUsuario,String NombreCifrado ){
+        try{
+        Socket skCliente=new Socket(HOST,PUERTO);
+        alServidor=new PrintWriter(skCliente.getOutputStream(),true);
+        delServidor=new DataInputStream(skCliente.getInputStream());
+        alServidor.println(2);
+        alServidor.println(NombreUsuario);
+        alServidor.println(NombreCifrado);
+        
+        }catch(Exception ex){
+            
+        }
+    }
+    
+    public void EnviarPeticion(String NombreUsuario,String Password ){
         try{
         Socket skCliente=new Socket(HOST,PUERTO);
         alServidor=new PrintWriter(skCliente.getOutputStream(),true);

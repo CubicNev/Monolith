@@ -88,6 +88,7 @@ public class Ingreso extends HttpServlet {
 
             try {
                 db.IngresarUsuario(u);
+                response.sendRedirect("InicioSesion.jsp");
 
             } catch (SQLException ex) {
                 out.print(ex.toString());
