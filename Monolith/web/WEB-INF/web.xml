@@ -71,4 +71,12 @@
         <servlet-name>userLogin</servlet-name>
         <url-pattern>/userLogin</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>EnvioKerberos</servlet-name>
+        <servlet-class>FunciónMonolith.EnvioKerberos</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EnvioKerberos</servlet-name>
+        <url-pattern>/EnvioKerberos</url-pattern>
+    </servlet-mapping>
 </web-app>

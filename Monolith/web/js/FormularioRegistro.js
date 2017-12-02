@@ -36,7 +36,8 @@ function inicio() {
                 email: true
             },
             contra: {
-                required: true
+                required: true,
+                maxlength:8
             }
         },
         messages: {
@@ -64,7 +65,8 @@ function inicio() {
                 email: "De un correo valido"
             },
             contra: {
-                required: "Llene el campo"
+                required: "Llene el campo",
+                maxlength:"Contraseña de 8 caracteres"
             }
         }
     });

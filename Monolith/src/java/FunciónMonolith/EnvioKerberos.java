@@ -4,7 +4,9 @@
  * and open the template in the editor.
  */
 package FunciónMonolith;
+
 import java.io.*;
+import java.net.InetAddress;
 import java.sql.*;
 import java.util.*;
 import javax.servlet.*;
@@ -12,12 +14,11 @@ import javax.servlet.annotation.*;
 import javax.servlet.http.*;
 
 @WebServlet(name = "EnvioKerberos", urlPatterns = {"/EnvioKerberos"})
-public class EnvioKerberos  extends HttpServlet{
-    
-     private String Nombre;
-     private String Password;
-    
-    
+public class EnvioKerberos extends HttpServlet {
+
+    private String Nombre;
+    private String Password;
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
@@ -48,36 +49,22 @@ public class EnvioKerberos  extends HttpServlet{
         Usuario u = new Usuario();
         DataBase db = null;
         try {
-            db = new DataBase();
-        } catch (ClassNotFoundException ex) {
-
-        } catch (InstantiationException ex) {
-            out.print(ex.toString());
-        } catch (IllegalAccessException ex) {
-            out.print(ex.toString());
-        } catch (SQLException ex) {
-            out.print(ex.toString());
-        }
-
-        Nombre = request.getParameter("nombre");
-        Password = request.getParameter("contra");
-
-        ServerCliente envio = new ServerCliente();
-        try {
-            envio.EnviarServidor(Nombre, Password);
-
-         
-
+            Nombre = request.getParameter("usuario");
+            Password = request.getParameter("contrasenia");
+            ServerCliente envio = new ServerCliente();
             try {
-                db.IngresarUsuario(u);
-                response.sendRedirect("InicioSesion.jsp");
-
-            } catch (SQLException ex) {
+                Hash tabla = new Hash();
+                String nombrecifrado = tabla.CifradoUsuario(Nombre, Password);
+                 InetAddress address = InetAddress.getLocalHost();
+                envio.EnviarPeticionUsuario(Nombre, nombrecifrado,address.getHostAddress(),Password);
+                
+                
+            } catch (Exception ex) {
                 out.print(ex.toString());
             }
 
         } catch (Exception ex) {
-            out.print(ex.toString());
+
         }
 
     }

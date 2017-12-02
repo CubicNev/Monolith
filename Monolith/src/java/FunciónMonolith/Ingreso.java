@@ -1,6 +1,7 @@
 package FunciónMonolith;
 
 import java.io.*;
+import java.net.*;
 import java.sql.*;
 import java.util.*;
 import javax.servlet.*;
@@ -49,29 +50,20 @@ public class Ingreso extends HttpServlet {
         Usuario u = new Usuario();
         DataBase db = null;
         try {
-            db = new DataBase();
-        } catch (ClassNotFoundException ex) {
 
-        } catch (InstantiationException ex) {
-            out.print(ex.toString());
-        } catch (IllegalAccessException ex) {
-            out.print(ex.toString());
-        } catch (SQLException ex) {
-            out.print(ex.toString());
-        }
+            Nombre = request.getParameter("nombre");
+            Institucion = request.getParameter("direccion");
+            NivelEstudios = request.getParameter("estudios");
+            Edad = Integer.parseInt(request.getParameter("edad"));
+            Pais = request.getParameter("pais");
+            Direccion = request.getParameter("direccion");
+            Correo = request.getParameter("correo");
+            Password = request.getParameter("contra");
+            ServerCliente envio = new ServerCliente();
+            InetAddress address = InetAddress.getLocalHost();
+             try {
 
-        Nombre = request.getParameter("nombre");
-        Institucion = request.getParameter("direccion");
-        NivelEstudios = request.getParameter("estudios");
-        Edad = Integer.parseInt(request.getParameter("edad"));
-        Pais = request.getParameter("pais");
-        Direccion = request.getParameter("direccion");
-        Correo = request.getParameter("correo");
-        Password = request.getParameter("contra");
-
-        ServerCliente envio = new ServerCliente();
-        try {
-            envio.EnviarServidor(Nombre, Password);
+            envio.EnviarRegistroUsuario(Nombre, Password, address.getHostAddress());
 
             u.setNombre(Nombre);
             u.setInstitucion(Institucion);
@@ -81,23 +73,30 @@ public class Ingreso extends HttpServlet {
             u.setDireccion(Direccion);
             u.setCorreo(Correo);
             u.setPassword(Password);
-            HttpSession sesion = request.getSession();
-            sesion.setAttribute("usuario", Nombre);
-            sesion.setAttribute("password", Password);
-         
-
+            db = new DataBase();
             try {
                 db.IngresarUsuario(u);
+                HttpSession sesion = request.getSession();
+                sesion.setAttribute("usuario", Nombre);
+                sesion.setAttribute("password", Password);
                 response.sendRedirect("InicioSesion.jsp");
+                
 
             } catch (SQLException ex) {
                 out.print(ex.toString());
+            
             }
-
         } catch (Exception ex) {
             out.print(ex.toString());
         }
 
+            
+        } catch (Exception ex) {
+            out.println(ex.toString());
+        }
+
+        
+        
     }
 
     @Override
