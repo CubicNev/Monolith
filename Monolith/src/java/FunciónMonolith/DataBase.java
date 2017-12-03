@@ -36,21 +36,6 @@ public class DataBase {
         c.close();
     }
     
-    public void CambiarUsuario(Usuario user, String usuariopeticion)throws SQLException{
-        String sql = "update Usuario set NombreUsuario=?,Institucion=?,NivelEstudio=?,Direccion=?,Correo=?,Edad=?,Pais=?,Contrasena=? where Nombreusuario='"+usuariopeticion+"';";
-          ps = c.prepareStatement(sql);
-        ps.setString(1, user.getNombre());
-        ps.setString(2, user.getInstitucion());
-        ps.setString(3, user.getNivelEstudios());
-        ps.setString(4, user.getDireccion());
-        ps.setString(5, user.getCorreo());
-        ps.setInt(6, user.getEdad());
-        ps.setString(7, user.getPais());
-        ps.setString(8, user.getPassword());
-        ps.execute();
-        c.close(); 
-    }
-    
     public void IngresarActividad(Actividad act) throws SQLException {
         String sql = "insert into actividad(Titulo,FormaDeEntregar,Descripcion,IDUsuario,FechaLimite,Estado) values (?,?,?,?,?,?);";
         ps = c.prepareStatement(sql);
@@ -66,12 +51,11 @@ public class DataBase {
     
       public void CambiarActividad(Actividad act,String id) throws SQLException {
          int identic=Integer.parseInt(id);
-        String sql = "update actividad set Titulo=?,FormaDeEntregar=?,FechaLimite=? ,Descripcion = ? where IDActividad="+identic+";";
+        String sql = "update actividad set Titulo=?,FormaDeEntregar=?,Descripcion = ? where IDActividad="+identic+";";
         ps = c.prepareStatement(sql);
         ps.setString(1, act.getTitulo());
         ps.setString(2, act.getFormadeEntregar());
-        ps.setDate(3, act.getFechaLimite());
-        ps.setString(4, act.getDescripcion());
+        ps.setString(3, act.getDescripcion());
         ps.execute();
         c.close();
     }
@@ -79,39 +63,6 @@ public class DataBase {
       public void EliminarActividad(String id) throws SQLException {
          int identic=Integer.parseInt(id);
         String sql = "delete from actividad where IDActividad="+identic+";";
-        ps = c.prepareStatement(sql);
-        ps.execute();
-        c.close();
-    }
-      
-     public void IngresarExamen(Examen exa) throws SQLException {
-        String sql = "insert into examen(Titulo,FormaDeEntregar,Descripcion,IDUsuario,FechaLimite,Estado) values (?,?,?,?,?,?);";
-        ps = c.prepareStatement(sql);
-        ps.setString(1, exa.getTitulo());
-        ps.setString(2, exa.getFormadeEntregar());
-        ps.setString(3, exa.getDescripcion());
-        ps.setInt(4,ConsultarUsuario(exa.getUsuario()));
-        ps.setDate(5,exa.getFechaLimite());
-        ps.setString(6,"No finalizada" );
-        ps.execute();
-        c.close();
-    }
-     
-      public void CambiarExamen(Examen ex,String id) throws SQLException {
-         int identic=Integer.parseInt(id);
-        String sql = "update examen set Titulo=?,FormaDeEntregar=?,FechaLimite=? ,Descripcion = ? where IDExamen="+identic+";";
-        ps = c.prepareStatement(sql);
-        ps.setString(1, ex.getTitulo());
-        ps.setString(2, ex.getFormadeEntregar());
-        ps.setDate(3, ex.getFechaLimite());
-        ps.setString(4, ex.getDescripcion());
-        ps.execute();
-        c.close();
-    }
-      
-     public void EliminarExamen(String id) throws SQLException {
-         int identic=Integer.parseInt(id);
-        String sql = "delete from examen where IDExamen="+identic+";";
         ps = c.prepareStatement(sql);
         ps.execute();
         c.close();
@@ -128,7 +79,7 @@ public class DataBase {
     
     public int ConsultarColaborador(String usr) throws SQLException{
          int num=0;
-        rs=st.executeQuery("select * from colaboradores inner join usuario on usuario.IDUsuario=colaboradores.IDUsuario where usuario.NombreUsuario='"+usr+"'");
+        rs=st.executeQuery("select * from colaboradoes inner join usuario on usuario.IDUsuario=colaboradoes.IDUsuario where usuario.NombreUsuario='"+usr+"'");
          if(rs.next()){
               num=rs.getInt("IDUsuario");
          }

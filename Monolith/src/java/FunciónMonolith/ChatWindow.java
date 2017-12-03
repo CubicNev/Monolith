@@ -22,8 +22,7 @@ public class ChatWindow extends HttpServlet {
             throws ServletException, IOException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-         try{
-             response.setHeader("Refresh", "15");
+         try{   
             String driver = "com.mysql.jdbc.Driver";
             String ruta = "jdbc:mysql://localhost/monolith";
             String usuario = "root";
@@ -47,18 +46,27 @@ public class ChatWindow extends HttpServlet {
       out.println(" <script src=\"js/jquery-3.2.1.min.js\"></script> ");
       out.println("<script src=\"js/popper.min.js\"></script>");
       out.println("<script src=\"js/bootstrap.min.js\"></script>");
-       out.println("<script src=\"js/Chat.js\"></script>");
       out.println("<title>JSP Page</title>");  
       out.println("</head>");  
     out.println("<body>");
             
          out.println("<div class=\"container\">");
-         
             out.println("<div class=\"row\" >");
                out.println("<div class=\"col-md-12\" >");
-                out.println("<div class=\"panel panel-primary\" id='Scroll'>");
+                out.println("<div class=\"panel panel-primary\">");
                 out.println("<div class=\"panel-body\" style=\"height:420px;\">");
                  out.println("<ul class=\"chat\">");   
+                    if(request.getParameter("Mensaje")!=null){
+                       int numIDCol=db.ConsultarColaborador(usaurio);
+                       String sql1="insert into Mensaje (IDConversacionProyecto,IDColaborador,OrdenConversacion,Contenido)"+
+                               "values(?,?,?,?)";
+                       ps=c.prepareStatement(sql1);
+                       ps.setInt(1, 1);
+                       ps.setInt(2,numIDCol);
+                       ps.setInt(3,1);
+                       ps.setString(4,request.getParameter("Mensaje"));
+                       ps.execute();
+                    } 
                         String sql2="select *from Mensaje";
                         rs=st.executeQuery(sql2);
                         while(rs.next()){
@@ -83,7 +91,7 @@ public class ChatWindow extends HttpServlet {
                         out.println("</div>");
                         out.println("<div class=\"panel-footer\" >");
                         out.println("<div class=\"input-group\">");
-                         out.println("<form name='ChatWindow method='post' action='IngresarMensaje'>");
+                         out.println("<form name='ChatWindow method='post' action='ChatWindow'>");
                         out.println("<input id=\"btn-input\" type=\"text\" name='Mensaje'  placeholder=\"Type your message here...\" />");  
                         out.println("<span class=\"input-group-btn\">");    
                         out.println("<input type='submit' class=\"btn btn-warning btn-sm\" id=\"btn-chat\" value='Send'>");        

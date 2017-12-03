@@ -4,21 +4,24 @@
  * and open the template in the editor.
  */
 package FunciónMonolith;
+
 import java.io.*;
-import java.sql.*;
-import java.util.*;
 import javax.servlet.*;
-import javax.servlet.annotation.*;
 import javax.servlet.http.*;
 
 
- 
-@WebServlet(name = "userLogin", urlPatterns = {"/userLogin"})
+/**
+ *
+ * @author Ricardo
+ */
 public class userLogin extends HttpServlet {
 
+    public String username;
+    public HttpSession sc;
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        username=request.getParameter("user");
         try (PrintWriter out = response.getWriter()) {
             
         }
@@ -51,43 +54,13 @@ public class userLogin extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-         String driver = "com.mysql.jdbc.Driver";
-            String ruta = "jdbc:mysql://localhost/monolith";
-            String usuario = "root";
-            String clave = "n0m3l0";
-            Connection c = null;
-            Statement st = null;
-            PreparedStatement ps = null;
-            ResultSet rs = null;
-            PrintWriter out=response.getWriter();
-            try{
-                Class.forName(driver).newInstance();
-            c = DriverManager.getConnection(ruta, usuario, clave);
-            st = c.createStatement();
-            String user=request.getParameter("u");
-            String contra=request.getParameter("c");
-            rs=st.executeQuery("select *from Usuario where NombreUsuario='"+user+"'");
-            if(rs.next()){
-                rs=st.executeQuery("select *from Usuario where NombreUsuario='"+user+"' and Contrasena='ramv1357';");
-                if(rs.next()){
-                   HttpSession sesion = request.getSession();
-                   sesion.setAttribute("usuario", user);
-                    sesion.setAttribute("password", contra);
-                    response.sendRedirect("InicioSesion.jsp");
-                }else{
-                    out.println("<p>Contraseña mal puesta</p>");
-                }
-            }else{
-                out.println("<p>No existe el usuario</p>");
-            }
-            
-            }catch(Exception ex){
-                out.println(ex.toString());
-            }
-        
     }
 
-    
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
     @Override
     public String getServletInfo() {
         return "Short description";

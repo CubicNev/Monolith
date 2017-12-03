@@ -1,0 +1,156 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 23/10/2017, 12:51:08 PM
+    Author     : Alex
+*/
+
+
+.prime{
+    float: left;
+    width: 50%;
+    height:15%;
+
+}
+.segu{
+    float:left;
+    width: 50%;
+    height:15%;
+
+}
+.terce{
+    float:left;
+    width: 62%;
+    height:85%;
+    /*#7EF2DF este es el color universal*/
+}
+.cuar{
+    float: left;
+    width: 38%;
+    height: 85%;
+
+}
+.titulo{
+    margin-bottom: 2%;
+    background: #56E3FC;
+    font-family: cursive;
+
+    text-align: center;
+    font-size: 2em;
+    color: #ffffff;
+    border: 1px solid #4d5061;
+    border-radius: 0.3em;
+}
+.subtitulo{
+    background: #56A4FC;
+    border: 1px solid #4d5061;
+}
+.cajita{
+    text-align: center;
+    height:75%;
+    border: 5px solid #4d5061;
+
+}
+
+.cuadros{
+    width: 85%;
+    height: 2em;
+    float: left;
+    background-color: #ccccff;
+    border-radius: 0.4em;
+    padding: 0px;
+    margin: 0.5%;
+    margin-left: 7%;
+    font-size: 140%;
+    font-family: monospace;
+    box-sizing: border-box;
+}
+
+/* all */
+::-webkit-input-placeholder { 
+    color:white;
+    font-size: 1.5em;
+    font-family: sans-serif;
+}
+
+::-moz-placeholder { /* firefox 19+ */
+    color:white;
+    font-size: 1.5em;
+    font-family: sans-serif;
+} 
+
+:-ms-input-placeholder { /* ie */
+    color:white; 
+    font-size: 1.5em;
+    font-family: sans-serif;
+} 
+
+input:-moz-placeholder { 
+    color:white; 
+    font-size: 1.5em;
+    font-family: sans-serif;
+}
+
+.mapa{
+    margin-left: 5%;
+    margin-top: 2%;
+    width: 90%;
+    height: 50%;
+    border-radius: 0.6em;
+}
+
+.image1{
+    float: left;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 0.4em;
+}
+
+.image2{
+    float: right;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 0.4em;
+}
+
+.image3{
+    width: 35%;
+    height: 5em;
+    float: left;
+    margin-top: 1.5%;
+    margin-right: 1em;
+    box-sizing: border-box;
+}
+
+.div1{
+    width: 70%;
+    height: 7em;
+}
+
+.div2{
+    width: 30%;
+    height: 7em;
+}
+
+.rutas{
+    width: 70%;
+    height: 2.5em;
+    border-radius: 0.4em;
+    background-color: #6699ff;
+    margin-top: 1.5em;
+    margin-right: 0px;
+    float: left;
+}
+
+.img-borra{
+    width: 8.5%;
+    height: 2.5em;
+    margin-top: 1.5em;
+    margin-left: 0px;
+    border-radius: 0.4em;
+    float: left;
+
+}
