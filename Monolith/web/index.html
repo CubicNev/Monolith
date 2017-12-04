@@ -1,15 +1,31 @@
 <html>
     <head>
-        <title>PruebaLogin</title>                          
+        <title>Login</title>                          
         <meta charset="UTF-8">                                              
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="Css/test1.css" rel="stylesheet" type="text/css">
         <link href="Css/bootstraplogin.css" rel="stylesheet" type="text/css">
         <link href="https://fonts.googleapis.com/css?family=Mukta" rel="stylesheet">
-        
+         <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/popper.min.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/Ingreso.js"></script>
+        <script>
+   /*
+            function ingresar(){
+                var nom=document.getElementById("usuario").value;
+                var con=document.getElementById("contrasenia").value;
+                var xmlhttp=new XMLHttpRequest();
+                 xmlhttp.open('Post',"InicioSesion?u="+nom,true);
+                  xmlhttp.open('Post',"InicioSesion?c="+con,true);
+                 xmlhttp.send();
+                 document.getElementById("MensajeServer").innerHTML = xmlhttp.responseText;
+             }  */
+        </script>
     </head>
     <body class="container-fluid">
-        <div class="barraInicio navbar navbar-default " style="font-family:Mukta">Monolith<img  class="logo" src="img/logo.png"></div>
+        <div class="barraInicio navbar navbar-default "  style="font-family:Mukta">Monolith<img  class="logo" src="img/logo.png"></div>
         <!--Primera parte con la imagen de edificios y danlo la bienvenida al sistema  -->
         <div class="pimg1">
             <div class="ptext">
@@ -37,24 +53,32 @@
         <div class="pimg2">
             <div class="login">
                     <div class="loginBox">
-                        <form method="post" action="InicioSesion.jsp">
+                        <form method="Post" action="InicioSesion.jsp">
                               <img src="img/user.png" class="user">
                              <h2>Ingresa Aqui</h2>
                              <p>Nombre Usuario</p>
-                             <input type="text" name="usuario" placeholder="Nombre de Usuario" required>
+                             <input type="text" id="usuario" name="usuario" placeholder="Nombre de Usuario" required>
                              <p>Contraseña</p>
-                             <input type="password" name="contrasenia" placeholder="Contraseña" required>
-                             <input type="submit" name="ingresar" value="Ingresar">
+                             <input type="password" id="contrasenia" name="contrasenia" placeholder="Contraseña" required>
+                             <div class="row">
+                                 <div class="col-12" id="MensajeServer">
+                                         
+                                 </div>
+                             </div>
+                             <input type="submit" name="ingresar" value="Ingresar" >
                          </form>
-                         <a id="forgotpass" href="https://www.w3schools.com/html/html_links.asp">¿Olvidaste tu contraseña?</a>
-                         <h2 id="nocuenta">¿No tienes cuenta?</h2>
                          <div class="row">
-                             <div class="col-12">
+                             <div class="col-3">
+                                 
+                             </div>
+                             <div class="col-6">
                            <button id="registro" onclick="location.href='registro.html'" name="registro" >Registrarse</button>
+                             </div>
+                             <div class="col-2" >
+                                 
                              </div>
                           </div>
                      </div>
-                
             </div>
         </div>
        <section class="section section-dark">
@@ -75,7 +99,7 @@
             </div>
             <div class="row cola">
                 <div class="col-7"><img  src="img/queen.png"></div>
-                <div class="col-2">Alejandro Enríquez Rivera</div>
+                <div class="col-2">Alejandro Enriquez Rivera</div>
             </div>
         </section>
     </body>

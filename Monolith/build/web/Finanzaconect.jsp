@@ -15,18 +15,25 @@
         <%
             String titulo;
             titulo = request.getParameter("titulo");
-
+            int num=0;
+            int aux=0;
             Connection c = null;
             Statement sta = null;
             ResultSet r = null;
-
+            HttpSession sesion = request.getSession();
+            aux=Integer.parseInt(sesion.getAttribute("idusario").toString());
+            int monto=0;
             try {
                 Class.forName("com.mysql.jdbc.Driver").newInstance();
                 c = DriverManager.getConnection("jdbc:mysql://localhost/monolith", "root", "n0m3l0");
                 sta = c.createStatement();
-                sta.executeUpdate("insert into Finanzas values ('" + titulo + "','" + 0 + "','" + 0 + "','" + 0 + "');");
-                out.print("<script> alert('Te has registrado exitosamente'); </script>");
-                out.print("<script> window.location='index.html'; </script>");
+                r=sta.executeQuery("select IDCuenta from Cuenta where IDusuario='"+aux+"'");
+                while(r.next()){
+                    num=r.getInt("IDCuenta");
+                }
+                sta.executeUpdate("insert into CategoriaCuenta(NombreCategoria,Monto,IDCuenta) values ('"+titulo+"','" + monto + "','" + num + "');");
+                out.print("<script> alert('se ha añadido exitosamente'); </script>");
+                out.print("<script> window.location='Finanzas.jsp'; </script>");
             } catch (SQLException error) {
                 out.print(error.toString());
             }

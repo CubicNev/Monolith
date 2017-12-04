@@ -135,12 +135,12 @@
                          <%
     HttpSession sesion = request.getSession();
     String Usuario=sesion.getAttribute("usuario").toString();
-    out.println("<a class=\"dropdown-item\" href=\"#\">"+Usuario+"</a>");
+    out.println("<a class=\"dropdown-item\" >"+Usuario+"</a>");
     //////////////////////////////////////////////////////////////
 %>
                        
-                        <a class="dropdown-item" href="#">Configuracion</a>
-                        <a class="dropdown-item" href="#">Cerrar Sesion</a>
+                        <a class="dropdown-item" href="Configuracion.jsp">Configuracion</a>
+                        <a class="dropdown-item" href="CerrarSesion.jsp">Cerrar Sesion</a>
                     </div>
                 </div>
 
@@ -149,26 +149,26 @@
         <div class="container-fluid" style="padding-left:13px;padding-right:13px;">
             <header>
                 <div class="col-12">
-                    <div class="contenedor" id="uno" onclick="agrandar();" ondblclick="minimizar();">
+                    <div class="contenedor" id="uno" onclick="location.href='InicioSesion.jsp'" ondblclick="minimizar();">
                         <img class="icon" src="img/home.png" alt="HomeLogo">
                     </div>
 
-                    <div class="contenedor" id="dos" onclick="agrandar2();" ondblclick="minimizar();">
+                    <div class="contenedor" id="dos" onclick="location.href='Examen.jsp'" ondblclick="minimizar();">
                         <img class="icon" src="img/examen.png" alt="ExamenLogo">
                     </div>
 
-                    <div class="contenedor" id="tres" onclick="agrandar3();" ondblclick="minimizar();">
+                    <div class="contenedor" id="tres" onclick="location.href='Proyectos.jsp'" ondblclick="minimizar();">
                         <img class="icon" src="img/proyectos.png" alt="ProyectosLogo">
                     </div>
 
-                    <div class="contenedor" id="cuatro" onclick="agrandar4();" ondblclick="minimizar();">
+                    <div class="contenedor" id="cuatro"  onclick="location.href='Proyectos.jsp'"ondblclick="minimizar();">
                         <img class="icon" src="img/tareas.png" alt="TareasLogo">
                     </div>
 
-                    <div class="contenedor" id="cinco" onclick="agrandar5();" ondblclick="minimizar();">
+                    <div class="contenedor" id="cinco" onclick="location.href='Finanzas.jsp'" ondblclick="minimizar();">
                         <img class="icon" src="img/finanza.png" alt="FinanzasLogo">
                     </div>
-                    <div class="contenedor" id="seis" onclick="agrandar6();" ondblclick="minimizar();">
+                    <div class="contenedor" id="seis" onclick="location.href='Rutas.jsp'" ondblclick="minimizar();">
                         <img class="icon" src="img/ruta.png" alt="RutaLogo">
                     </div>
                 </div>
@@ -182,6 +182,7 @@
 
             <div class="col-12 cartasdiv " style="margin-bottom:13px;">
                 <div class="card-columns ">
+                   
                     <div class="card carta" >
                         <h3 class="cart-title titulocarta">Nuevo Proyecto</h3>
                         <div class="card-block bloquecarta">
@@ -196,7 +197,7 @@
                         <div class="modal-dialog modal-lg">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h5 class="modal-title" align="center" style="text-align:center" id="exampleModalLabel">Nueva Actividad</h5>
+                                    <h5 class="modal-title" align="center" style="text-align:center" id="exampleModalLabel">Nuevo Proyecto</h5>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
@@ -205,7 +206,7 @@
                                     <form  class="actividadform" style="width:100%;"  >
                                         <div class="row targetactividad"  style="width:100%;">
                                             <div class="col-6 col-sm-auto" style="width:100%;">
-                                                <label  class="col-form-label">Nombre actividad</label>
+                                                <label  class="col-form-label">Nombre Proyecto</label>
                                             </div>
                                             <div class="col-6  col-sm-auto" style="width:100%;">
                                                 <input type="text" class="form-control" id="recipient-name" placeholder="Nombre Actividad">
@@ -220,26 +221,9 @@
                                             </div>
                                         </div> 
                                         <div class="row targetactividad" style="width:100%;" >
-                                            <div class="col-3 targetactividadfecha">
-                                                <label  class="col-form-label">Fecha de Entrega</label>
-                                            </div>
-                                            <div class="col-3">
-                                                <select id="inputState" class="form-control">
-                                                    <option selected>Dia</option>
-                                                    <option>...</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-3">
-                                                <select id="inputState" class="form-control">
-                                                    <option selected>Mes</option>
-                                                    <option>...</option>
-                                                </select>
-                                            </div>
-                                            <div class="col-3">
-                                                <select id="inputState" class="form-control">
-                                                    <option selected>Año</option>
-                                                    <option>...</option>
-                                                </select>
+                                            <div class="col-12 targetactividadfecha">
+                                                <label  class='col-form-label'>Fecha de Entrega</label>
+                                                <input type="date"  class="col-12" name="FechaEntrega"> 
                                             </div>
                                         </div>
                                         <hr>
@@ -254,7 +238,7 @@
                                                 <label  class="col-form-label">Nombre Integrante</label>
                                             </div>
                                             <div class="col-4  " style="width:100%;">
-                                                <input type="text" class="form-control" id="recipient-name" placeholder="Nombre Actividad">
+                                                <input type="text" class="form-control" id="recipient-name" placeholder="Nombre Integrante">
                                             </div>
                                             <div class="col-4" style="width:100%;">
                                                 <button class="btn btn-primary">Agregar</button>
@@ -310,7 +294,7 @@
                             </div>
                         </div>
                     </div>
-
+ <!--
                     <div class="card carta" >
                         <div class="">
                             <h3 class="cart-title titulocarta">Proyecto 1</h3>
@@ -335,10 +319,12 @@
                                 </div>
                             </div>
                             <div class="btn-group grupo-btn">
+                              
                                 <button class="btn btn-primary" id="checar">Final</button>
                                 <button class="btn btn-primary" id="editar">Editar</button>
-                                <button class="btn btn-primary" id="Chat">Chat</button>
+                                <button class="btn btn-primary" onclick="location.href='ChatWindow'" id="Chat">Chat</button>
                                 <button class="btn btn-primary" id="borrar">Borrar</button>
+                               
                             </div>
                         </div>
                     </div>
@@ -436,6 +422,33 @@
                         </div>
                     </div>
                 </div>
+ <div class="card-body bloquecarta">
+                            <div class="container">
+                                <div id="accordion" role="tablist" aria-multiselectable="false">
+                                    <div class="card">
+                                        <div class="card-header" role="tab" id="headingOne">
+                                            <h5 class="mb-0">
+                                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                                    Descripcion
+                                                </a>
+                                            </h5>
+                                        </div>
+                                        <div id="collapseOne" class="collapse" role="tabpanel" aria-labelledby="headinOne">
+                                            <div class="card-block">
+                                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="btn-group grupo-btn">
+                                <button class="btn btn-primary" id="checar">Final</button>
+                                <button class="btn btn-primary" id="editar">Editar</button>
+                                <button class="btn btn-primary" onclick="location.href='ChatWindow'" id="Chat">Chat</button>
+                                <button class="btn btn-primary" id="borrar">Borrar</button>
+                            </div>
+                        </div>
+                    </div>-->
             </div>
         </div>
     </body>

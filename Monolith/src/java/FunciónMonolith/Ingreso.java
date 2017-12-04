@@ -56,16 +56,12 @@ public class Ingreso extends HttpServlet {
             db = new DataBase();
         } catch (ClassNotFoundException ex) {
            
-        } catch (InstantiationException ex) {
+        } catch (InstantiationException | IllegalAccessException | SQLException ex) {
             out.print(ex.toString());
-        } catch (IllegalAccessException ex) {
-                        out.print(ex.toString());
-        } catch (SQLException ex) {
-                      out.print(ex.toString());
         }
         
         Nombre = request.getParameter("nombre");
-        Institucion = request.getParameter("direccion");
+        Institucion = request.getParameter("institucion");
         NivelEstudios = request.getParameter("estudios");
         Edad = Integer.parseInt(request.getParameter("edad"));
         Pais = request.getParameter("pais");
@@ -81,6 +77,10 @@ public class Ingreso extends HttpServlet {
         u.setDireccion(Direccion);
         u.setCorreo(Correo);
         u.setPassword(Password);
+        HttpSession sesion = request.getSession();
+        sesion.setAttribute("usuario", Nombre);
+        sesion.setAttribute("password", Password);
+        response.sendRedirect("InicioSesion.jsp");
         
         try {
             db.IngresarUsuario(u);
