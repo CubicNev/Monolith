@@ -8,6 +8,14 @@
         <url-pattern>/Ingreso</url-pattern>
     </servlet-mapping>
     <servlet>
+        <servlet-name>CambiosUsuarios</servlet-name>
+        <servlet-class>FunciónMonolith.CambiosUsuarios</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CambiosUsuarios</servlet-name>
+        <url-pattern>/CambiosUsuarios</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>Entrada</servlet-name>
         <servlet-class>FunciónMonolith.Entrada</servlet-class>
     </servlet>
@@ -30,5 +38,37 @@
     <servlet-mapping>
         <servlet-name>CambioActividad</servlet-name>
         <url-pattern>/CambioActividad</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ELiminarActividad</servlet-name>
+        <servlet-class>FunciónMonolith.ELiminarActividad</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ELiminarActividad</servlet-name>
+        <url-pattern>/ELiminarActividad</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ChatWindow</servlet-name>
+        <servlet-class>FunciónMonolith.ChatWindow</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ChatWindow</servlet-name>
+        <url-pattern>/ChatWindow</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>IngresarMensaje</servlet-name>
+        <servlet-class>FunciónMonolith.IngresarMensaje</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>IngresarMensaje</servlet-name>
+        <url-pattern>/IngresarMensaje</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>userLogin</servlet-name>
+        <servlet-class>FunciónMonolith.userLogin</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>userLogin</servlet-name>
+        <url-pattern>/userLogin</url-pattern>
     </servlet-mapping>
 </web-app>

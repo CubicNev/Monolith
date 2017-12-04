@@ -60,9 +60,10 @@ public class CambioActividad extends HttpServlet {
             String nombre=request.getParameter("Titulo");
             String entrega=request.getParameter("FormaEntrega");
             String descripcion=request.getParameter("Descripcion");
+           String Fecha=request.getParameter("FechaEntrega");
             act.setTitulo(nombre);
             act.setFormadeEntregar(entrega);
-            act.setFechaLimite(java.sql.Date.valueOf("2018-11-05"));
+            act.setFechaLimite(java.sql.Date.valueOf(Fecha));
             act.setUsuario(sesion.getAttribute("usuario").toString());
             act.setDescripcion(descripcion);
              db.CambiarActividad(act,identificador);

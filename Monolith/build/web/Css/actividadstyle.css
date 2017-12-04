@@ -115,6 +115,13 @@
 .descripcionproyecto{
     margin:15px;
 }
+.descripcionproyecto label{
+    padding-right:15px;
+}
+
+.error {
+  color: red;
+}
 
 /* Fin  Css para carta de Modal de Actividades
 */

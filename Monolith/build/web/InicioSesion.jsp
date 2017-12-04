@@ -8,14 +8,18 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
+
+
+
 <%
+   
     HttpSession sesion = request.getSession();
-    String Usuario = request.getParameter("usuario");
-    String Password = request.getParameter("contrasenia");
+    
     Connection con = null;
     Statement sta = null;
     ResultSet r = null;
-
+    ResultSet rs = null;
+    
     try {
         Class.forName("com.mysql.jdbc.Driver").newInstance();
         con = DriverManager.getConnection("jdbc:mysql://localhost/monolith", "root", "n0m3l0");
@@ -25,11 +29,13 @@
     }
     if (sesion.isNew()) {
         try {
+            String Usuario = request.getParameter("usuario");
+    String Password = request.getParameter("contrasenia");
             r = sta.executeQuery("select * from Usuario where NombreUsuario='" + Usuario + "';");
             if (r.next()) {
 
-                r = sta.executeQuery("select * from Usuario where NombreUsuario='" + Usuario + "' and Contrasena='" + Password + "';");
-                if (r.next()) {
+                rs = sta.executeQuery("select * from Usuario where NombreUsuario='" + Usuario + "' and Contrasena='" + Password + "';");
+                if (rs.next()) {
                     sesion.setAttribute("usuario", Usuario);
                     sesion.setAttribute("password", Password);
                     out.println("<html>");
@@ -138,8 +144,8 @@
                     out.println(" <div class='navbar-nav ml-auto'>");
                     out.println("<a class='nav-link dropdown-toggle text-white' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Usuario</a>");
                     out.println("<div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdownMenuLink'>");
-                     out.println("<a class=\"dropdown-item\" href=\"#\">"+Usuario+"</a>");
-                     out.println(" <a class='dropdown-item' href='#'>Configuracion</a>");
+                     out.println("<a class=\"dropdown-item\" >"+Usuario+"</a>");
+                     out.println(" <a class='dropdown-item' href='Configuracion.jsp'>Configuracion</a>");
                     out.println("<a class='dropdown-item' href='CerrarSesion.jsp'>Cerrar Sesion</a>");
                     out.println("</div>"+
                             "</div>" +
@@ -152,7 +158,7 @@
                     out.println(" <img class='icon' src='img/home.png' alt='HomeLogo'>");
                     out.println("</div>");
 
-                    out.println("<div class='contenedor' id='dos'  onclick=\"location.href='Examenes.html';\" >");
+                    out.println("<div class='contenedor' id='dos'  onclick=\"location.href='Examen.jsp';\" >");
                     out.println(" <img class='icon' src='img/examen.png' alt='ExamenLogo'>");
                     out.println("</div>");
 
@@ -164,11 +170,11 @@
                     out.println(" <img class=\"icon\" src=\"img/tareas.png\" alt=\"TareasLogo\">");
                     out.println("</div>");
 
-                    out.println("<div class='contenedor' id='cinco' onclick='agrandar5();'>");
+                    out.println("<div class='contenedor' id='cinco' onclick=\"location.href='Finanzas.jsp';\">");
                     out.println("<img class='icon' src='img/finanza.png' alt='FinanzasLogo'>");
                     out.println("</div>");
 
-                    out.println(" <div class='contenedor' id='seis' onclick='agrandar6();'>");
+                    out.println(" <div class='contenedor' id='seis' onclick=\"location.href='Rutas.jsp';\">");
                     out.println("<img class='icon' src='img/ruta.png' alt='RutaLogo'>");
                     out.println("</div>");
 
@@ -178,10 +184,13 @@
                     out.println("</body>");
                     out.println("</html>");
                 } else {
-                    out.println("<h3>Contraseña mal puesta</h3>");
+                    sesion.invalidate();
+                    response.sendRedirect("ContrasenaIncorrecta.jsp");
                 }
             } else {
-                out.println("<h3>Usuario Inexistente</h3>");
+                sesion.invalidate();
+                
+                response.sendRedirect("UsuarioNoRegistrado.jsp");
             }
 
         } catch (SQLException error) {
@@ -295,8 +304,8 @@
                     out.println(" <div class='navbar-nav ml-auto'>");
                     out.println("<a class='nav-link dropdown-toggle text-white' href='#' id='navbarDropdownMenuLink' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>Usuario</a>");
                     out.println("<div class='dropdown-menu dropdown-menu-right' aria-labelledby='navbarDropdownMenuLink'>");
-                     out.println("<a class=\"dropdown-item\" href=\"#\">"+User+"</a>");
-                     out.println(" <a class='dropdown-item' href='#'>Configuracion</a>");
+                     out.println("<a class=\"dropdown-item\" >"+User+"</a>");
+                     out.println(" <a class='dropdown-item' href='Configuracion.jsp'>Configuracion</a>");
                     out.println("<a class='dropdown-item' href='CerrarSesion.jsp'>Cerrar Sesion</a>");
                     out.println("</div>"+
                             "</div>" +
@@ -309,7 +318,7 @@
                     out.println(" <img class='icon' src='img/home.png' alt='HomeLogo'>");
                     out.println("</div>");
 
-                    out.println("<div class='contenedor' id='dos'  onclick=\"location.href='Examenes.html';\" >");
+                    out.println("<div class='contenedor' id='dos'  onclick=\"location.href='Examen.jsp';\" >");
                     out.println(" <img class='icon' src='img/examen.png' alt='ExamenLogo'>");
                     out.println("</div>");
 
@@ -321,11 +330,11 @@
                     out.println(" <img class=\"icon\" src=\"img/tareas.png\" alt=\"TareasLogo\">");
                     out.println("</div>");
 
-                    out.println("<div class='contenedor' id='cinco' onclick=\"location.href='Finanzas.html';\">");
+                    out.println("<div class='contenedor' id='cinco' onclick=\"location.href='Finanzas.jsp';\">");
                     out.println("<img class='icon' src='img/finanza.png' alt='FinanzasLogo'>");
                     out.println("</div>");
 
-                    out.println(" <div class='contenedor' id='seis' onclick='agrandar6();'>");
+                    out.println(" <div class='contenedor' id='seis' onclick=\"location.href='Rutas.jsp';\">");
                     out.println("<img class='icon' src='img/ruta.png' alt='RutaLogo'>");
                     out.println("</div>");
 
@@ -335,7 +344,7 @@
                     out.println("</body>");
                     out.println("</html>");
     }
-    //////////////////////////////////////////////////////////////
+    
 
 
 %>

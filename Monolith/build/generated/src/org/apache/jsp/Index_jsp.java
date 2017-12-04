@@ -151,21 +151,16 @@ public final class Index_jsp extends org.apache.jasper.runtime.HttpJspBase
                 out.write("    </body>\n");
                 out.write("</html>\n");
                 out.write("\n");
-            }
-        } catch (Throwable t) {
-            if (!(t instanceof SkipPageException)) {
-                out = _jspx_out;
-                if (out != null && out.getBufferSize() != 0) {
-                    out.clearBuffer();
-                }
-                if (_jspx_page_context != null) {
-                    _jspx_page_context.handlePageException(t);
-                } else {
-                    throw new ServletException(t);
-                }
-            }
-        } finally {
-            _jspxFactory.releasePageContext(_jspx_page_context);
+            }}catch (Throwable t) {
+      if (!(t instanceof SkipPageException)){
+        out = _jspx_out;
+        if (out != null && out.getBufferSize() != 0)
+          out.clearBuffer();
+        if (_jspx_page_context != null) _jspx_page_context.handlePageException(t);
+        else throw new ServletException(t);
+      }
+    }finally {
+      _jspxFactory.releasePageContext(_jspx_page_context);
+    }
         }
     }
-}
